@@ -21,7 +21,7 @@
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.6);
       width: 100%;
       height: 100%;
       display: flex;
@@ -35,38 +35,35 @@
     h1 {
       font-size: 64px;
       letter-spacing: 6px;
-      color: #fff;
       text-shadow:
-        0 0 10px rgba(255, 0, 0, 0.8),
-        0 0 20px rgba(255, 0, 0, 0.6),
-        0 0 40px rgba(255, 0, 0, 0.4);
+        0 0 10px rgba(255,0,0,0.8),
+        0 0 30px rgba(255,0,0,0.6);
       animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
       from {
         text-shadow:
-          0 0 10px rgba(255, 0, 0, 0.6),
-          0 0 20px rgba(255, 0, 0, 0.4);
+          0 0 10px rgba(255,0,0,0.6),
+          0 0 20px rgba(255,0,0,0.4);
       }
       to {
         text-shadow:
-          0 0 20px rgba(255, 0, 0, 1),
-          0 0 40px rgba(255, 0, 0, 0.8);
+          0 0 20px rgba(255,0,0,1),
+          0 0 40px rgba(255,0,0,0.8);
       }
     }
 
     .subtitle {
       margin-top: 12px;
       letter-spacing: 3px;
-      color: #ddd;
       font-size: 14px;
+      color: #ddd;
     }
 
     .address {
       margin-top: 18px;
       font-size: 13px;
-      letter-spacing: 1.5px;
       color: #ccc;
     }
 
@@ -82,67 +79,124 @@
       padding: 12px 22px;
       border: 1px solid #ff2a2a;
       color: #ff2a2a;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 2px;
-      transition: all 0.3s ease;
       background: rgba(0,0,0,0.6);
+      text-decoration: none;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     .btn:hover {
       background: #ff2a2a;
       color: black;
-      box-shadow: 0 0 20px rgba(255, 42, 42, 0.8);
+      box-shadow: 0 0 20px rgba(255,42,42,0.8);
     }
 
-    /* Mobile tối ưu */
+    /* ===== POPUP MENU ===== */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      width: 90%;
+      max-width: 600px;
+      height: 80%;
+      background: black;
+      border: 1px solid #ff2a2a;
+      box-shadow: 0 0 30px rgba(255,42,42,0.7);
+      position: relative;
+      animation: popupIn 0.4s ease;
+    }
+
+    @keyframes popupIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .popup iframe,
+    .popup img {
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: contain;
+      background: black;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 28px;
+      color: #ff2a2a;
+      cursor: pointer;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 42px;
-      }
-      .subtitle {
-        font-size: 12px;
-      }
-      .address {
-        font-size: 12px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <div class="overlay">
     <div>
       <h1>THE WANN</h1>
-
-      <div class="subtitle">
-        NIGHTLIFE • MUSIC • EXPERIENCE
-      </div>
-
+      <div class="subtitle">NIGHTLIFE • MUSIC • EXPERIENCE</div>
       <div class="address">
         📍 51 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh
       </div>
 
       <div class="buttons">
-        <!-- NÚT GOOGLE MAP -->
-        <a
-          class="btn"
-          href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh"
-          target="_blank"
-        >
+        <a class="btn"
+           href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh"
+           target="_blank">
           GOOGLE MAP
         </a>
 
-        <!-- NÚT MENU -->
-        <a
-          class="btn"
-          href="menu.pdf"
-          target="_blank"
-        >
+        <button class="btn" onclick="openMenu()">
           VIEW MENU
-        </a>
+        </button>
       </div>
     </div>
   </div>
+
+  <!-- POPUP MENU -->
+  <div class="popup" id="menuPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closeMenu()">×</span>
+
+      <!-- MENU PDF -->
+      <iframe src="menu.pdf"></iframe>
+
+      <!-- NẾU MENU LÀ ẢNH → đổi iframe thành dòng dưới -->
+      <!-- <img src="menu.jpg"> -->
+
+    </div>
+  </div>
+
+  <script>
+    function openMenu() {
+      document.getElementById("menuPopup").style.display = "flex";
+    }
+    function closeMenu() {
+      document.getElementById("menuPopup").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
