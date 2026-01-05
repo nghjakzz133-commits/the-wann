@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>THE WANN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     * {
@@ -15,20 +15,15 @@
     body {
       height: 100vh;
       font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at center, rgba(255,0,60,0.15), rgba(0,0,0,0.95)),
-        url("bg.jpg") no-repeat center center fixed;
+      background: url("bg.jpg") no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .overlay {
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.75),
-        rgba(120,0,30,0.6),
-        rgba(0,0,0,0.9)
-      );
+      background: rgba(0, 0, 0, 0.55);
       width: 100%;
       height: 100%;
       display: flex;
@@ -39,99 +34,71 @@
       padding: 20px;
     }
 
-    .wrap {
-      max-width: 720px;
-    }
-
-    /* ===== TITLE ===== */
     h1 {
-      font-size: 72px;
-      letter-spacing: 10px;
-      animation: glow 2.8s ease-in-out infinite alternate,
-                 drop 1.2s ease forwards;
+      font-size: 60px;
+      letter-spacing: 6px;
+      text-shadow:
+        0 0 10px #ff0033,
+        0 0 20px #ff0033,
+        0 0 40px #ff0033;
+      animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
       from {
-        text-shadow: 0 0 15px #ff0033, 0 0 40px rgba(255,0,60,.7);
+        text-shadow:
+          0 0 10px #ff0033,
+          0 0 20px #ff0033;
       }
       to {
-        text-shadow: 0 0 25px #ff3355, 0 0 70px rgba(255,0,80,.95);
+        text-shadow:
+          0 0 20px #ff3355,
+          0 0 40px #ff3355,
+          0 0 60px #ff3355;
       }
-    }
-
-    @keyframes drop {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .tagline {
-      margin-top: 16px;
-      letter-spacing: 4px;
+      margin-top: 12px;
+      letter-spacing: 3px;
+      color: #ddd;
       font-size: 14px;
-      color: #ccc;
-      opacity: 0;
-      animation: rise 1.2s ease forwards;
-      animation-delay: .5s;
     }
 
     .address {
-      margin-top: 26px;
-      font-size: 14px;
-      letter-spacing: 2px;
-      color: #eee;
-      opacity: 0;
-      animation: rise 1.2s ease forwards;
-      animation-delay: .8s;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .buttons {
-      margin-top: 36px;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: rise 1.2s ease forwards;
-      animation-delay: 1.1s;
+      margin-top: 22px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: #ccc;
     }
 
     .btn {
-      padding: 15px 38px;
-      border-radius: 50px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 28px;
+      border: 1px solid #ff0033;
+      color: #ff0033;
       text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg, #ff0022, #99001a);
-      box-shadow: 0 0 25px rgba(255,0,60,.7);
-      transition: .3s ease;
-    }
-
-    .btn.secondary {
-      background: linear-gradient(135deg, #111, #33000a);
-      box-shadow: 0 0 20px rgba(255,0,60,.4);
+      letter-spacing: 2px;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 45px rgba(255,0,60,1);
+      background: #ff0033;
+      color: black;
+      box-shadow: 0 0 20px #ff0033;
     }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
+    /* Mobile */
+    @media (max-width: 600px) {
       h1 {
-        font-size: 44px;
-        letter-spacing: 6px;
+        font-size: 42px;
       }
 
-      .tagline,
+      .tagline {
+        font-size: 12px;
+      }
+
       .address {
         font-size: 12px;
       }
@@ -141,7 +108,7 @@
 
 <body>
   <div class="overlay">
-    <div class="wrap">
+    <div>
       <h1>THE WANN</h1>
 
       <div class="tagline">
@@ -152,25 +119,10 @@
         📍 51 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh
       </div>
 
-      <div class="buttons">
-        <!-- MAP -->
-        <a class="btn" target="_blank"
-           href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh">
-          OPEN MAP
-        </a>
-
-        <!-- GALLERY (ví dụ Instagram) -->
-        <a class="btn secondary" target="_blank"
-           href="https://instagram.com/">
-          VIEW GALLERY
-        </a>
-
-        <!-- MENU FILE TRONG WEB -->
-        <a class="btn secondary" target="_blank"
-           href="menu.pdf">
-          VIEW MENU
-        </a>
-      </div>
+      <!-- Sau này thay link menu vào đây -->
+      <a class="btn" href="#" target="_blank">
+        VIEW MENU
+      </a>
     </div>
   </div>
 </body>
