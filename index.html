@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>THE WANN | Nightlife • Music • Experience</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="THE WANN – Nightlife, Music & Experience tại Quận 1. Đặt bàn nhanh qua Email.">
+<meta name="description" content="THE WANN – Nightlife, Music & Experience tại Quận 1. Đặt bàn nhanh chóng và xác nhận qua Email.">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -126,6 +126,7 @@ h1{
 
 <body>
 
+<!-- NAV -->
 <div class="navbar">
   <div class="nav-left">
     <a href="#">Trang Chủ</a>
@@ -134,6 +135,7 @@ h1{
   <a class="booking-nav" href="#booking">BOOKING</a>
 </div>
 
+<!-- HERO -->
 <div class="overlay">
   <div>
     <h1>THE WANN</h1>
@@ -146,53 +148,39 @@ h1{
   </div>
 </div>
 
+<!-- BOOKING -->
 <section class="booking-section" id="booking">
   <h2>BOOK YOUR NIGHT</h2>
   <p class="booking-sub">Đặt bàn – Xác nhận qua Email</p>
 
-  <form class="booking-form" onsubmit="sendBooking(event)">
-    <input id="name" type="text" placeholder="Họ & Tên" required>
-    <input id="phone" type="tel" placeholder="Số điện thoại" required>
-    <input id="date" type="date" required>
-    <select id="table" required>
+  <form class="booking-form"
+        action="https://formsubmit.co/nghjakzz133@gmail.com"
+        method="POST">
+
+    <input type="hidden" name="_subject" value="BOOKING THE WANN">
+    <input type="hidden" name="_captcha" value="false">
+
+    <input name="Tên khách" type="text" placeholder="Họ & Tên" required>
+    <input name="Số điện thoại" type="tel" placeholder="Số điện thoại" required>
+    <input name="Ngày booking" type="date" required>
+
+    <select name="Loại bàn" required>
       <option value="">Loại bàn</option>
       <option>Standard Table</option>
       <option>VIP Table</option>
       <option>VVIP / Event</option>
     </select>
-    <textarea id="note" placeholder="Ghi chú thêm"></textarea>
+
+    <textarea name="Ghi chú" placeholder="Ghi chú thêm"></textarea>
+
     <button type="submit">GỬI BOOKING</button>
   </form>
 </section>
 
+<!-- CALL FLOAT -->
 <div class="contact-fixed">
   <a href="tel:0778307889" class="contact-btn">📞</a>
 </div>
-
-<script>
-function sendBooking(e){
-  e.preventDefault();
-  const name=document.getElementById("name").value;
-  const phone=document.getElementById("phone").value;
-  const date=document.getElementById("date").value;
-  const table=document.getElementById("table").value;
-  const note=document.getElementById("note").value||"Không";
-
-  const message=
-`BOOKING THE WANN
-👤 Tên: ${name}
-📞 SĐT: ${phone}
-📅 Ngày: ${date}
-🍾 Bàn: ${table}
-📝 Ghi chú: ${note}`;
-
-  const email="nghjakzz133@gmail.com";
-  const subject=encodeURIComponent("BOOKING THE WANN");
-  const body=encodeURIComponent(message);
-
-  window.location.href=`mailto:${email}?subject=${subject}&body=${body}`;
-}
-</script>
 
 </body>
 </html>
