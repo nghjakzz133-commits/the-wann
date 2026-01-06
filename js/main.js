@@ -20,7 +20,7 @@ toggleBtn.addEventListener("click", () => {
 ===================== */
 const bookingPopup = document.getElementById("bookingPopup");
 
-function openBooking() {
+function openBookingBtn() {
   bookingPopup.style.display = "flex";
 }
 
