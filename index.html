@@ -76,5 +76,34 @@
 
   <!-- JS -->
   <script src="js/main.js"></script>
+<!-- BOOKING POPUP -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeBooking()">×</span>
+
+    <h2>Đặt Bàn / Booking</h2>
+
+    <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
+      <!-- CONFIG -->
+      <input type="hidden" name="_subject" value="New Booking - THE WANN">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <!-- INPUTS -->
+      <input type="text" name="Tên khách" placeholder="Tên của bạn" required>
+      <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
+      <input type="date" name="Ngày đặt" required>
+      <input type="number" name="Số khách" placeholder="Số khách" required>
+
+      <textarea name="Ghi chú" placeholder="Yêu cầu đặc biệt (VIP, sofa...)"></textarea>
+
+      <button type="submit" class="btn-red">Gửi Booking</button>
+    </form>
+
+    <p class="note">
+      Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất
+    </p>
+  </div>
+</div>
 </body>
 </html>
