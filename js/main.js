@@ -19,18 +19,20 @@ toggleBtn.addEventListener("click", () => {
    BOOKING POPUP
 ===================== */
 const bookingPopup = document.getElementById("bookingPopup");
+const openBookingBtn = document.getElementById("openBooking");
+const closeBookingBtn = document.getElementById("closeBooking");
 
-function openBookingBtn() {
-  bookingPopup.style.display = "flex";
-}
+openBookingBtn.onclick = (e) => {
+  e.preventDefault();
+  bookingPopup.classList.add("active");
+};
 
-function closeBooking() {
-  bookingPopup.style.display = "none";
-}
+closeBookingBtn.onclick = () => {
+  bookingPopup.classList.remove("active");
+};
 
-// Click ra ngoài popup để đóng
-bookingPopup.addEventListener("click", (e) => {
-  if (e.target === bookingPopup) {
-    closeBooking();
+bookingPopup.onclick = (e) => {
+  if(e.target === bookingPopup){
+    bookingPopup.classList.remove("active");
   }
-});
+};
