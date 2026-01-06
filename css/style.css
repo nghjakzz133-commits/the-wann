@@ -246,3 +246,21 @@ footer {
     font-size: 30px;
   }
 }
+/* LOCATION & HOURS */
+.hours-box {
+  border: 1px solid #333;
+  display: inline-block;
+  padding: 25px 40px;
+  background: #0b0b0b;
+}
+
+.hours-box h3 {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: #ff0000;
+}
+
+.hours-box p {
+  margin: 4px 0;
+  opacity: .85;
+}
