@@ -23,10 +23,7 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-     <h1 class="brand-title" data-vi="THE WANN" data-en="THE WANN">
-  THE WANN
-</h1>
-
+      <h1 class="brand-title">THE WANN</h1>
 
       <p data-vi="Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu"
          data-en="Music • Lights • Premium Experience">
@@ -34,39 +31,30 @@
       </p>
 
       <div class="cta">
-        <a href="https://wa.me/84373453757" target="_blank" class="btn-red">
-          WhatsApp
-        </a>
-        <a href="https://zalo.me/0778307889" target="_blank" class="btn-dark">
-          Zalo
-        </a>
+        <a href="https://wa.me/84373453757" target="_blank" class="btn-red">WhatsApp</a>
+        <a href="https://zalo.me/0778307889" target="_blank" class="btn-dark">Zalo</a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section dark">
-    <h2 data-vi="Về THE WANN" data-en="About THE WANN">Về THE WANN</h2>
-    <p data-vi="Không gian nightlife cao cấp, DJ quốc tế, dịch vụ VIP."
-       data-en="A premium nightlife destination with international DJs and VIP services.">
-       Không gian nightlife cao cấp, DJ quốc tế, dịch vụ VIP.
+    <h2>Về THE WANN</h2>
+    <p>
+      Không gian nightlife cao cấp, DJ quốc tế, dịch vụ VIP.
     </p>
   </section>
 
   <!-- BOOKING -->
   <section class="section red" id="booking">
-    <h2 data-vi="Đặt Bàn / Booking" data-en="Table Booking">
-      Đặt Bàn / Booking
-    </h2>
-    <p data-vi="Liên hệ ngay để giữ vị trí đẹp nhất"
-       data-en="Contact us now for the best tables">
-       Liên hệ ngay để giữ vị trí đẹp nhất
-    </p>
+    <h2>Đặt Bàn / Booking</h2>
+    <p>Liên hệ ngay để giữ vị trí đẹp nhất</p>
 
     <div class="cta">
-  <a href="#" class="btn-red" id="openBooking">BOOK A TABLE</a>
-</div>
-
+      <a href="javascript:void(0)" class="btn-red" onclick="openBooking()">
+        BOOK A TABLE
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -74,36 +62,42 @@
     © THE WANN Nightclub
   </footer>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
-<!-- BOOKING POPUP -->
-<div id="bookingPopup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closeBooking()">×</span>
+  <!-- BOOKING POPUP -->
+  <div id="bookingPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closeBooking()">×</span>
 
-    <h2>Đặt Bàn / Booking</h2>
+      <h2>Đặt Bàn / Booking</h2>
 
-    <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
-      <!-- CONFIG -->
-      <input type="hidden" name="_subject" value="New Booking - THE WANN">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+      <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Booking - THE WANN">
+        <input type="hidden" name="_captcha" value="false">
 
-      <!-- INPUTS -->
-      <input type="text" name="Tên khách" placeholder="Tên của bạn" required>
-      <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
-      <input type="date" name="Ngày đặt" required>
-      <input type="number" name="Số khách" placeholder="Số khách" required>
+        <input type="text" name="Tên khách" placeholder="Tên của bạn" required>
+        <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
+        <input type="date" name="Ngày đặt" required>
+        <input type="number" name="Số khách" placeholder="Số khách" required>
 
-      <textarea name="Ghi chú" placeholder="Yêu cầu đặc biệt (VIP, sofa...)"></textarea>
+        <textarea name="Ghi chú" placeholder="Yêu cầu đặc biệt (VIP, sofa...)"></textarea>
 
-      <button type="submit" class="btn-red">Gửi Booking</button>
-    </form>
+        <button type="submit" class="btn-red">Gửi Booking</button>
+      </form>
 
-    <p class="note">
-      Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất
-    </p>
+      <p class="note">
+        Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất
+      </p>
+    </div>
   </div>
-</div>
+
+  <!-- JS -->
+  <script>
+    function openBooking() {
+      document.getElementById("bookingPopup").style.display = "flex";
+    }
+    function closeBooking() {
+      document.getElementById("bookingPopup").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
