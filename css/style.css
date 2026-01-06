@@ -149,3 +149,54 @@ footer {
     font-size: 30px;
   }
 }
+.booking-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.booking-overlay.active{
+  display: flex;
+}
+
+.booking-box{
+  background: #0b0b0b;
+  padding: 30px;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid #c40000;
+  position: relative;
+  text-align: center;
+}
+
+.booking-box h2{
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.booking-box input{
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.booking-actions{
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.close-booking{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
