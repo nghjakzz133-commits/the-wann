@@ -91,7 +91,7 @@ h1 {
   }
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTON ===== */
 .buttons {
   margin-top: 30px;
   display: flex;
@@ -99,7 +99,7 @@ h1 {
 }
 
 .btn {
-  padding: 12px 28px;
+  padding: 12px 26px;
   border: 1px solid red;
   color: white;
   text-decoration: none;
@@ -159,11 +159,16 @@ h1 {
   background: red;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE OPTIMIZE ===== */
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
     animation: zoomIn 1s ease forwards, glow 2s infinite alternate;
+  }
+
+  .address {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   @keyframes zoomIn {
@@ -185,10 +190,7 @@ h1 {
 <div class="overlay">
   <div class="content">
     <h1>THE WANN</h1>
-
-    <div class="subtitle">
-      NIGHTLIFE • MUSIC • EXPERIENCE
-    </div>
+    <div class="subtitle">NIGHTLIFE • MUSIC • EXPERIENCE</div>
 
     <div class="address">
       📍 51 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh
