@@ -29,3 +29,10 @@ bookingPopup.onclick = (e) => {
     bookingPopup.classList.remove("active");
   }
 };
+function openBooking() {
+  document.getElementById("bookingPopup").style.display = "flex";
+}
+
+function closeBooking() {
+  document.getElementById("bookingPopup").style.display = "none";
+}
