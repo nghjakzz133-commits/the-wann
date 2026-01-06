@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>THE WANN | Nightclub & Bar Experience</title>
+  <title>THE WANN | Nightclub & Bar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="THE WANN – Nightclub & Bar. Luxury nightlife experience. Book table via WhatsApp & Zalo." />
+  <meta name="description" content="THE WANN Nightclub & Bar – Booking VIP tables via WhatsApp & Zalo" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- LANGUAGE SWITCH -->
-  <div class="lang-switch">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('vi')">VN</button>
-  </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="logo">THE WANN</div>
+    <div class="nav-right">
+      <button id="langToggle">EN</button>
+      <a href="#booking" class="btn-outline">BOOK NOW</a>
+    </div>
+  </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="overlay"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 id="title">THE WANN</h1>
-      <p id="subtitle">Luxury Nightclub & Bar Experience</p>
+      <h1 data-vi="Nightclub & Bar Đẳng Cấp" data-en="Luxury Nightclub & Bar">
+        Nightclub & Bar Đẳng Cấp
+      </h1>
+      <p data-vi="Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu"
+         data-en="Music • Lights • Premium Experience">
+        Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu
+      </p>
 
       <div class="cta">
-        <a id="bookBtn" href="#" class="btn-red">BOOK NOW</a>
+        <a href="https://wa.me/xxxxxxxxxx" target="_blank" class="btn-red">WhatsApp</a>
+        <a href="https://zalo.me/xxxxxxxxxx" target="_blank" class="btn-dark">Zalo</a>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <h2 id="servicesTitle">OUR SERVICES</h2>
+  <!-- ABOUT -->
+  <section class="section dark">
+    <h2 data-vi="Về THE WANN" data-en="About THE WANN">Về THE WANN</h2>
+    <p data-vi="Không gian nightlife sang trọng, DJ quốc tế, dịch vụ VIP."
+       data-en="A premium nightlife destination with international DJs and VIP services.">
+       Không gian nightlife sang trọng, DJ quốc tế, dịch vụ VIP.
+    </p>
+  </section>
 
-    <div class="service-list">
-      <div class="service">
-        <h3 id="s1">Nightclub</h3>
-        <p id="s1d">High-energy music, premium sound & lighting.</p>
-      </div>
+  <!-- BOOKING -->
+  <section class="section red" id="booking">
+    <h2 data-vi="Đặt Bàn / Booking" data-en="Table Booking">Đặt Bàn / Booking</h2>
+    <p data-vi="Liên hệ ngay để giữ bàn đẹp nhất"
+       data-en="Contact us now for the best tables">
+       Liên hệ ngay để giữ bàn đẹp nhất
+    </p>
 
-      <div class="service">
-        <h3 id="s2">Bar & Lounge</h3>
-        <p id="s2d">Signature cocktails & luxury seating.</p>
-      </div>
-
-      <div class="service">
-        <h3 id="s3">Table Booking</h3>
-        <p id="s3d">VIP tables & private areas.</p>
-      </div>
+    <div class="cta">
+      <a href="https://wa.me/xxxxxxxxxx" target="_blank" class="btn-black">WhatsApp Booking</a>
+      <a href="https://zalo.me/xxxxxxxxxx" target="_blank" class="btn-outline">Zalo Booking</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© THE WANN Nightlife</p>
+    <p>© THE WANN Nightclub</p>
   </footer>
 
   <script src="js/main.js"></script>
