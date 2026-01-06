@@ -204,3 +204,72 @@ footer {
   letter-spacing: 6px;
   font-weight: 700;
 }
+/* POPUP BOOKING */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #0b0b0b;
+  border: 1px solid #ff0000;
+  padding: 30px;
+  width: 90%;
+  max-width: 420px;
+  color: white;
+  position: relative;
+}
+
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+}
+
+.popup-content textarea {
+  resize: none;
+  height: 90px;
+}
+
+.popup-content button {
+  width: 100%;
+  padding: 14px;
+  background: #ff0000;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #cc0000;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.note {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #aaa;
+}
