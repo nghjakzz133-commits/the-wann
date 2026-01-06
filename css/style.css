@@ -8,9 +8,10 @@
 body {
   background: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 .nav {
   position: fixed;
   top: 0;
@@ -19,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -27,6 +28,7 @@ body {
 .logo {
   font-weight: 700;
   letter-spacing: 4px;
+  font-size: 18px;
 }
 
 .nav-right {
@@ -35,24 +37,30 @@ body {
 }
 
 #langToggle {
-  background: none;
+  background: transparent;
   border: 1px solid #fff;
   color: #fff;
   padding: 6px 12px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* HERO */
+#langToggle:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ===== HERO ===== */
 .hero {
   height: 100vh;
-  background: url('../assets/bg.jpg') center/cover no-repeat;
+  background: url('../assets/bg.jpg') center / cover no-repeat;
   position: relative;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .hero-content {
@@ -68,55 +76,84 @@ body {
 
 .hero h1 {
   font-size: 48px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .hero p {
   margin-top: 16px;
   opacity: 0.85;
+  letter-spacing: 1px;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .cta {
   margin-top: 32px;
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-red {
   background: #b30000;
-  padding: 14px 28px;
+  padding: 14px 30px;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-red:hover {
+  background: #ff0000;
 }
 
 .btn-dark {
   background: #111;
   border: 1px solid #444;
-  padding: 14px 28px;
+  padding: 14px 30px;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-dark:hover {
+  background: #222;
 }
 
 .btn-outline {
   border: 1px solid #fff;
-  padding: 14px 28px;
+  padding: 14px 30px;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
 }
 
 .btn-black {
   background: #000;
   border: 1px solid #fff;
-  padding: 14px 28px;
+  padding: 14px 30px;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-/* SECTIONS */
+.btn-black:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ===== SECTIONS ===== */
 .section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
@@ -131,13 +168,34 @@ body {
 .section h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* FOOTER */
+.section p {
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
 footer {
   background: #000;
   text-align: center;
-  padding: 20px;
+  padding: 24px;
   font-size: 14px;
   opacity: 0.6;
+  letter-spacing: 1px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .nav {
+    padding: 16px 20px;
+  }
 }
