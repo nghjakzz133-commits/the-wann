@@ -1,187 +1,61 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>THE WANN | Nightlife • Music • Experience</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="THE WANN – Nightlife, Music & Experience tại Quận 1. Đặt bàn nhanh chóng và xác nhận qua Email.">
+  <meta charset="UTF-8" />
+  <title>THE WANN | Nightclub & Bar Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="THE WANN – Nightclub & Bar. Luxury nightlife experience. Book table via WhatsApp & Zalo." />
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:Arial,sans-serif;
-  background:url("bg.jpg") no-repeat center center fixed;
-  background-size:cover;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* NAV */
-.navbar{
-  position:fixed;top:0;width:100%;
-  padding:18px 40px;
-  display:flex;justify-content:space-between;align-items:center;
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);
-  z-index:1000;
-}
-.nav-left{display:flex;gap:26px}
-.nav-left a{
-  color:#ddd;text-decoration:none;font-size:14px;letter-spacing:1px;position:relative
-}
-.nav-left a::after{
-  content:"";position:absolute;bottom:-6px;left:0;width:0;height:2px;
-  background:red;transition:.3s
-}
-.nav-left a:hover::after{width:100%}
-.booking-nav{
-  border:1px solid gold;padding:8px 18px;color:gold;
-  text-decoration:none;font-size:13px;letter-spacing:2px
-}
-.booking-nav:hover{background:gold;color:black}
-
-/* HERO */
-.overlay{
-  background:rgba(0,0,0,.65);
-  height:100vh;
-  display:flex;justify-content:center;align-items:center;
-  text-align:center;padding:20px
-}
-h1{
-  font-size:64px;letter-spacing:8px;
-  text-shadow:0 0 20px red,0 0 50px red;
-  animation:glow 2s infinite alternate
-}
-.subtitle{margin-top:14px;letter-spacing:4px;color:#ddd;font-size:14px}
-.address{margin-top:18px;font-size:14px;opacity:.9}
-.btn{
-  margin-top:28px;display:inline-block;
-  padding:12px 28px;border:1px solid red;color:white;
-  text-decoration:none;letter-spacing:2px;font-size:13px;
-  box-shadow:0 0 14px rgba(255,0,0,.6);
-  transition:.3s
-}
-.btn:hover{background:red;box-shadow:0 0 35px red}
-
-/* BOOKING */
-.booking-section{
-  padding:100px 20px;background:rgba(0,0,0,.9);text-align:center
-}
-.booking-section h2{
-  font-size:42px;letter-spacing:6px;color:gold
-}
-.booking-sub{
-  margin:14px 0 40px;font-size:14px;letter-spacing:3px;color:#ccc
-}
-.booking-form{
-  max-width:520px;margin:auto;
-  display:flex;flex-direction:column;gap:16px
-}
-.booking-form input,
-.booking-form select,
-.booking-form textarea{
-  background:transparent;border:1px solid #444;
-  padding:14px;color:white;font-size:14px
-}
-.booking-form textarea{resize:none;height:90px}
-.booking-form input:focus,
-.booking-form select:focus,
-.booking-form textarea:focus{
-  outline:none;border-color:red;
-  box-shadow:0 0 12px rgba(255,0,0,.6)
-}
-.booking-form button{
-  padding:14px;background:red;border:none;
-  color:white;letter-spacing:3px;cursor:pointer;
-  box-shadow:0 0 20px rgba(255,0,0,.7);transition:.3s
-}
-.booking-form button:hover{
-  background:gold;color:black;box-shadow:0 0 30px gold
-}
-
-/* FLOAT CALL */
-.contact-fixed{
-  position:fixed;bottom:24px;right:20px;z-index:9999
-}
-.contact-btn{
-  width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:24px;color:white;text-decoration:none;
-  background:red;animation:pulse 2s infinite
-}
-
-/* ANIM */
-@keyframes glow{from{text-shadow:0 0 12px red}to{text-shadow:0 0 40px red}}
-@keyframes pulse{
-  0%{box-shadow:0 0 10px rgba(255,0,0,.5)}
-  50%{box-shadow:0 0 28px rgba(255,0,0,1)}
-  100%{box-shadow:0 0 10px rgba(255,0,0,.5)}
-}
-@media(max-width:768px){
-  .nav-left{display:none}
-  h1{font-size:42px}
-}
-</style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<!-- NAV -->
-<div class="navbar">
-  <div class="nav-left">
-    <a href="#">Trang Chủ</a>
-    <a href="#booking">Booking</a>
+  <!-- LANGUAGE SWITCH -->
+  <div class="lang-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('vi')">VN</button>
   </div>
-  <a class="booking-nav" href="#booking">BOOKING</a>
-</div>
 
-<!-- HERO -->
-<div class="overlay">
-  <div>
-    <h1>THE WANN</h1>
-    <div class="subtitle">NIGHTLIFE • MUSIC • EXPERIENCE</div>
-    <div class="address">📍 51 Bùi Thị Xuân, Quận 1, TP.HCM</div>
-    <a class="btn" target="_blank"
-       href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh">
-      GOOGLE MAPS
-    </a>
-  </div>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 id="title">THE WANN</h1>
+      <p id="subtitle">Luxury Nightclub & Bar Experience</p>
 
-<!-- BOOKING -->
-<section class="booking-section" id="booking">
-  <h2>BOOK YOUR NIGHT</h2>
-  <p class="booking-sub">Đặt bàn – Xác nhận qua Email</p>
+      <div class="cta">
+        <a id="bookBtn" href="#" class="btn-red">BOOK NOW</a>
+      </div>
+    </div>
+  </section>
 
-  <form class="booking-form"
-        action="https://formsubmit.co/nghjakzz133@gmail.com"
-        method="POST">
+  <!-- SERVICES -->
+  <section class="services">
+    <h2 id="servicesTitle">OUR SERVICES</h2>
 
-    <input type="hidden" name="_subject" value="BOOKING THE WANN">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="thankyou.html">
+    <div class="service-list">
+      <div class="service">
+        <h3 id="s1">Nightclub</h3>
+        <p id="s1d">High-energy music, premium sound & lighting.</p>
+      </div>
 
-    <input name="Tên khách" type="text" placeholder="Họ & Tên" required>
-    <input name="Số điện thoại" type="tel" placeholder="Số điện thoại" required>
-    <input name="Ngày booking" type="date" required>
+      <div class="service">
+        <h3 id="s2">Bar & Lounge</h3>
+        <p id="s2d">Signature cocktails & luxury seating.</p>
+      </div>
 
-    <select name="Loại bàn" required>
-      <option value="">Loại bàn</option>
-      <option>Standard Table</option>
-      <option>VIP Table</option>
-      <option>VVIP / Event</option>
-    </select>
+      <div class="service">
+        <h3 id="s3">Table Booking</h3>
+        <p id="s3d">VIP tables & private areas.</p>
+      </div>
+    </div>
+  </section>
 
-    <textarea name="Ghi chú" placeholder="Ghi chú thêm"></textarea>
+  <!-- FOOTER -->
+  <footer>
+    <p>© THE WANN Nightlife</p>
+  </footer>
 
-    <button type="submit">GỬI BOOKING</button>
-  </form>
-</section>
-
-<!-- CALL FLOAT -->
-<div class="contact-fixed">
-  <a href="tel:0778307889" class="contact-btn">📞</a>
-</div>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
