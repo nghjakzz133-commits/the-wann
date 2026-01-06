@@ -200,3 +200,7 @@ footer {
   cursor: pointer;
   font-size: 24px;
 }
+.brand-title{
+  letter-spacing: 6px;
+  font-weight: 700;
+}
