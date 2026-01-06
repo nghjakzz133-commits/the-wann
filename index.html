@@ -4,356 +4,193 @@
 <meta charset="UTF-8">
 <title>THE WANN | Nightlife • Music • Experience</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="THE WANN – Nightlife, Music & Experience tại Quận 1. Đặt bàn nhanh qua Zalo & Email.">
+<meta name="description" content="THE WANN – Nightlife, Music & Experience tại Quận 1. Đặt bàn nhanh qua Email.">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,sans-serif;
+  background:url("bg.jpg") no-repeat center center fixed;
+  background-size:cover;
+  color:white;
+  overflow-x:hidden;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: url("bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  overflow-x: hidden;
+/* NAV */
+.navbar{
+  position:fixed;top:0;width:100%;
+  padding:18px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(6px);
+  z-index:1000;
 }
-
-/* ===== NAV ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
+.nav-left{display:flex;gap:26px}
+.nav-left a{
+  color:#ddd;text-decoration:none;font-size:14px;letter-spacing:1px;position:relative
 }
-
-.nav-left {
-  display: flex;
-  gap: 26px;
+.nav-left a::after{
+  content:"";position:absolute;bottom:-6px;left:0;width:0;height:2px;
+  background:red;transition:.3s
 }
-
-.nav-left a {
-  color: #ddd;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-  position: relative;
+.nav-left a:hover::after{width:100%}
+.booking-nav{
+  border:1px solid gold;padding:8px 18px;color:gold;
+  text-decoration:none;font-size:13px;letter-spacing:2px
 }
+.booking-nav:hover{background:gold;color:black}
 
-.nav-left a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: red;
-  transition: 0.3s;
+/* HERO */
+.overlay{
+  background:rgba(0,0,0,.65);
+  height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  text-align:center;padding:20px
 }
-
-.nav-left a:hover::after {
-  width: 100%;
+h1{
+  font-size:64px;letter-spacing:8px;
+  text-shadow:0 0 20px red,0 0 50px red;
+  animation:glow 2s infinite alternate
 }
-
-.booking-nav {
-  border: 1px solid gold;
-  padding: 8px 18px;
-  color: gold;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 2px;
+.subtitle{margin-top:14px;letter-spacing:4px;color:#ddd;font-size:14px}
+.address{margin-top:18px;font-size:14px;opacity:.9}
+.btn{
+  margin-top:28px;display:inline-block;
+  padding:12px 28px;border:1px solid red;color:white;
+  text-decoration:none;letter-spacing:2px;font-size:13px;
+  box-shadow:0 0 14px rgba(255,0,0,.6);
+  transition:.3s
 }
+.btn:hover{background:red;box-shadow:0 0 35px red}
 
-.booking-nav:hover {
-  background: gold;
-  color: black;
+/* BOOKING */
+.booking-section{
+  padding:100px 20px;background:rgba(0,0,0,.9);text-align:center
 }
-
-/* ===== HERO ===== */
-.overlay {
-  background: rgba(0,0,0,0.65);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+.booking-section h2{
+  font-size:42px;letter-spacing:6px;color:gold
 }
-
-.content {
-  animation: fadeIn 1.2s ease forwards;
+.booking-sub{
+  margin:14px 0 40px;font-size:14px;letter-spacing:3px;color:#ccc
 }
-
-h1 {
-  font-size: 64px;
-  letter-spacing: 8px;
-  text-shadow: 0 0 20px red, 0 0 50px red;
-  animation: glow 2s infinite alternate;
+.booking-form{
+  max-width:520px;margin:auto;
+  display:flex;flex-direction:column;gap:16px
 }
-
-.subtitle {
-  margin-top: 14px;
-  letter-spacing: 4px;
-  color: #ddd;
-  font-size: 14px;
-}
-
-.address {
-  margin-top: 18px;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.buttons {
-  margin-top: 28px;
-}
-
-.btn {
-  padding: 12px 28px;
-  border: 1px solid red;
-  color: white;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 13px;
-  box-shadow: 0 0 14px rgba(255,0,0,0.6);
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: red;
-  box-shadow: 0 0 35px red;
-}
-
-/* ===== BOOKING ===== */
-.booking-section {
-  padding: 100px 20px;
-  background: rgba(0,0,0,0.9);
-  text-align: center;
-}
-
-.booking-section h2 {
-  font-size: 42px;
-  letter-spacing: 6px;
-  color: gold;
-}
-
-.booking-sub {
-  margin: 14px 0 40px;
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: #ccc;
-}
-
-.booking-form {
-  max-width: 520px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .booking-form input,
 .booking-form select,
-.booking-form textarea {
-  background: transparent;
-  border: 1px solid #444;
-  padding: 14px;
-  color: white;
-  font-size: 14px;
+.booking-form textarea{
+  background:transparent;border:1px solid #444;
+  padding:14px;color:white;font-size:14px
 }
-
-.booking-form textarea {
-  resize: none;
-  height: 90px;
-}
-
+.booking-form textarea{resize:none;height:90px}
 .booking-form input:focus,
 .booking-form select:focus,
-.booking-form textarea:focus {
-  outline: none;
-  border-color: red;
-  box-shadow: 0 0 12px rgba(255,0,0,0.6);
+.booking-form textarea:focus{
+  outline:none;border-color:red;
+  box-shadow:0 0 12px rgba(255,0,0,.6)
+}
+.booking-form button{
+  padding:14px;background:red;border:none;
+  color:white;letter-spacing:3px;cursor:pointer;
+  box-shadow:0 0 20px rgba(255,0,0,.7);transition:.3s
+}
+.booking-form button:hover{
+  background:gold;color:black;box-shadow:0 0 30px gold
 }
 
-.booking-form button {
-  margin-top: 10px;
-  padding: 14px;
-  background: red;
-  border: none;
-  color: white;
-  letter-spacing: 3px;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(255,0,0,0.7);
-  transition: 0.3s;
+/* FLOAT CALL */
+.contact-fixed{
+  position:fixed;bottom:24px;right:20px;z-index:9999
+}
+.contact-btn{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:white;text-decoration:none;
+  background:red;animation:pulse 2s infinite
 }
 
-.booking-form button:hover {
-  background: gold;
-  color: black;
-  box-shadow: 0 0 30px gold;
+/* ANIM */
+@keyframes glow{from{text-shadow:0 0 12px red}to{text-shadow:0 0 40px red}}
+@keyframes pulse{
+  0%{box-shadow:0 0 10px rgba(255,0,0,.5)}
+  50%{box-shadow:0 0 28px rgba(255,0,0,1)}
+  100%{box-shadow:0 0 10px rgba(255,0,0,.5)}
 }
-
-.booking-hotline {
-  margin-top: 26px;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.booking-hotline a {
-  color: gold;
-  text-decoration: none;
-}
-
-/* ===== CONTACT FLOAT ===== */
-.contact-fixed {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 9999;
-}
-
-.contact-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  animation: pulse 2s infinite;
-}
-
-.zalo { background: #0068ff; }
-.phone { background: red; }
-
-/* ===== ANIMATION ===== */
-@keyframes glow {
-  from { text-shadow: 0 0 12px red; }
-  to   { text-shadow: 0 0 40px red; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 10px rgba(255,0,0,0.5); }
-  50% { box-shadow: 0 0 28px rgba(255,0,0,1); }
-  100% { box-shadow: 0 0 10px rgba(255,0,0,0.5); }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .nav-left { display: none; }
-  h1 { font-size: 42px; }
+@media(max-width:768px){
+  .nav-left{display:none}
+  h1{font-size:42px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
   <div class="nav-left">
     <a href="#">Trang Chủ</a>
     <a href="#booking">Booking</a>
-    <a href="#">Liên Hệ</a>
   </div>
   <a class="booking-nav" href="#booking">BOOKING</a>
 </div>
 
-<!-- HERO -->
 <div class="overlay">
-  <div class="content">
+  <div>
     <h1>THE WANN</h1>
     <div class="subtitle">NIGHTLIFE • MUSIC • EXPERIENCE</div>
     <div class="address">📍 51 Bùi Thị Xuân, Quận 1, TP.HCM</div>
-    <div class="buttons">
-      <a class="btn" target="_blank"
-         href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh">
-        GOOGLE MAPS
-      </a>
-    </div>
+    <a class="btn" target="_blank"
+       href="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh">
+      GOOGLE MAPS
+    </a>
   </div>
 </div>
 
-<!-- BOOKING -->
 <section class="booking-section" id="booking">
   <h2>BOOK YOUR NIGHT</h2>
-  <p class="booking-sub">Đặt bàn nhanh – Xác nhận liền</p>
+  <p class="booking-sub">Đặt bàn – Xác nhận qua Email</p>
 
   <form class="booking-form" onsubmit="sendBooking(event)">
     <input id="name" type="text" placeholder="Họ & Tên" required>
     <input id="phone" type="tel" placeholder="Số điện thoại" required>
     <input id="date" type="date" required>
-
     <select id="table" required>
       <option value="">Loại bàn</option>
       <option>Standard Table</option>
       <option>VIP Table</option>
       <option>VVIP / Event</option>
     </select>
-
     <textarea id="note" placeholder="Ghi chú thêm"></textarea>
-
     <button type="submit">GỬI BOOKING</button>
   </form>
-
-  <div class="booking-hotline">
-    Hotline:
-    <a href="tel:0778307889">📞 0778 307 889</a> |
-    <a target="_blank" href="https://zalo.me/0778307889">💬 Zalo</a>
-  </div>
 </section>
 
-<!-- CONTACT FLOAT -->
 <div class="contact-fixed">
-  <a href="https://zalo.me/0778307889" target="_blank" class="contact-btn zalo">💬</a>
-  <a href="tel:0778307889" class="contact-btn phone">📞</a>
+  <a href="tel:0778307889" class="contact-btn">📞</a>
 </div>
 
-<!-- SCRIPT -->
 <script>
-function sendBooking(e) {
+function sendBooking(e){
   e.preventDefault();
+  const name=document.getElementById("name").value;
+  const phone=document.getElementById("phone").value;
+  const date=document.getElementById("date").value;
+  const table=document.getElementById("table").value;
+  const note=document.getElementById("note").value||"Không";
 
-  const name  = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const date  = document.getElementById("date").value;
-  const table = document.getElementById("table").value;
-  const note  = document.getElementById("note").value || "Không";
-
-  const message =
+  const message=
 `BOOKING THE WANN
---------------------
 👤 Tên: ${name}
 📞 SĐT: ${phone}
 📅 Ngày: ${date}
 🍾 Bàn: ${table}
 📝 Ghi chú: ${note}`;
 
-  // ZALO
-  window.open("https://zalo.me/0778307889", "_blank");
+  const email="nghjakzz133@gmail.com";
+  const subject=encodeURIComponent("BOOKING THE WANN");
+  const body=encodeURIComponent(message);
 
-  // EMAIL
-  const email = "booking@thewann.vn"; // đổi email tại đây
-  const subject = encodeURIComponent("BOOKING THE WANN");
-  const body = encodeURIComponent(message);
-  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  window.location.href=`mailto:${email}?subject=${subject}&body=${body}`;
 }
 </script>
 
