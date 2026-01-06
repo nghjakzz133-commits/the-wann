@@ -11,3 +11,21 @@ toggleBtn.addEventListener("click", () => {
     el.textContent = el.dataset[currentLang];
   });
 });
+const openBooking = document.getElementById("openBooking");
+const bookingPopup = document.getElementById("bookingPopup");
+const closeBooking = document.getElementById("closeBooking");
+
+openBooking.onclick = (e) => {
+  e.preventDefault();
+  bookingPopup.classList.add("active");
+};
+
+closeBooking.onclick = () => {
+  bookingPopup.classList.remove("active");
+};
+
+bookingPopup.onclick = (e) => {
+  if(e.target === bookingPopup){
+    bookingPopup.classList.remove("active");
+  }
+};
