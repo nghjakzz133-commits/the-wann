@@ -48,13 +48,11 @@ h1 {
   animation: glow 2s infinite alternate;
 }
 
-/* Glow */
 @keyframes glow {
   from { text-shadow: 0 0 10px red; }
   to   { text-shadow: 0 0 35px red; }
 }
 
-/* Fade */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -79,7 +77,6 @@ h1 {
   animation-delay: 0.6s;
 }
 
-/* Slide */
 @keyframes slideUp {
   from {
     transform: translateY(20px);
@@ -99,7 +96,7 @@ h1 {
 }
 
 .btn {
-  padding: 12px 26px;
+  padding: 12px 24px;
   border: 1px solid red;
   color: white;
   text-decoration: none;
@@ -107,9 +104,9 @@ h1 {
   font-size: 13px;
   transition: 0.3s;
   box-shadow: 0 0 12px rgba(255,0,0,0.6);
-  opacity: 0;
   animation: slideUp 0.8s ease forwards;
   animation-delay: 0.9s;
+  opacity: 0;
 }
 
 .btn:hover {
@@ -117,32 +114,43 @@ h1 {
   box-shadow: 0 0 30px red;
 }
 
-.btn:active {
-  transform: scale(0.95);
-}
-
-/* ===== FIXED CONTACT ===== */
+/* ===== CONTACT FIXED ===== */
 .contact-fixed {
   position: fixed;
-  bottom: 25px;
-  right: 20px;
+  bottom: 22px;
+  right: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   z-index: 9999;
 }
 
 .contact-btn {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  color: white;
   text-decoration: none;
   animation: pulse 2s infinite;
+}
+
+/* ZALO ICON */
+.zalo {
+  background: #0068ff;
+}
+
+.zalo img {
+  width: 30px;
+  height: 30px;
+}
+
+/* PHONE */
+.phone {
+  background: red;
+  color: white;
+  font-size: 22px;
 }
 
 @keyframes pulse {
@@ -151,35 +159,10 @@ h1 {
   100% { box-shadow: 0 0 10px rgba(255,0,0,0.5); }
 }
 
-.zalo {
-  background: #0068ff;
-}
-
-.phone {
-  background: red;
-}
-
-/* ===== MOBILE OPTIMIZE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
-    animation: zoomIn 1s ease forwards, glow 2s infinite alternate;
-  }
-
-  .address {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  @keyframes zoomIn {
-    from {
-      transform: scale(0.9);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
   }
 }
 </style>
@@ -190,7 +173,10 @@ h1 {
 <div class="overlay">
   <div class="content">
     <h1>THE WANN</h1>
-    <div class="subtitle">NIGHTLIFE • MUSIC • EXPERIENCE</div>
+
+    <div class="subtitle">
+      NIGHTLIFE • MUSIC • EXPERIENCE
+    </div>
 
     <div class="address">
       📍 51 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh
@@ -207,11 +193,17 @@ h1 {
 
 <!-- CONTACT -->
 <div class="contact-fixed">
+  <!-- ZALO -->
   <a href="https://zalo.me/0778307889" target="_blank"
-     class="contact-btn zalo">💬</a>
+     class="contact-btn zalo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+  </a>
 
+  <!-- PHONE -->
   <a href="tel:0778307889"
-     class="contact-btn phone">📞</a>
+     class="contact-btn phone">
+     📞
+  </a>
 </div>
 
 </body>
