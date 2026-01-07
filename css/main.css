@@ -84,3 +84,45 @@ button {
   margin: 0 auto;
   width: 100%;
 }
+/* ===== FIX HERO BACKGROUND ===== */
+.hero {
+  min-height: 100vh;
+  background: url('../assets/hero-bg.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== FIX NAV MOBILE ===== */
+.nav {
+  height: 64px;
+  padding: 0 16px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* ===== TRÁNH HERO BỊ CHE BỞI NAV ===== */
+body {
+  padding-top: 64px;
+}
+
+/* ===== HERO CONTENT CENTER ĐÚNG CHUẨN ===== */
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== BUTTON FULL WIDTH CHO MOBILE ===== */
+.cta a {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* ===== FIX ICON LỖI DẤU ? ===== */
+img {
+  display: block;
+}
