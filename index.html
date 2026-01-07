@@ -24,7 +24,7 @@
 </header>
 
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" data-mobile="true">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>THE WANN</h1>
@@ -61,7 +61,12 @@
 <section class="section red" id="booking">
   <h2>Đặt Bàn / Booking</h2>
   <p>Liên hệ ngay để giữ vị trí đẹp nhất</p>
-  <a href="javascript:void(0)" class="btn-red" id="openBooking">
+
+  <p class="mobile-call">
+    📞 <a href="tel:0778307889">0778 307 889</a>
+  </p>
+
+  <a href="javascript:void(0)" class="btn-red mobile-book" id="openBooking">
     BOOK NOW
   </a>
 </section>
@@ -82,7 +87,6 @@
     <h2>Vị trí & Giờ mở cửa</h2>
     <p>📍 51 Bùi Thị Xuân, Quận 1, TP. Hồ Chí Minh</p>
     <p>🕘 Mở cửa: 19:00 – 04:00 mỗi ngày</p>
-    <!-- Google Map -->
     <iframe src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed" width="100%" height="320" style="border:0;" loading="lazy"></iframe>
 </section>
 
@@ -94,7 +98,7 @@
 <!-- BOOKING POPUP -->
 <div id="bookingPopup" class="popup">
     <div class="popup-content">
-        <span class="close" onclick="closeBooking()">×</span>
+        <span class="close">×</span>
         <h2>Đặt Bàn / Booking</h2>
         <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
             <input type="hidden" name="_next" value="https://the-wann.pages.dev/thankyou.html">
@@ -111,7 +115,12 @@
     </div>
 </div>
 
-<script src="js/main.js"></script>
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+    <a href="https://zalo.me/0778307889" class="float-zalo">ZALO</a>
+    <a href="https://wa.me/84373453757" class="float-wa">WA</a>
+</div>
 
+<script src="js/main.js"></script>
 </body>
 </html>
