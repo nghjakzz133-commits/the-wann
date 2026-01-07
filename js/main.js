@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ===== VARIABLES ===== */
   const openBtn = document.getElementById('openBooking');
   const popup = document.getElementById('bookingPopup');
   const closeBtn = document.querySelector('.close');
   const form = document.getElementById('bookingForm');
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.querySelector('.nav .navbar');
 
   /* ===== OPEN POPUP ===== */
   function openBooking() {
     popup.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-
     setTimeout(() => {
       const firstInput = popup.querySelector('input');
       if (firstInput) firstInput.focus();
@@ -70,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         `https://wa.me/84${adminPhone.substring(1)}?text=${encodeURIComponent(message)}`;
 
       window.open(whatsappURL, '_blank');
-
       closeBooking();
       form.reset();
     });
@@ -86,8 +87,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
         }
+        // Nếu menu mobile đang mở, đóng nó sau khi click
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+        }
       }
     });
   });
+
+  /* ===== HAMBURGER MENU ===== */
+  if (hamburger && navbar) {
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  }
 
 });
