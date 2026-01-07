@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  /* ===== EVENTS ===== */
+  /* ===== EVENTS POPUP ===== */
   if (openBtn) {
     openBtn.addEventListener('click', openBooking);
     openBtn.addEventListener('touchstart', function (e) {
@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     closeBtn.addEventListener('click', closeBooking);
   }
 
-  popup.addEventListener('click', function (e) {
-    if (e.target === popup) closeBooking();
-  });
+  if (popup) {
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) closeBooking();
+    });
+  }
 
   /* ===== SUBMIT FORM → WHATSAPP ===== */
   if (form) {
@@ -48,10 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const phone = document.getElementById('phone').value.trim();
       const date = document.getElementById('date').value;
       const people = document.getElementById('people').value;
-      const table = document.getElementById('table').value;
       const note = document.getElementById('note').value.trim();
 
-      if (!name || !phone || !date || !people || !table) {
+      if (!name || !phone || !date || !people) {
         alert('Vui lòng điền đầy đủ thông tin!');
         return;
       }
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
 📞 SĐT: ${phone}
 📅 Ngày: ${date}
 👥 Số khách: ${people}
-🍾 Loại bàn: ${table}
 📝 Ghi chú: ${note || 'Không có'}`;
 
       const adminPhone = '0778307889';
@@ -75,5 +75,19 @@ document.addEventListener('DOMContentLoaded', function () {
       form.reset();
     });
   }
+
+  /* ===== SMOOTH SCROLL MENU ===== */
+  document.querySelectorAll('header.nav a').forEach(link => {
+    link.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 
 });
