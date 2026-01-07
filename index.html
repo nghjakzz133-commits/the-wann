@@ -1,166 +1,101 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="THE WANN Nightclub & Bar – Trải nghiệm nightlife cao cấp tại Quận 1. Đặt bàn nhanh qua WhatsApp, Zalo hoặc Booking Form." />
-  <meta name="keywords" content="THE WANN, nightclub quận 1, bar quận 1, nightlife HCM, đặt bàn club, VIP table HCM" />
-  <meta name="author" content="THE WANN Nightclub" />
-
-    <meta property="og:type" content="website">
-  <meta property="og:title" content="THE WANN Nightclub & Bar | Nightlife Luxury in Saigon">
-  <meta property="og:description" content="Nightclub & Bar cao cấp tại trung tâm Quận 1. Mở cửa 19:00 – 04:00 mỗi ngày. Book bàn VIP ngay.">
-  <meta property="og:url" content="https://the-wann.pages.dev/">
-  <meta property="og:image" content="https://the-wann.pages.dev/assets/og-image.jpg">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="THE WANN Nightclub & Bar">
-  <meta name="twitter:description" content="Premium nightlife experience in Ho Chi Minh City.">
-  <meta name="twitter:image" content="https://the-wann.pages.dev/assets/og-image.jpg">
-
-  <title>THE WANN | Nightclub & Bar</title>
-  <input type="hidden" name="_next" value="https://the-wann.pages.dev/thankyou.html">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NightClub",
-    "name": "THE WANN Nightclub & Bar",
-    "image": "https://the-wann.pages.dev/assets/og-image.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "51 Bùi Thị Xuân, Phường Phạm Ngũ Lão",
-      "addressLocality": "Quận 1",
-      "addressRegion": "TP Hồ Chí Minh",
-      "addressCountry": "VN"
-    },
-    "openingHours": "Mo-Su 19:00-04:00",
-    "url": "https://the-wann.pages.dev/",
-    "telephone": "+84778307889",
-    "priceRange": "$$$",
-    "sameAs": [
-      "https://zalo.me/0778307889",
-      "https://wa.me/84778307889",
-      "LIÊN KẾT FACEBOOK CỦA BẠN",
-      "LIÊN KẾT INSTAGRAM CỦA BẠN"
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="THE WANN Nightclub & Bar – Trải nghiệm nightlife cao cấp tại Quận 1. Đặt bàn nhanh qua WhatsApp, Zalo hoặc Booking Form.">
+    <meta name="keywords" content="THE WANN, nightclub quận 1, bar quận 1, nightlife HCM, đặt bàn club, VIP table HCM">
+    <meta name="author" content="THE WANN Nightclub">
+    <title>THE WANN | Nightclub & Bar</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- NAVIGATION -->
+    <header class="nav">
+        <div class="logo">
+            <img src="assets/logo.png" alt="THE WANN Logo">
+        </div>
+        <div class="nav-right">
+            <button id="langToggle">EN</button>
+            <a href="#booking" class="btn-book">BOOK NOW</a>
+        </div>
+    </header>
 
-    <header class="nav">
-    <div class="logo">THE WANN</div>
-    <nav class="menu-desktop">
-      <a href="#about">ABOUT</a>
-      <a href="#events">EVENTS</a>
-      <a href="#gallery">GALLERY</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
-    <div class="nav-right">
-      <button id="langToggle">EN</button>
-      <a href="#booking" class="btn-outline" onclick="openBooking()">BOOK NOW</a>
-            <i class="fa-solid fa-bars menu-toggle-btn"></i>
-    </div>
-  </header>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>THE WANN</h1>
+            <p>Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu</p>
+            <div class="cta">
+                <a href="https://wa.me/84373453757" class="btn-red">WhatsApp</a>
+                <a href="https://zalo.me/0778307889" class="btn-dark">Zalo</a>
+            </div>
+        </div>
+    </section>
 
-    <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>THE WANN</h1>
-      <p data-vi="Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu" data-en="Music • Lights • Premium Experience">Âm nhạc • Ánh sáng • Trải nghiệm thượng lưu</p>
-      <div class="cta">
-        <a href="javascript:void(0)" class="btn-dark btn-hero" onclick="openBooking()">TABLE BOOKING</a>
-      </div>
-      <p class="scroll-indicator" data-vi="Cuộn xuống để khám phá" data-en="Scroll down to discover">Cuộn xuống để khám phá</p>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section class="section dark">
+        <h2>Về THE WANN</h2>
+        <p>Nightclub & Bar cao cấp, DJ quốc tế, dịch vụ VIP.</p>
+    </section>
 
-    <section class="section dark" id="about">
-    <h2 data-vi="Về THE WANN" data-en="About THE WANN">Về THE WANN</h2>
-    <p data-vi="Nightclub & Bar cao cấp, DJ quốc tế, dịch vụ VIP. Nơi hội tụ âm nhạc điện tử đỉnh cao, ánh sáng hiện đại, mang đến trải nghiệm giải trí thượng lưu và đẳng cấp ngay tại trung tâm Sài Gòn."
-       data-en="Premium nightclub & bar, international DJs, VIP services. The convergence of high-end electronic music, modern lighting, providing a luxury and premium entertainment experience right in the heart of Saigon.">Nightclub & Bar cao cấp, DJ quốc tế, dịch vụ VIP. Nơi hội tụ âm nhạc điện tử đỉnh cao, ánh sáng hiện đại, mang đến trải nghiệm giải trí thượng lưu và đẳng cấp ngay tại trung tâm Sài Gòn.</p>
-  </section>
+    <!-- BOOKING -->
+    <section class="section red" id="booking">
+        <h2>Đặt Bàn / Booking</h2>
+        <p>Liên hệ ngay để giữ vị trí đẹp nhất</p>
+        <div class="cta">
+            <a href="javascript:void(0)" class="btn-red" onclick="openBooking()">BOOK NOW</a>
+        </div>
+    </section>
 
-    <section class="section red" id="events">
-    <h2 data-vi="Sự kiện sắp tới" data-en="Upcoming Events">Sự kiện sắp tới</h2>
-    <p data-vi="Theo dõi để không bỏ lỡ đêm tiệc bùng nổ của DJ quốc tế và các sự kiện độc quyền." data-en="Follow us to not miss international DJ nights and exclusive events.">Theo dõi để không bỏ lỡ đêm tiệc bùng nổ của DJ quốc tế và các sự kiện độc quyền.</p>
-        <div class="event-card">
-      <h3>NIGHT OF FAME</h3>
-      <p class="date">Thứ Sáu, 15/03/2026 | 21:00</p>
-      <p class="lineup">DJ TONY / MC KAI</p>
-    </div>
-    <div class="event-card">
-      <h3>EXCLUSIVE VIP PARTY</h3>
-      <p class="date">Thứ Bảy, 16/03/2026 | 21:00</p>
-      <p class="lineup">International Guest DJ</p>
-    </div>
-    <a href="LIÊN KẾT FANPAGE CỦA BẠN" class="btn-dark" style="margin-top: 30px;">XEM TẤT CẢ</a>
-  </section>
+    <!-- GALLERY -->
+    <section class="section dark" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="assets/gallery1.jpg" alt="THE WANN Nightlife">
+            <img src="assets/gallery2.jpg" alt="THE WANN DJ">
+            <img src="assets/gallery3.jpg" alt="THE WANN Bar">
+            <img src="assets/gallery4.jpg" alt="THE WANN Party">
+        </div>
+    </section>
 
-    <section class="section dark" id="gallery">
-    <h2 data-vi="Gallery" data-en="Gallery">Gallery</h2>
-    <div class="gallery-grid">
-      <img src="assets/gallery1.jpg" alt="THE WANN Nightlife">
-      <img src="assets/gallery2.jpg" alt="THE WANN DJ">
-      <img src="assets/gallery3.jpg" alt="THE WANN Bar">
-      <img src="assets/gallery4.jpg" alt="THE WANN Party">
-    </div>
-  </section>
+    <!-- LOCATION -->
+    <section class="section dark" id="location">
+        <h2>Vị trí & Giờ mở cửa</h2>
+        <p>📍 51 Bùi Thị Xuân, Quận 1, TP. Hồ Chí Minh</p>
+        <p>🕘 Mở cửa: 19:00 – 04:00 mỗi ngày</p>
+        <iframe src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed" width="100%" height="320" style="border:0;" loading="lazy"></iframe>
+    </section>
 
-    <section class="section dark contact-section" id="contact">
-    <div class="contact-info">
-      <h2 data-vi="Liên hệ" data-en="Contact Us">Liên hệ</h2>
-      <p class="location-detail">📍 51 Bùi Thị Xuân, Quận 1, TP. Hồ Chí Minh</p>
-      <p class="location-detail">📞 +84 778 307 889</p>
-      <p class="location-detail">📧 nghjakzz133@gmail.com</p>
-      <p class="opening-hours-detail">🕘 Mở cửa: 19:00 – 04:00 mỗi ngày</p>
-      
-      <div class="social-icons">
-        <a href="LIÊN KẾT FACEBOOK CỦA BẠN" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="LIÊN KẾT INSTAGRAM CỦA BẠN" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/84373453757" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed" width="100%" height="400" style="border:0;" loading="lazy"></iframe>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+        © THE WANN Nightclub
+    </footer>
 
-  <footer class="main-footer">
-    <div class="footer-links">
-      <a href="#about">Về THE WANN</a>
-      <a href="#events">Sự kiện</a>
-      <a href="javascript:void(0)" onclick="openBooking()">Đặt Bàn</a>
-    </div>
-    <p class="copyright">© 2026 THE WANN Nightclub. All rights reserved.</p>
-  </footer>
+    <!-- BOOKING POPUP -->
+    <div id="bookingPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeBooking()">×</span>
+            <h2>Đặt Bàn / Booking</h2>
+            <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://the-wann.pages.dev/thankyou.html">
+                <input type="hidden" name="_subject" value="New Booking - THE WANN">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="Tên khách" placeholder="Tên của bạn" required>
+                <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
+                <input type="date" name="Ngày đặt" required>
+                <input type="number" name="Số khách" placeholder="Số khách" required>
+                <textarea name="Ghi chú" placeholder="Yêu cầu đặc biệt (VIP, sofa...)"></textarea>
+                <button type="submit" class="btn-red">Gửi Booking</button>
+            </form>
+            <p class="note">Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất</p>
+        </div>
+    </div>
 
-    <div id="bookingPopup" class="popup">
-    <div class="popup-content">
-      <span class="close" id="closeBtn">×</span> 
-      <h2>Đặt Bàn / Booking</h2>
-      <form action="https://formsubmit.co/nghjakzz133@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://the-wann.pages.dev/thankyou.html">
-        <input type="hidden" name="_subject" value="New Booking - THE WANN">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="Tên khách" placeholder="Tên của bạn" required>
-        <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
-        <input type="date" name="Ngày đặt" required>
-        <input type="number" name="Số khách" placeholder="Số khách" required>
-        <textarea name="Ghi chú" placeholder="Yêu cầu đặc biệt (VIP, sofa...)"></textarea>
-        <button type="submit" class="btn-red">Gửi Booking</button>
-      </form>
-      <p class="note">Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất</p>
-    </div>
-  </div>
-
-    <script src="js/main.js"></script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
