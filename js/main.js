@@ -19,3 +19,12 @@ document.getElementById('openBooking').addEventListener('touchstart', function(e
   e.preventDefault();
   openBooking();
 });
+function openBooking() {
+  const popup = document.getElementById('bookingPopup');
+  popup.style.display = 'flex';
+
+  setTimeout(() => {
+    const firstInput = popup.querySelector('input');
+    if (firstInput) firstInput.focus();
+  }, 300);
+}
