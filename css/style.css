@@ -259,3 +259,20 @@ footer {
     max-width: 1000px;
   }
 }
+.popup-content label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.popup-content button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
