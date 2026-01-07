@@ -22,6 +22,16 @@
     <img src="assets/favicon.png" alt="THE WANN">
   </div>
 
+  <ul class="navbar">
+    <li><a href="#home">Trang Chủ</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#booking">Đặt bàn</a></li>
+    <li><a href="#gallery">Hình ảnh</a></li>
+    <li><a href="#news">Tin tức</a></li>
+    <li><a href="#about">Giới thiệu</a></li>
+    <li><a href="#contact">Liên hệ</a></li>
+  </ul>
+
   <div class="nav-right">
     <button id="langToggle">EN</button>
     <a href="#booking" class="btn-book">BOOK NOW</a>
@@ -29,7 +39,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-content">
     <h1>THE WANN</h1>
     <p>Premium Nightlife Experience</p>
@@ -63,6 +73,27 @@
   </div>
 </section>
 
+<!-- MENU -->
+<section class="section" id="menu">
+  <h2>Menu</h2>
+  <p>Thức uống & cocktail đặc sắc</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <h3>Signature Cocktail</h3>
+      <p>Giá: 350k</p>
+    </div>
+    <div class="menu-item">
+      <h3>Mocktail</h3>
+      <p>Giá: 250k</p>
+    </div>
+    <div class="menu-item">
+      <h3>Beer Tower</h3>
+      <p>Giá: 400k</p>
+    </div>
+    <!-- Thêm món khác nếu muốn -->
+  </div>
+</section>
+
 <!-- BOOKING -->
 <section class="section red" id="booking">
   <h2>Đặt Bàn VIP</h2>
@@ -71,8 +102,8 @@
 </section>
 
 <!-- GALLERY -->
-<section class="section dark">
-  <h2>Gallery</h2>
+<section class="section dark" id="gallery">
+  <h2>Hình ảnh</h2>
   <div class="gallery-grid">
     <img src="assets/gallery1.jpg">
     <img src="assets/gallery2.jpg">
@@ -83,12 +114,38 @@
   </div>
 </section>
 
+<!-- NEWS -->
+<section class="section" id="news">
+  <h2>Tin tức</h2>
+  <div class="news-item">
+    <h3>DJ Party cuối tuần</h3>
+    <p>Tham gia cùng DJ quốc tế vào thứ 7 này.</p>
+  </div>
+  <div class="news-item">
+    <h3>Ưu đãi Happy Hour</h3>
+    <p>Giảm 20% tất cả đồ uống từ 20h – 22h.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section dark" id="about">
+  <h2>Giới thiệu</h2>
+  <p>THE WANN – nơi trải nghiệm nightlife đỉnh cao tại TP.HCM. Dịch vụ VIP, DJ quốc tế và không gian sang trọng.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Liên hệ</h2>
+  <p>Email: info@thewann.com</p>
+  <p>Hotline: <a href="tel:0778307889">0778 307 889</a></p>
+</section>
+
 <!-- LOCATION -->
 <section class="section dark">
   <h2>Location</h2>
   <p>51 Bùi Thị Xuân, Quận 1</p>
   <iframe
-    src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed"
+    src="https://www.google.com/maps?q=51+Bui+Thi+Xuân+Quan+1+Ho+Chi+Minh&output=embed"
     height="300"
     style="border:0;"
     loading="lazy">
@@ -125,5 +182,15 @@
 </div>
 
 <script src="js/main.js"></script>
+<script>
+  // Smooth scroll menu
+  document.querySelectorAll('header.nav a').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
