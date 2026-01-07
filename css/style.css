@@ -45,6 +45,24 @@ body {
   display: block;
 }
 
+.nav .navbar {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav .navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.nav .navbar li a:hover {
+  color: #b30000;
+}
+
 .nav-right {
   display: flex;
   gap: 10px;
@@ -190,6 +208,33 @@ body {
   display: block;
 }
 
+/* ===== MENU ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.menu-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ===== NEWS ===== */
+.news-item {
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+/* ===== CONTACT ===== */
+#contact p {
+  margin-top: 8px;
+}
+
 /* ===== MAP ===== */
 iframe {
   width: 100%;
@@ -278,7 +323,21 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-item {
+    display: inline-block;
+    width: calc(50% - 12px);
+    margin-right: 12px;
+  }
+
   .section > * {
     max-width: 1000px;
+  }
+
+  .nav .navbar {
+    gap: 32px;
   }
 }
