@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>THE WANN | Nightclub & Bar</title>
 
   <meta name="description" content="THE WANN Nightclub & Bar – Trải nghiệm nightlife cao cấp tại Quận 1.">
@@ -11,14 +12,16 @@
 
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
 <!-- NAV -->
 <header class="nav">
-  
+  <div class="logo">
+    <img src="assets/favicon.png" alt="THE WANN">
+  </div>
+
   <div class="nav-right">
     <button id="langToggle">EN</button>
     <a href="#booking" class="btn-book">BOOK NOW</a>
@@ -27,12 +30,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>THE WANN</h1>
     <p>Premium Nightlife Experience</p>
+
     <div class="cta">
-      <a href="https://wa.me/84373453757" class="btn-red">WhatsApp</a>
+      <a href="https://wa.me/84778307889" class="btn-red">WhatsApp</a>
       <a href="https://zalo.me/0778307889" class="btn-dark">Zalo</a>
     </div>
   </div>
@@ -41,15 +44,18 @@
 <!-- DIFFERENCE -->
 <section class="section">
   <h2>THE WANN Difference</h2>
+
   <div class="features-container">
     <div class="feature-item">
       <h3>Booking System</h3>
       <p>Đặt bàn nhanh qua WhatsApp, Zalo hoặc Form.</p>
     </div>
+
     <div class="feature-item">
       <h3>International DJs</h3>
       <p>Âm nhạc đỉnh cao mỗi đêm.</p>
     </div>
+
     <div class="feature-item">
       <h3>VIP Services</h3>
       <p>Dịch vụ cao cấp – bảo mật.</p>
@@ -72,6 +78,8 @@
     <img src="assets/gallery2.jpg">
     <img src="assets/gallery3.jpg">
     <img src="assets/gallery4.jpg">
+    <img src="assets/gallery5.jpg">
+    <img src="assets/gallery6.jpg">
   </div>
 </section>
 
@@ -79,8 +87,12 @@
 <section class="section dark">
   <h2>Location</h2>
   <p>51 Bùi Thị Xuân, Quận 1</p>
-  <iframe src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed"
-    width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+  <iframe
+    src="https://www.google.com/maps?q=51+Bui+Thi+Xuan+Quan+1+Ho+Chi+Minh&output=embed"
+    height="300"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
 </section>
 
 <footer>© THE WANN Nightclub</footer>
@@ -89,26 +101,27 @@
 <div id="bookingPopup" class="popup">
   <div class="popup-content">
     <span class="close">×</span>
+
     <h2>Đặt Bàn</h2>
+
     <form id="bookingForm">
-      <input type="text" placeholder="Tên *" required>
-      <input type="tel" placeholder="SĐT *" required>
-      <input type="date" required>
-      <select required>
+      <input type="text" id="name" placeholder="Tên *" required>
+      <input type="tel" id="phone" placeholder="SĐT *" required>
+      <input type="date" id="date" required>
+
+      <select id="people" required>
         <option value="">Số khách</option>
         <option>2 người</option>
         <option>3–4 người</option>
         <option>5–7 người</option>
         <option>8+ người</option>
       </select>
+
+      <textarea id="note" placeholder="Ghi chú"></textarea>
+
       <button class="btn-red" type="submit">GIỮ BÀN</button>
     </form>
   </div>
-</div>
-
-<div class="floating-cta">
-  <a href="https://zalo.me/0778307889" class="float-zalo">ZALO</a>
-  <a href="https://wa.me/84778307889" class="float-wa">WA</a>
 </div>
 
 <script src="js/main.js"></script>
