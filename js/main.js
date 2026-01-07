@@ -1,19 +1,21 @@
-// Mở popup khi nhấn vào nút BOOK NOW
-document.getElementById('openBooking').addEventListener('click', function() {
-  openBooking();
-});
+document.getElementById('openBooking').addEventListener('click', openBooking);
+document.querySelector('.close').addEventListener('click', closeBooking);
 
-// Đóng popup khi nhấn vào nút "×"
-document.querySelector('.close').addEventListener('click', function() {
-  closeBooking();
-});
-
-// Hàm mở popup
 function openBooking() {
   document.getElementById('bookingPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
 
-// Hàm đóng popup
 function closeBooking() {
   document.getElementById('bookingPopup').style.display = 'none';
+  document.body.style.overflow = '';
 }
+
+document.getElementById('bookingPopup').addEventListener('click', function(e) {
+  if (e.target === this) closeBooking();
+});
+
+document.getElementById('openBooking').addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  openBooking();
+});
