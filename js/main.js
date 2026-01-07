@@ -1,44 +1,62 @@
-document.getElementById('openBooking').addEventListener('click', openBooking);
-document.querySelector('.close').addEventListener('click', closeBooking);
+document.addEventListener('DOMContentLoaded', function () {
 
-function openBooking() {
-  document.getElementById('bookingPopup').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeBooking() {
-  document.getElementById('bookingPopup').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-document.getElementById('bookingPopup').addEventListener('click', function(e) {
-  if (e.target === this) closeBooking();
-});
-
-document.getElementById('openBooking').addEventListener('touchstart', function(e) {
-  e.preventDefault();
-  openBooking();
-});
-function openBooking() {
+  const openBtn = document.getElementById('openBooking');
   const popup = document.getElementById('bookingPopup');
-  popup.style.display = 'flex';
+  const closeBtn = document.querySelector('.close');
+  const form = document.getElementById('bookingForm');
 
-  setTimeout(() => {
-    const firstInput = popup.querySelector('input');
-    if (firstInput) firstInput.focus();
-  }, 300);
-}
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+  /* ===== OPEN POPUP ===== */
+  function openBooking() {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const date = document.getElementById('date').value;
-  const people = document.getElementById('people').value;
-  const table = document.getElementById('table').value;
-  const note = document.getElementById('note').value;
+    setTimeout(() => {
+      const firstInput = popup.querySelector('input');
+      if (firstInput) firstInput.focus();
+    }, 300);
+  }
 
-  const message =
+  /* ===== CLOSE POPUP ===== */
+  function closeBooking() {
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  /* ===== EVENTS ===== */
+  if (openBtn) {
+    openBtn.addEventListener('click', openBooking);
+    openBtn.addEventListener('touchstart', function (e) {
+      e.preventDefault();
+      openBooking();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeBooking);
+  }
+
+  popup.addEventListener('click', function (e) {
+    if (e.target === popup) closeBooking();
+  });
+
+  /* ===== SUBMIT FORM → WHATSAPP ===== */
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const date = document.getElementById('date').value;
+      const people = document.getElementById('people').value;
+      const table = document.getElementById('table').value;
+      const note = document.getElementById('note').value.trim();
+
+      if (!name || !phone || !date || !people || !table) {
+        alert('Vui lòng điền đầy đủ thông tin!');
+        return;
+      }
+
+      const message =
 `🔥 BOOKING THE WANN 🔥
 👤 Tên: ${name}
 📞 SĐT: ${phone}
@@ -47,10 +65,15 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 🍾 Loại bàn: ${table}
 📝 Ghi chú: ${note || 'Không có'}`;
 
-  const phoneAdmin = '0778307889'; // SĐT của mày
-  const whatsappURL = `https://wa.me/84${phoneAdmin.substring(1)}?text=${encodeURIComponent(message)}`;
+      const adminPhone = '0778307889';
+      const whatsappURL =
+        `https://wa.me/84${adminPhone.substring(1)}?text=${encodeURIComponent(message)}`;
 
-  window.open(whatsappURL, '_blank');
+      window.open(whatsappURL, '_blank');
 
-  closeBooking();
+      closeBooking();
+      form.reset();
+    });
+  }
+
 });
