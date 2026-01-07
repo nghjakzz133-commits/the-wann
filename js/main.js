@@ -28,3 +28,29 @@ function openBooking() {
     if (firstInput) firstInput.focus();
   }, 300);
 }
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const date = document.getElementById('date').value;
+  const people = document.getElementById('people').value;
+  const table = document.getElementById('table').value;
+  const note = document.getElementById('note').value;
+
+  const message =
+`🔥 BOOKING THE WANN 🔥
+👤 Tên: ${name}
+📞 SĐT: ${phone}
+📅 Ngày: ${date}
+👥 Số khách: ${people}
+🍾 Loại bàn: ${table}
+📝 Ghi chú: ${note || 'Không có'}`;
+
+  const phoneAdmin = '0778307889'; // SĐT của mày
+  const whatsappURL = `https://wa.me/84${phoneAdmin.substring(1)}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, '_blank');
+
+  closeBooking();
+});
