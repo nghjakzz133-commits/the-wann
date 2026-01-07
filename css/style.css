@@ -34,8 +34,14 @@ body {
   z-index: 1000;
 }
 
-.logo img {
+.nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav .logo img {
   height: 36px;
+  width: auto;
   display: block;
 }
 
@@ -64,8 +70,9 @@ body {
 /* ===== HERO ===== */
 .hero {
   min-height: calc(100vh - 64px);
-  background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-              url('../assets/bg.jpg') center center / cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url('../assets/hero-bg.jpg') center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,7 +256,6 @@ footer {
 
 /* ===== DESKTOP ===== */
 @media (min-width: 992px) {
-
   .hero h1 {
     font-size: 48px;
   }
