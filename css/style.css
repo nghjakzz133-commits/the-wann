@@ -1,14 +1,23 @@
-/* Global styles */
+/* GLOBAL STYLES (Đổi font sang kiểu hiện đại, tối giản) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif; /* Sử dụng font Montserrat */
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
 }
 
 body {
   background: #000;
   color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* NAV */
@@ -16,31 +25,51 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 18px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
-  letter-spacing: 4px;
-  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 700; 
+}
+
+.menu-desktop a {
+  margin-right: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.7;
+  position: relative;
+}
+
+.menu-desktop a:hover {
+  opacity: 1;
+  color: #ff0000;
 }
 
 .nav-right {
   display: flex;
   gap: 14px;
+  align-items: center;
 }
 
 #langToggle {
   background: none;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
-  padding: 6px 12px;
+  padding: 6px 10px;
   cursor: pointer;
+  font-size: 12px;
+}
+.menu-toggle-btn {
+  display: none; /* Ẩn trên desktop */
 }
 
 /* HERO */
@@ -53,7 +82,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.6);
 }
 
 .hero-content {
@@ -68,48 +97,80 @@ body {
 }
 
 .hero h1 {
-  font-size: 46px;
-  letter-spacing: 6px;
+  font-size: 80px; 
+  letter-spacing: 15px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .hero p {
-  margin-top: 16px;
-  opacity: 0.85;
+  margin-top: 0;
+  font-size: 18px;
+  opacity: 0.9;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-5px); }
+  100% { opacity: 0.6; transform: translateY(0); }
 }
 
 .cta {
-  margin-top: 32px;
+  margin-top: 50px;
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.btn-red {
-  background: #b30000;
-  color: #fff;
+/* BUTTONS (Làm cho nút trông thanh lịch hơn) */
+.btn-red, .btn-dark, .btn-outline {
   padding: 14px 30px;
   text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.btn-red {
+  background: #ff0000;
+  color: #fff;
+  border-color: #ff0000;
+}
+.btn-red:hover {
+  background: #cc0000;
 }
 
 .btn-dark {
-  background: #111;
-  border: 1px solid #444;
+  background: none;
+  border: 1px solid #fff;
   color: #fff;
-  padding: 14px 30px;
-  text-decoration: none;
+}
+.btn-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .btn-outline {
+  background: none;
   border: 1px solid #fff;
   color: #fff;
-  padding: 14px 30px;
-  text-decoration: none;
+}
+.btn-outline:hover {
+  background: #ff0000;
+  border-color: #ff0000;
 }
 
 /* SECTION */
 .section {
   padding: 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -118,40 +179,146 @@ body {
 }
 
 .section.red {
-  background: #700000;
+  background: #0a0a0a; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section h2 {
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  margin-bottom: 15px;
+  letter-spacing: 4px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff0000;
+}
+.section p {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  opacity: 0.7;
 }
 
-footer {
-  background: #000;
-  padding: 20px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
+/* EVENTS */
+.event-card {
+  background: #111;
+  border: 1px solid #333;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
 }
+.event-card h3 {
+  color: #ff0000;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.event-card .date {
+  opacity: 0.8;
+  font-size: 14px;
+}
+.event-card .lineup {
+  margin-top: 10px;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* GALLERY */
+.gallery-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0; 
+  filter: brightness(0.7);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  filter: brightness(1);
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255,0,0,0.3);
+}
+
+/* CONTACT & LOCATION */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+.contact-info {
+  width: 45%;
+  min-width: 300px;
+  margin-bottom: 30px;
+}
+.contact-info h2 {
+  text-align: left;
+}
+.location-detail, .opening-hours-detail {
+  margin: 10px 0;
+  max-width: none;
+  opacity: 0.9;
+}
+.map-container {
+  width: 50%;
+  min-width: 300px;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+.social-icons a {
+  font-size: 24px;
+  margin-right: 20px;
+  opacity: 0.7;
+}
+.social-icons a:hover {
+  opacity: 1;
+  color: #ff0000;
+}
+
+/* FOOTER */
+.main-footer {
+  background: #000;
+  padding: 30px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.footer-links a {
+  margin: 0 15px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+.footer-links a:hover {
+  opacity: 1;
+  color: #ff0000;
+}
+.copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
 
 /* POPUP BOOKING */
 .popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.8);
-  display: none;
+  background: rgba(0,0,0,.95);
+  display: none; 
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
-
-/* --- ĐIỀU CHỈNH THÊM: HIỂN THỊ POPUP KHI CÓ CLASS ACTIVE --- */
 .popup.active {
   display: flex;
 }
-/* ------------------------------------------------------------- */
-
-
 .popup-content {
   background: #0b0b0b;
   border: 1px solid #ff0000;
@@ -161,27 +328,19 @@ footer {
   color: white;
   position: relative;
 }
-
 .popup-content h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .popup-content input,
 .popup-content textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  background: #111;
+  background: #1a1a1a;
   border: 1px solid #333;
   color: white;
 }
-
-.popup-content textarea {
-  resize: none;
-  height: 90px;
-}
-
 .popup-content button {
   width: 100%;
   padding: 14px;
@@ -191,11 +350,6 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
-
-.popup-content button:hover {
-  background: #cc0000;
-}
-
 .popup .close {
   position: absolute;
   top: 10px;
@@ -204,53 +358,37 @@ footer {
   cursor: pointer;
 }
 
-/* GALLERY */
-.gallery-grid {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 4px;
-  filter: brightness(0.85);
-  transition: 0.4s ease;
-  cursor: pointer;
-}
-
-.gallery-grid img:hover {
-  filter: brightness(1.1);
-  transform: scale(1.04);
-  box-shadow: 0 0 20px rgba(255,0,0,0.6);
-}
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .menu-desktop {
+    display: none; 
+  }
+  .menu-toggle-btn {
+    display: block; 
+    font-size: 24px;
+    cursor: pointer;
+  }
   .hero h1 {
+    font-size: 45px;
+    letter-spacing: 10px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .section h2 {
     font-size: 30px;
   }
-
-  .hero p {
-    font-size: 14px;
+  
+  .contact-section {
+    flex-direction: column;
+    text-align: center;
   }
-
-  .cta {
-    gap: 8px;
+  .contact-info, .map-container {
+    width: 100%;
+    margin: 0;
   }
-
-  .btn-red, .btn-dark, .btn-outline {
-    padding: 10px 22px;
-  }
-
-  .section h2 {
-    font-size: 24px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  .contact-info h2 {
+    text-align: center;
   }
 }
