@@ -11,6 +11,7 @@ body {
   color: #fff;
 }
 
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
@@ -42,6 +43,7 @@ body {
   cursor: pointer;
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   background: url("assets/hero-bg.jpg") center/cover no-repeat;
@@ -105,6 +107,7 @@ body {
   text-decoration: none;
 }
 
+/* SECTION */
 .section {
   padding: 120px 20px;
   text-align: center;
@@ -131,6 +134,7 @@ footer {
   opacity: 0.6;
 }
 
+/* POPUP BOOKING */
 .popup {
   position: fixed;
   inset: 0;
@@ -193,6 +197,7 @@ footer {
   cursor: pointer;
 }
 
+/* GALLERY */
 .gallery-grid {
   margin-top: 40px;
   display: grid;
@@ -214,4 +219,31 @@ footer {
   filter: brightness(1.1);
   transform: scale(1.04);
   box-shadow: 0 0 20px rgba(255,0,0,0.6);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .cta {
+    gap: 8px;
+  }
+
+  .btn-red, .btn-dark, .btn-outline {
+    padding: 10px 22px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 }
