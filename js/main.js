@@ -109,3 +109,14 @@ document.querySelectorAll('.submenu-toggle').forEach(toggle => {
     parent.classList.toggle('open');
   });
 });
+// ===== HAMBURGER MENU FIX =====
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.querySelector('.nav .navbar');
+
+  if (hamburger && navbar) {
+    hamburger.addEventListener('click', function () {
+      navbar.classList.toggle('active');
+    });
+  }
+});
