@@ -355,3 +355,58 @@ body {
 #gallery .cta {
   display: none;
 }
+/* ================= BOOKING VIP – LUXURY ================= */
+.booking-vip {
+  background: radial-gradient(
+    circle at center,
+    #2a0000 0%,
+    #120000 70%,
+    #000 100%
+  );
+  padding: 100px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-box {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  padding: 48px 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.booking-box h2 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 32px;
+}
+
+.booking-phone {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.booking-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  padding: 14px 36px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.booking-btn:hover {
+  background: #fff;
+  color: #000;
+}
