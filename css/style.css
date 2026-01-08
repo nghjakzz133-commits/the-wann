@@ -556,3 +556,36 @@ body {
   font-size: 12px;
   opacity: 0.6;
 }
+/* ================= MOBILE MENU SLIDE ================= */
+@media (max-width: 991px) {
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .nav .navbar {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 72%;
+    height: 100vh;
+    background: rgba(0,0,0,0.96);
+    flex-direction: column;
+    padding-top: 24px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav .navbar.active {
+    right: 0;
+  }
+}
