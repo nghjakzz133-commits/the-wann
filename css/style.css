@@ -668,3 +668,27 @@ body {
 .hero-cta a i {
   color: #f5d98b;
 }
+/* ===== HERO CTA – SIZE REFINED (LUXURY SMALLER) ===== */
+
+.hero-cta {
+  gap: 14px;
+}
+
+/* thu nhỏ nút */
+.hero-cta a {
+  max-width: 300px;        /* từ 360 → 300 */
+  padding: 13px 18px;      /* giảm chiều cao */
+  font-size: 13.5px;       /* chữ nhỏ hơn */
+  letter-spacing: 1.2px;
+  border-radius: 14px;     /* bớt bo cho gọn */
+}
+
+/* mobile nhỏ hơn nữa */
+@media (max-width: 480px) {
+  .hero-cta a {
+    max-width: 260px;
+    padding: 12px 16px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+}
