@@ -418,3 +418,73 @@ body {
 #menu {
   scroll-margin-top: 100px;
 }
+/* ===== Luxury Mobile Menu ===== */
+.lux-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  z-index: 998;
+}
+
+.lux-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 360px;
+  height: 100%;
+  background: linear-gradient(180deg, #050505, #000);
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: 0.45s ease;
+  z-index: 999;
+}
+
+.lux-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.lux-menu a:hover {
+  opacity: 1;
+  color: #c00;
+}
+
+.lux-menu.active {
+  right: 0;
+}
+
+.lux-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lux-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Ẩn menu này trên desktop */
+@media (min-width: 992px) {
+  .lux-menu,
+  .lux-overlay {
+    display: none;
+  }
+}
