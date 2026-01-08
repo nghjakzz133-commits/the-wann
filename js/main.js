@@ -102,3 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+/* ===== SUBMENU MOBILE ===== */
+document.querySelectorAll('.submenu-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const parent = toggle.closest('.has-submenu');
+    parent.classList.toggle('open');
+  });
+});
