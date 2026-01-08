@@ -141,3 +141,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+<script>
+let current = 0;
+const perLoad = 12;
+const total = 70;
+
+const gallery = document.getElementById("menuGallery");
+const btn = document.getElementById("loadMore");
+
+function loadMenu() {
+  for (let i = current + 1; i <= current + perLoad && i <= total; i++) {
+    const img = document.createElement("img");
+    img.src = `assets/menu/menu-${String(i).padStart(2, '0')}.jpg`;
+    img.loading = "lazy";
+    gallery.appendChild(img);
+  }
+  current += perLoad;
+  if (current >= total) btn.style.display = "none";
+}
+
+btn.addEventListener("click", loadMenu);
+loadMenu();
+</script>
