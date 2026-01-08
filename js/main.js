@@ -163,3 +163,24 @@ function loadMenu() {
 btn.addEventListener("click", loadMenu);
 loadMenu();
 </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.querySelector(".menu-toggle");
+  const luxMenu = document.getElementById("luxMenu");
+  const luxOverlay = document.getElementById("luxOverlay");
+  const luxClose = document.getElementById("luxClose");
+
+  if (!burger || !luxMenu || !luxOverlay || !luxClose) return;
+
+  burger.addEventListener("click", () => {
+    luxMenu.classList.add("active");
+    luxOverlay.classList.add("active");
+  });
+
+  function closeLux() {
+    luxMenu.classList.remove("active");
+    luxOverlay.classList.remove("active");
+  }
+
+  luxOverlay.addEventListener("click", closeLux);
+  luxClose.addEventListener("click", closeLux);
+});
