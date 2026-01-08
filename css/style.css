@@ -618,3 +618,53 @@ body {
   border-radius: 50%;
   margin-right: 6px;
 }
+/* ================= HERO CTA – BLACK / GOLD LUXURY ================= */
+
+.hero-cta {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* style chung cho 3 nút */
+.hero-cta a {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 16px 22px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #0d0d0d, #000);
+  color: #f5d98b;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: 1px solid rgba(201,162,77,0.55);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(6px);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+/* hover – sang hơn */
+.hero-cta a:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1a1a1a, #000);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.75),
+    inset 0 0 0 1px rgba(201,162,77,0.8);
+}
+
+/* icon + chữ cân hơn */
+.hero-cta a span,
+.hero-cta a i {
+  color: #f5d98b;
+}
