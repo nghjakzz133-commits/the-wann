@@ -254,3 +254,9 @@ button {
   font-weight: bold;
   text-decoration: none;
 }
+/* CHỈ HIỆN TRÊN MOBILE */
+@media (min-width: 768px) {
+  .fixed-booking {
+    display: none;
+  }
+}
