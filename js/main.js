@@ -159,3 +159,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const date = document.getElementById('date').value;
+  const people = document.getElementById('people').value;
+  const note = document.getElementById('note').value;
+
+  const message = 
+`ĐẶT BÀN THE WANN
+👤 Tên: ${name}
+📞 SĐT: ${phone}
+📅 Ngày: ${date}
+👥 Số khách: ${people}
+📝 Ghi chú: ${note}`;
+
+  const zaloUrl = `https://zalo.me/0778307889?text=${encodeURIComponent(message)}`;
+  window.open(zaloUrl, '_blank');
+});
