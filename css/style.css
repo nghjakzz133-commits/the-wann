@@ -316,3 +316,42 @@ body {
     display: none;
   }
 }
+/* ================= BOOKING VIP FIX ================= */
+.section.red {
+  background: linear-gradient(180deg, #3a0000, #700000);
+  padding: 80px 16px;
+}
+
+.section.red h2 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.section.red p {
+  margin-bottom: 24px;
+}
+
+/* nút booking */
+.section.red a {
+  display: inline-block;
+  background: #fff;
+  color: #700000;
+  font-weight: 800;
+  padding: 14px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+/* hover */
+.section.red a:hover {
+  background: #ffecec;
+}
+
+/* ================= FIX CTA TRÙNG DƯỚI GALLERY ================= */
+#gallery + .cta,
+#gallery .cta {
+  display: none;
+}
