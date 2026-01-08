@@ -410,3 +410,13 @@ body {
   background: #fff;
   color: #000;
 }
+/* ================= CONTACT FIX ================= */
+#contact a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
