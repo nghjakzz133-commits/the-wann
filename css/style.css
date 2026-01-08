@@ -443,3 +443,38 @@ footer {
     height: 250px;
   }
 }
+/* ===== HERO OVERLAY MƯỢT ===== */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.75)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== CTA HOVER NHẸ ===== */
+.hero-cta a {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.hero-cta a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+/* ===== TEXT DỄ ĐỌC HƠN ===== */
+.section h2 {
+  margin-bottom: 24px;
+}
+
+.section p {
+  line-height: 1.7;
+}
