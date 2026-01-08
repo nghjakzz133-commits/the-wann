@@ -457,3 +457,20 @@ body {
     gap: 12px;
   }
 }
+/* ================= FIXED BOOKING – CLEAN ================= */
+.fixed-booking {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.fixed-booking a {
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.fixed-booking a:hover {
+  opacity: 1;
+}
