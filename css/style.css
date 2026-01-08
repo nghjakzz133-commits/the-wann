@@ -426,3 +426,34 @@ body {
   padding-top: 64px;
   padding-bottom: 64px;
 }
+/* ================= MOBILE UI CLEAN ================= */
+@media (max-width: 768px) {
+
+  /* giảm padding section cho gọn */
+  .section {
+    padding: 56px 16px;
+  }
+
+  /* tiêu đề không quá to */
+  .section h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  /* đoạn text dễ đọc hơn */
+  .section p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* feature card gọn – sang */
+  .feature-item {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* gallery không bị thở */
+  .gallery-grid {
+    gap: 12px;
+  }
+}
