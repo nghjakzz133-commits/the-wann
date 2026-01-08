@@ -217,3 +217,24 @@ button {
     padding: 80px 16px;
   }
 }
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-call,
+.btn-zalo,
+.btn-whatsapp {
+  padding: 14px 22px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-call { background: #e50914; }
+.btn-zalo { background: #0068ff; }
+.btn-whatsapp { background: #25D366; }
