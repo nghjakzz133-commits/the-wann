@@ -415,3 +415,6 @@ body {
   cursor: pointer;
   border-radius: 30px;
 }
+#menu {
+  scroll-margin-top: 100px;
+}
