@@ -73,8 +73,9 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,.35),
-    rgba(0,0,0,.7)
+    rgba(0,0,0,.65)
   );
+  z-index: 1;
 }
 
 .hero-content {
@@ -94,44 +95,64 @@ body {
   font-size: 15px;
   opacity: 0.9;
   max-width: 360px;
-  margin: auto;
+  margin: 0 auto;
   line-height: 1.6;
 }
 
-/* ================= HERO CTA (LUXURY – GỘP DUY NHẤT) ================= */
+/* ================= HERO CTA ================= */
 .hero-cta {
-  margin-top: 32px;
   display: flex;
-  flex-direction: column;
   gap: 14px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .hero-cta a {
-  max-width: 300px;
-  margin: auto;
-  padding: 13px 18px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #0d0d0d, #000);
-  color: #f5d98b;
-  font-size: 13.5px;
+  min-width: 150px;
+  padding: 14px 20px;
+  border-radius: 999px;
   font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
+  font-size: 14px;
   text-decoration: none;
-  border: 1px solid rgba(201,162,77,0.55);
-  box-shadow: 0 12px 30px rgba(0,0,0,.6);
-  transition: .25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .hero-cta a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.75);
+  box-shadow: 0 14px 30px rgba(0,0,0,.55);
 }
 
-/* ================= SECTION ================= */
+.btn-call {
+  background: linear-gradient(135deg, #ff2a2a, #b80000);
+  color: #fff;
+}
+
+.btn-zalo {
+  background: linear-gradient(135deg, #0084ff, #005ad5);
+  color: #fff;
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366, #1da851);
+  color: #fff;
+}
+
+/* ================= SECTIONS ================= */
 .section {
+  width: 100%;
   padding: 72px 16px;
   text-align: center;
+}
+
+.section > * {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .section h2 {
@@ -146,6 +167,40 @@ body {
   opacity: 0.85;
 }
 
+.section.red {
+  background: #700000;
+}
+
+.section.dark {
+  background: #000;
+}
+
+/* ================= FEATURES ================= */
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.feature-item {
+  background: rgba(255,255,255,0.05);
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-4px);
+}
+
+.feature-item h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
 /* ================= GALLERY ================= */
 .gallery-grid {
   display: grid;
@@ -157,62 +212,42 @@ body {
 .gallery-grid img {
   width: 100%;
   border-radius: 10px;
-  transition: .3s;
+  display: block;
+  transition: transform 0.3s;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.04);
 }
 
-/* ================= MENU PDF ================= */
-.menu-section {
-  padding: 60px 20px;
-  background: #000;
-  text-align: center;
+/* ================= POPUP ================= */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
 }
 
-.menu-section h2 {
-  font-size: 32px;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-}
-
-.menu-pdf {
-  max-width: 1200px;
-  margin: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,.7);
-}
-
-.menu-pdf iframe {
-  width: 100%;
-  height: 800px;
-  border: none;
-}
-
-.menu-download {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 14px 30px;
-  border: 1px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: .3s;
-}
-
-.menu-download:hover {
+.popup-content {
   background: #fff;
   color: #000;
+  width: 92%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 12px;
+  position: relative;
 }
 
 /* ================= FIXED BOOKING ================= */
 .fixed-booking {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0,0,0,.85);
+  background: #000;
   display: flex;
   justify-content: space-around;
   padding: 12px 0;
@@ -221,19 +256,71 @@ body {
 
 .fixed-booking a {
   color: #fff;
-  font-size: 13px;
+  font-weight: 700;
   text-decoration: none;
 }
 
 /* ================= MOBILE ================= */
+/* ================= MOBILE MENU SLIDE ================= */
 @media (max-width: 768px) {
+
   .hero-title {
     font-size: 30px;
     letter-spacing: 4px;
   }
 
-  .section {
-    padding: 56px 16px;
+  .hero-cta a {
+    min-width: 100%;
+  }
+}
+
+/* ================= BOOKING VIP FIX ================= */
+.section.red {
+  background: linear-gradient(180deg, #3a0000, #700000);
+  padding: 80px 16px;
+}
+
+.section.red h2 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.section.red p {
+  margin-bottom: 24px;
+}
+
+/* ================= MOBILE MENU SLIDE ================= */
+@media (max-width: 991px) {
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .nav .navbar {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 72%;
+    height: 100vh;
+    background: rgba(0,0,0,0.96);
+    flex-direction: column;
+    padding-top: 24px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav .navbar.active {
+    right: 0;
   }
 }
 
