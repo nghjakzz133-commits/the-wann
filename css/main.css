@@ -238,3 +238,19 @@ button {
 .btn-call { background: #e50914; }
 .btn-zalo { background: #0068ff; }
 .btn-whatsapp { background: #25D366; }
+.fixed-booking {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 9999;
+}
+.fixed-booking a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
