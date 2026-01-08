@@ -120,3 +120,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+// ===== MOBILE MENU CLICK FIX =====
+document.addEventListener("DOMContentLoaded", function () {
+
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.querySelector(".nav .navbar");
+
+  if (hamburger && navbar) {
+    hamburger.addEventListener("click", function () {
+      navbar.classList.toggle("active");
+    });
+  }
+
+  // SUBMENU TOGGLE
+  document.querySelectorAll(".submenu-toggle").forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      this.parentElement.classList.toggle("open");
+    });
+  });
+
+});
