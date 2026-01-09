@@ -253,3 +253,7 @@ body{
 .hero-sub{
   letter-spacing:1px;
 }
+.hero-cta a{
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.15);
+}
