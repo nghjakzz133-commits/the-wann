@@ -202,3 +202,9 @@ hamburger.addEventListener('click', () => {
 document.getElementById('menuToggle').onclick=()=>{
   document.querySelector('.nav').classList.toggle('active');
 }
+const openB=document.getElementById('openBooking');
+const popup=document.getElementById('bookingPopup');
+const closeB=document.getElementById('closeBooking');
+
+openB.onclick=()=>popup.style.display='block';
+closeB.onclick=()=>popup.style.display='none';
