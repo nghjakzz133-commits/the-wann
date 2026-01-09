@@ -511,3 +511,26 @@ body{
 #about .about-text p{
   text-align:left;
 }
+/* FIX ABOUT FONT SIZE */
+#about .about-lead{
+  font-size:18px;
+  line-height:1.9;
+}
+
+#about .about-text h3{
+  font-size:20px;
+}
+
+#about .about-text p{
+  font-size:16.5px;
+  line-height:2;
+}
+
+@media(max-width:768px){
+  #about .about-lead{
+    font-size:17px;
+  }
+  #about .about-text p{
+    font-size:16px;
+  }
+}
