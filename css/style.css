@@ -664,3 +664,28 @@ body{
   line-height:1.6;
   color:rgba(255,255,255,.65);
 }
+form{
+  width:94vw !important;
+  max-width:480px !important;
+  margin:0 auto !important;
+}
+
+input, textarea, select{
+  min-height:56px !important;
+}
+.booking-card,
+.booking-container,
+.booking-form{
+  width:94vw !important;
+  max-width:480px !important;
+}
+html, body{
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(212,175,55,.18), transparent 60%),
+    radial-gradient(80% 50% at 80% 110%, rgba(120,0,0,.22), transparent 60%),
+    #050505 !important;
+}
+.booking-logo{
+  width:120px !important;
+  opacity:1 !important;
+}
