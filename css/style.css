@@ -530,3 +530,15 @@ body {
   left: 16px;
   z-index: 10000;
 }
+.header{position:fixed;top:0;width:100%;background:#000;z-index:1000}
+.header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
+.logo{color:gold;font-weight:bold}
+.nav a{color:#fff;margin-left:20px;text-decoration:none}
+.menu-toggle{display:none;color:#fff;font-size:26px}
+
+@media(max-width:768px){
+.nav{display:none;position:absolute;top:60px;right:0;width:100%;background:#000;text-align:center}
+.nav a{display:block;padding:15px}
+.menu-toggle{display:block}
+.nav.active{display:block}
+}
