@@ -534,3 +534,46 @@ body{
     font-size:16px;
   }
 }
+/* ===== ABOUT HERO ===== */
+.about-hero{
+  position:relative;
+  height:60vh;
+  background:url('../assets/hero-bg.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.about-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.85));
+}
+
+.about-hero-content{
+  position:relative;
+  text-align:center;
+}
+
+.about-hero-content h1{
+  font-size:36px;
+  letter-spacing:6px;
+  font-weight:900;
+}
+
+.about-hero-content p{
+  margin-top:10px;
+  font-size:14px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.75);
+}
+
+@media(max-width:768px){
+  .about-hero{
+    height:50vh;
+  }
+  .about-hero-content h1{
+    font-size:28px;
+  }
+}
