@@ -494,3 +494,10 @@ body {
   cursor: pointer;
   pointer-events: auto;
 }
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: block;
+}
