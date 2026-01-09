@@ -395,3 +395,6 @@ body{
 @media(max-width:768px){
   .nav{display:none!important;}
 }
+@media(max-width:768px){
+  .nav{display:none!important;}
+}
