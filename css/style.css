@@ -263,3 +263,9 @@ body{
 .section h2{
   font-weight:800;
 }
+.gallery-grid img{
+  filter:brightness(.95);
+}
+.gallery-grid img:hover{
+  filter:brightness(1.1);
+}
