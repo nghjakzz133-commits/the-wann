@@ -112,12 +112,13 @@ document.querySelectorAll('.submenu-toggle').forEach(toggle => {
 // ===== HAMBURGER MENU FIX =====
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.getElementById('hamburger');
-  const navbar = document.querySelector('.nav .navbar');
+const navbar = document.querySelector('.nav .navbar');
 
-  if (hamburger && navbar) {
-    hamburger.addEventListener('click', function () {
-      navbar.classList.toggle('active');
-    });
+if (hamburger && navbar) {
+  hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+}
   }
 });
 // ===== MOBILE MENU CLICK FIX =====
