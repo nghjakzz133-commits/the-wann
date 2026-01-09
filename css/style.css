@@ -524,3 +524,9 @@ body {
   gap: 20px;
   text-align: center;
 }
+.hamburger {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10000;
+}
