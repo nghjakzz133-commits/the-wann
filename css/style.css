@@ -405,3 +405,36 @@ body{
     radial-gradient(80% 50% at 80% 110%, rgba(120,0,0,.22), transparent 60%),
     #050505;
 }
+/* ===== MENU PREVIEW (HOMEPAGE) ===== */
+.menu-preview{
+  padding:120px 20px;
+  text-align:center;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(212,175,55,.18), transparent 60%);
+}
+
+.menu-desc{
+  font-size:14px;
+  color:rgba(255,255,255,.65);
+  margin-top:10px;
+}
+
+.menu-preview-actions{
+  margin-top:32px;
+}
+
+.menu-btn{
+  display:inline-block;
+  padding:16px 42px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+  color:#fff;
+  font-weight:800;
+  letter-spacing:1px;
+  text-decoration:none;
+  box-shadow:0 16px 40px rgba(255,42,42,.6);
+}
+
+.menu-btn:active{
+  transform:scale(.96);
+}
