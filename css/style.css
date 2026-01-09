@@ -239,3 +239,11 @@ body{
 @media(min-width:769px){
   .fixed-booking{display:none}
 }
+.header{
+  background:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,.6));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.logo{
+  font-size:18px;
+  text-transform:uppercase;
+}
