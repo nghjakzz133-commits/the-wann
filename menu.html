@@ -25,7 +25,35 @@
     trên website chính hoặc liên hệ trực tiếp để được tư vấn.
   </p>
 
-  <a href="index.html#menu">XEM MENU HÌNH ẢNH</a>
+  
 </section>
+<section class="section dark">
+  <h2>MENU HÌNH ẢNH</h2>
+
+  <div class="menu-gallery" id="menuGallery"></div>
+  <button class="menu-load" id="loadMore">Xem thêm</button>
+</section>
+
+<script>
+let current = 0;
+const perLoad = 12;
+const total = 70;
+const gallery = document.getElementById("menuGallery");
+const btn = document.getElementById("loadMore");
+
+function loadMenu(){
+  for(let i=current+1;i<=current+perLoad && i<=total;i++){
+    const img=document.createElement("img");
+    img.src=`assets/menu/menu-${String(i).padStart(2,'0')}.jpg`;
+    img.loading="lazy";
+    gallery.appendChild(img);
+  }
+  current+=perLoad;
+  if(current>=total) btn.style.display="none";
+}
+
+btn.onclick=loadMenu;
+loadMenu();
+</script>
 </body>
 </html>
