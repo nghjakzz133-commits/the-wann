@@ -501,3 +501,26 @@ body {
 .mobile-menu.active {
   display: block;
 }
+/* === FORCE MOBILE MENU FIX === */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  z-index: 9999;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu-inner {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
