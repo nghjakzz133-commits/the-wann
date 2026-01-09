@@ -398,3 +398,7 @@ body{
 @media(max-width:768px){
   .nav{display:none!important;}
 }
+.feature-item{
+  border:1px solid rgba(255,215,0,.15);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
