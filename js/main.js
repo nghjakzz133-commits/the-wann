@@ -185,3 +185,11 @@ document.addEventListener("DOMContentLoaded", function () {
   luxOverlay.addEventListener("click", closeLux);
   luxClose.addEventListener("click", closeLux);
 });
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+}
