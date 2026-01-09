@@ -399,3 +399,9 @@ body{
   .nav{display:none}
   .menu-toggle{display:block}
 }
+body{
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(212,175,55,.18), transparent 60%),
+    radial-gradient(80% 50% at 80% 110%, rgba(120,0,0,.22), transparent 60%),
+    #050505;
+}
