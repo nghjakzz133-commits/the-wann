@@ -425,7 +425,69 @@ body{
 .booking-form textarea::placeholder{
   color:rgba(255,255,255,.5);
 }
+/* ===== LUXURY BOOKING FORM ===== */
+.booking-form{
+  max-width:520px;
+  margin:40px auto 0;
+  padding:32px 26px;
+  background:linear-gradient(180deg,#0b0b0b,#000);
+  border:1px solid rgba(255,215,0,.18);
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  box-shadow:0 30px 70px rgba(0,0,0,.85);
+}
 
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  width:100%;
+  background:#000;
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  padding:14px 16px;
+  border-radius:12px;
+  font-size:14px;
+  outline:none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+  border-color:gold;
+}
+
+.booking-form textarea{
+  resize:none;
+}
+
+.booking-form button{
+  margin-top:10px;
+  padding:15px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg,#b00000,#ff2a2a);
+  color:#fff;
+  font-weight:800;
+  letter-spacing:1px;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(255,42,42,.4);
+}
+
+.booking-form button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 20px 45px rgba(255,42,42,.6);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .booking-form{
+    margin:24px 16px;
+    padding:24px 18px;
+  }
+}
 .booking-form button{
   margin-top:10px;
   padding:14px;
