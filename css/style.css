@@ -269,3 +269,7 @@ body{
 .gallery-grid img:hover{
   filter:brightness(1.1);
 }
+.booking-box{
+  border:1px solid rgba(255,215,0,.3);
+  box-shadow:0 30px 60px rgba(0,0,0,.8);
+}
