@@ -247,3 +247,9 @@ body{
   font-size:18px;
   text-transform:uppercase;
 }
+.hero-title{
+  text-shadow:0 10px 30px rgba(0,0,0,.8);
+}
+.hero-sub{
+  letter-spacing:1px;
+}
