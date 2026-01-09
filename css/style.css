@@ -494,3 +494,20 @@ body{
     gap:60px;
   }
 }
+/* FIX ABOUT PAGE */
+#about{
+  text-align:left;
+}
+
+#about h2{
+  text-align:center;
+}
+
+#about .about-text{
+  max-width:760px;
+  margin:0 auto;
+}
+
+#about .about-text p{
+  text-align:left;
+}
