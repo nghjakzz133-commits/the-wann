@@ -208,3 +208,38 @@ const closeB=document.getElementById('closeBooking');
 
 openB.onclick=()=>popup.style.display='block';
 closeB.onclick=()=>popup.style.display='none';
+/* ===== MENU LOAD + LIGHTBOX ===== */
+let current = 0;
+const perLoad = 12;
+const total = 70;
+
+const gallery = document.getElementById("menuGallery");
+const btn = document.getElementById("loadMore");
+
+function loadMenu(){
+  for(let i=current+1;i<=current+perLoad && i<=total;i++){
+    const img=document.createElement("img");
+    img.src=`assets/menu/menu-${String(i).padStart(2,"0")}.jpg`;
+    img.loading="lazy";
+    img.onclick=()=>openLightbox(img.src);
+    gallery.appendChild(img);
+  }
+  current+=perLoad;
+  if(current>=total) btn.style.display="none";
+}
+if(btn){
+  btn.onclick=loadMenu;
+  loadMenu();
+}
+
+/* LIGHTBOX */
+const lightbox=document.createElement("div");
+lightbox.className="menu-lightbox";
+lightbox.innerHTML=`<span>&times;</span><img>`;
+document.body.appendChild(lightbox);
+
+function openLightbox(src){
+  lightbox.classList.add("active");
+  lightbox.querySelector("img").src=src;
+}
+lightbox.onclick=()=>lightbox.classList.remove("active");
