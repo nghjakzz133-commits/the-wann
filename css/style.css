@@ -760,3 +760,48 @@ body{
 .cta-btn:active{
   transform:scale(.97);
 }
+/* ===== LUXURY SLIDE MENU ===== */
+.lux-menu{
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:78vw;
+  max-width:360px;
+  background:
+    linear-gradient(180deg,#050505,#000),
+    radial-gradient(120% 80% at 0% 0%,rgba(212,175,55,.18),transparent 60%);
+  padding:90px 36px;
+  transform:translateX(-100%);
+  transition:.45s cubic-bezier(.4,0,.2,1);
+  z-index:9999;
+  box-shadow:40px 0 80px rgba(0,0,0,.9);
+}
+
+.lux-menu.active{
+  transform:translateX(0);
+}
+
+.lux-menu a{
+  display:block;
+  margin:22px 0;
+  font-size:20px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+  text-decoration:none;
+}
+
+.lux-menu a:hover{
+  color:gold;
+}
+
+.lux-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:32px;
+  background:none;
+  border:none;
+  color:#fff;
+}
