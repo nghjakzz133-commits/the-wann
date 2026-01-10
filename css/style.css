@@ -1064,3 +1064,72 @@ body{
   opacity:1;
   color:#d4af37;
 }
+/* ================= CONTACT PAGE LUXURY ================= */
+.contact-page{
+  min-height:100vh;
+  padding:140px 20px 100px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.95)),
+    url('./assets/gallery4.jpg') center/cover no-repeat;
+  text-align:center;
+}
+
+.contact-box{
+  max-width:520px;
+  margin:0 auto;
+  padding:48px 32px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:26px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 30px 90px rgba(0,0,0,.9);
+}
+
+.contact-box h1,
+.contact-box h2{
+  letter-spacing:4px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.contact-box p{
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(255,255,255,.75);
+}
+
+.contact-info{
+  margin-top:26px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact-info strong{
+  color:#d4af37;
+  letter-spacing:1px;
+}
+
+.contact-phone{
+  margin-top:26px;
+  display:inline-block;
+  padding:16px 42px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+  color:#fff;
+  font-weight:900;
+  letter-spacing:2px;
+  text-decoration:none;
+  box-shadow:0 18px 50px rgba(255,42,42,.6);
+}
+
+.contact-phone:active{
+  transform:scale(.97);
+}
+
+/* mobile */
+@media(max-width:768px){
+  .contact-box{
+    padding:38px 22px;
+  }
+}
