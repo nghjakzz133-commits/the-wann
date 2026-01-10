@@ -965,3 +965,16 @@ body{
 .lux-menu a{
   margin:12px 0;
 }
+/* === LUX MENU: KHÔNG NÚT X – HOME Ở TRÊN === */
+.lux-close{
+  display:none;
+}
+
+.lux-menu{
+  padding-top:60px;
+  justify-content:flex-start;
+}
+
+.lux-menu a{
+  margin:14px 0;
+}
