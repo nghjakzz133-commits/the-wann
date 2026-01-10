@@ -331,3 +331,58 @@ body{
   .about-grid{grid-template-columns:1fr}
   .about-hero-content h1{font-size:36px}
 }
+/* ======================================================
+   THE WANN – UPGRADE 01
+   SAFE GLOBAL POLISH (NO LAYOUT CHANGE)
+====================================================== */
+
+/* nâng cảm giác chữ */
+body{
+  letter-spacing:0.3px;
+}
+
+/* heading rõ hierarchy hơn */
+h1, h2, h3{
+  font-weight:900;
+}
+
+/* section thoáng hơn */
+.section{
+  padding-top:120px;
+  padding-bottom:120px;
+}
+
+/* paragraph dễ đọc hơn */
+p{
+  line-height:1.85;
+}
+
+/* button sang hơn – không đổi size */
+a, button{
+  transition:all .25s ease;
+}
+
+/* hover tinh tế */
+a:hover{
+  opacity:.9;
+}
+
+/* hình ảnh nhìn premium hơn */
+img{
+  filter:contrast(1.05) saturate(1.05);
+}
+
+/* card / box nổi hơn */
+.feature-item,
+.booking-form,
+.contact-box{
+  backdrop-filter:blur(2px);
+}
+
+/* mobile vẫn giữ nguyên bố cục */
+@media(max-width:768px){
+  .section{
+    padding-top:90px;
+    padding-bottom:90px;
+  }
+}
