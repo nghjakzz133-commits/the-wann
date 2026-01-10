@@ -912,3 +912,12 @@ body{
   border:none;
   color:#fff;
 }
+.lux-menu{
+  left:0 !important;
+  right:auto !important;
+  transform:translateX(-100%) !important;
+}
+
+.lux-menu.active{
+  transform:translateX(0) !important;
+}
