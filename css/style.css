@@ -386,3 +386,73 @@ img{
     padding-bottom:90px;
   }
 }
+/* ======================================================
+   GLOBAL MOBILE OVERFLOW FIX – THE WANN
+   FIX ALL CONTAINERS – NO EXCEPTION
+====================================================== */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* mọi phần tử không được vượt viewport */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* fix các container hay bị dính lỗi */
+section,
+div,
+main,
+header,
+footer {
+  max-width: 100%;
+}
+
+/* grid & flex luôn co lại */
+@media (max-width: 768px) {
+
+  * {
+    min-width: 0;
+  }
+
+  /* ép toàn bộ grid về 1 cột nếu cần */
+  [class*="grid"],
+  [class*="gallery"],
+  [class*="container"],
+  [class*="wrapper"] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* padding an toàn mobile */
+  section,
+  .section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* hero / menu / about / contact */
+  .hero,
+  .about-hero,
+  .contact-page,
+  .menu-preview,
+  .cta-lux {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* ảnh & video */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
