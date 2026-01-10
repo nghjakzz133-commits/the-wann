@@ -145,6 +145,20 @@
 <script src="js/main.js"></script>
 
 
+<script>
+const menu = document.getElementById('luxMenu');
+const toggle = document.getElementById('menuToggle');
 
+toggle.onclick = () => {
+  menu.classList.toggle('active');
+};
+
+// bấm vào nền tối để tắt
+menu.addEventListener('click', (e) => {
+  if (e.target === menu) {
+    menu.classList.remove('active');
+  }
+});
+</script>
 </body>
 </html>
