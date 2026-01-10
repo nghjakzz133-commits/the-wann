@@ -1309,3 +1309,51 @@ body{
 .btn-outline:active{
   transform:scale(.96);
 }
+.map-preview{
+  display:block;
+  margin:22px 0;
+  text-decoration:none;
+  color:#d4af37;
+}
+
+.map-preview img{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 20px 50px rgba(0,0,0,.8);
+}
+
+.map-preview span{
+  display:block;
+  margin-top:8px;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.contact-actions{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:22px;
+}
+
+.contact-btn{
+  padding:16px;
+  border-radius:999px;
+  text-align:center;
+  font-weight:900;
+  text-decoration:none;
+  color:#fff;
+}
+
+.contact-btn.phone{
+  background:linear-gradient(135deg,#7a0000,#ff2a2a);
+}
+
+.contact-btn.zalo{
+  background:#0068ff;
+}
+
+.contact-btn.whatsapp{
+  background:#25d366;
+}
