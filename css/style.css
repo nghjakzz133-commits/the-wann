@@ -946,3 +946,22 @@ body{
 .lux-menu.active{
   transform:translateX(0);
 }
+/* === FIX NÚT X + KHOẢNG TRỐNG TRÊN === */
+.lux-menu{
+  padding-top:80px;   /* tạo khoảng trống trên */
+  justify-content:flex-start;
+}
+
+/* nút X */
+.lux-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  font-size:26px;
+  opacity:.8;
+}
+
+/* căn menu chữ xuống giữa gọn */
+.lux-menu a{
+  margin:12px 0;
+}
