@@ -970,3 +970,104 @@ a:active {
     font-size: 16px;
   }
 }
+/* ======================================================
+   HOME GALLERY – HORIZONTAL SCROLL (LUXURY)
+====================================================== */
+
+/* gallery kéo ngang */
+.gallery-grid{
+  display:flex !important;
+  gap:16px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:20px 0 30px;
+}
+
+/* mỗi ảnh */
+.gallery-grid img{
+  flex:0 0 85%;
+  max-width:85%;
+  scroll-snap-align:center;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.8);
+}
+
+/* desktop: thu nhỏ lại chút */
+@media(min-width:769px){
+  .gallery-grid img{
+    flex:0 0 32%;
+    max-width:32%;
+  }
+}
+
+/* ẩn scrollbar cho đẹp */
+.gallery-grid::-webkit-scrollbar{
+  display:none;
+}
+/* ======================================================
+   VIP HORIZONTAL GALLERY – THE WANN
+====================================================== */
+
+/* wrapper */
+.gallery-grid{
+  display:flex !important;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:24px 0 40px;
+  position:relative;
+}
+
+/* item */
+.gallery-grid img{
+  flex:0 0 86%;
+  max-width:86%;
+  scroll-snap-align:center;
+  border-radius:22px;
+  transition:transform .35s ease, filter .35s ease, opacity .35s ease;
+  box-shadow:0 22px 70px rgba(0,0,0,.85);
+}
+
+/* blur nhẹ ảnh không active (mobile) */
+@media(max-width:768px){
+  .gallery-grid img{
+    filter:brightness(.9) blur(.3px);
+    opacity:.75;
+  }
+  .gallery-grid img:active,
+  .gallery-grid img:hover{
+    filter:brightness(1) blur(0);
+    opacity:1;
+    transform:scale(1.02);
+  }
+}
+
+/* desktop: nhiều ảnh hơn */
+@media(min-width:769px){
+  .gallery-grid img{
+    flex:0 0 30%;
+    max-width:30%;
+    filter:none;
+    opacity:1;
+  }
+}
+
+/* swipe hint */
+.gallery-grid::after{
+  content:"Swipe →";
+  position:absolute;
+  right:18px;
+  bottom:6px;
+  font-size:12px;
+  letter-spacing:2px;
+  color:rgba(212,175,55,.7);
+  pointer-events:none;
+}
+
+/* ẩn scrollbar */
+.gallery-grid::-webkit-scrollbar{
+  display:none;
+}
