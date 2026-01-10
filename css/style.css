@@ -868,3 +868,105 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+/* ======================================================
+   FIX CONTACT PAGE – MOBILE CENTER & FULL WIDTH
+====================================================== */
+
+.contact-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px 16px !important;
+  box-sizing: border-box;
+}
+
+.contact-box {
+  width: 100% !important;
+  max-width: 360px !important;
+  margin: 0 auto !important;
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* đảm bảo không còn phần tử đẩy lệch */
+.contact-page * {
+  max-width: 100%;
+}
+
+/* mobile iPhone ưu tiên */
+@media (max-width: 768px) {
+  .contact-box {
+    border-radius: 22px;
+  }
+}
+/* ======================================================
+   CONTACT ACTION BUTTONS – LUXURY VERSION
+====================================================== */
+
+.contact-actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-sub {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(212,175,55,.85);
+  margin-bottom: 6px;
+}
+
+/* nút chung */
+.contact-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.contact-btn span {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: .85;
+}
+
+/* hotline – đỏ luxury */
+.contact-btn.call {
+  background: linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+}
+
+/* zalo – xanh đậm sang */
+.contact-btn.zalo {
+  background: linear-gradient(135deg,#0f2a44,#1e5fa3);
+}
+
+/* whatsapp – xanh luxury */
+.contact-btn.whatsapp {
+  background: linear-gradient(135deg,#0b3d2e,#25d366);
+}
+
+/* hover */
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 70px rgba(0,0,0,.8);
+}
+
+/* mobile tối ưu */
+@media (max-width: 768px) {
+  .contact-btn {
+    padding: 18px 22px;
+    font-size: 16px;
+  }
+}
