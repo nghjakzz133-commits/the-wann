@@ -681,3 +681,43 @@ body{
   letter-spacing:2px;
   opacity:.7;
 }
+/* ===== LUX PARTIAL MENU ===== */
+.lux-menu{
+  inset:auto 0 0 0;
+  height:70vh;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(212,175,55,.12), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.95));
+  backdrop-filter:blur(18px);
+  border-top-left-radius:28px;
+  border-top-right-radius:28px;
+  box-shadow:0 -20px 60px rgba(0,0,0,.9);
+  transform:translateY(100%);
+  transition:.35s ease;
+}
+
+/* khi mở */
+.lux-menu.active{
+  transform:translateY(0);
+}
+
+/* menu item */
+.lux-menu a{
+  font-size:20px;
+  letter-spacing:4px;
+  opacity:.75;
+  margin:10px 0;
+}
+
+.lux-menu a:hover{
+  opacity:1;
+  color:#d4af37;
+}
+
+/* nút đóng */
+.lux-close{
+  top:18px;
+  right:22px;
+  font-size:28px;
+  opacity:.7;
+}
