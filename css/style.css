@@ -1275,3 +1275,37 @@ body{
   background:rgba(0,0,0,.92);
   box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
+/* === HERO CTA UX === */
+.hero-cta{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn-primary{
+  padding:18px 42px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#7a0000,#ff2a2a,#ff5a5a);
+  color:#fff;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-decoration:none;
+  box-shadow:0 22px 55px rgba(255,42,42,.6);
+}
+
+.btn-outline{
+  padding:18px 42px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  backdrop-filter:blur(6px);
+}
+
+.btn-primary:active,
+.btn-outline:active{
+  transform:scale(.96);
+}
