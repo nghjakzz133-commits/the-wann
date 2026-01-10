@@ -1396,3 +1396,45 @@ body{
   letter-spacing:1px;
   color:#d4af37;
 }
+/* === CINEMATIC HERO IMAGE (BETTER THAN VIDEO) === */
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+/* lớp ánh sáng động */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(212,175,55,.18), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,80,80,.12), transparent 45%);
+  animation: heroLight 12s ease-in-out infinite alternate;
+  z-index:1;
+}
+
+/* grain điện ảnh */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:2;
+}
+
+/* chuyển động ánh sáng */
+@keyframes heroLight{
+  0%{
+    transform:translate(-2%,-2%) scale(1);
+  }
+  100%{
+    transform:translate(2%,2%) scale(1.05);
+  }
+}
+
+/* giữ content nổi trên cùng */
+.hero-overlay{ z-index:3; }
+.hero-content{ z-index:4; }
