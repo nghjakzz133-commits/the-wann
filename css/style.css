@@ -1540,18 +1540,7 @@ body{
 .decor-line {
   display: none !important;
 }
-/* CONTACT SCALE UP – ADD ONLY */
-#contact .contact-box {
-  transform: scale(1.15);
-  transform-origin: center;
-}
 
-/* Mobile tối ưu hơn */
-@media (max-width: 768px) {
-  #contact .contact-box {
-    transform: scale(1.25);
-  }
-}
 /* CONTACT BUTTONS – BLACK & GOLD LUXURY */
 #contact .contact-box a,
 #contact .contact-box button {
