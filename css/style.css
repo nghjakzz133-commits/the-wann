@@ -1235,3 +1235,29 @@ body{
 @media(min-width:769px){
   .fixed-contact-bar{ display:none; }
 }
+/* === LUXURY GLOW LOGO === */
+.logo{
+  position: relative;
+  color: #d4af37;
+  text-shadow:
+    0 0 6px rgba(212,175,55,.6),
+    0 0 14px rgba(212,175,55,.35),
+    0 0 28px rgba(212,175,55,.25);
+  animation: logoGlow 3.5s ease-in-out infinite;
+}
+
+/* hiệu ứng thở nhẹ */
+@keyframes logoGlow{
+  0%,100%{
+    text-shadow:
+      0 0 6px rgba(212,175,55,.6),
+      0 0 14px rgba(212,175,55,.35),
+      0 0 28px rgba(212,175,55,.25);
+  }
+  50%{
+    text-shadow:
+      0 0 10px rgba(212,175,55,.9),
+      0 0 22px rgba(212,175,55,.55),
+      0 0 40px rgba(212,175,55,.35);
+  }
+}
