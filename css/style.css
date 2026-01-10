@@ -809,3 +809,65 @@ body{
   border:none;
   color:#fff;
 }
+/* ================= LUX MENU – SLIDE FROM RIGHT (FINAL) ================= */
+.lux-menu{
+  position:fixed;
+  top:0;
+  right:0;
+  width:78%;
+  max-width:320px;
+  height:100vh;
+
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(212,175,55,.12), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.95));
+
+  backdrop-filter:blur(18px);
+  box-shadow:-30px 0 80px rgba(0,0,0,.85);
+
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  z-index:9999;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+}
+
+.lux-menu.active{
+  transform:translateX(0);
+}
+
+.lux-menu a{
+  color:#fff;
+  font-size:20px;
+  letter-spacing:4px;
+  text-decoration:none;
+  opacity:.75;
+  transition:.25s ease;
+}
+
+.lux-menu a:hover{
+  opacity:1;
+  color:#d4af37;
+  transform:translateX(-4px);
+}
+
+.lux-close{
+  position:absolute;
+  top:18px;
+  left:18px;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:#fff;
+  opacity:.7;
+  cursor:pointer;
+}
+
+.lux-close:hover{
+  opacity:1;
+  transform:rotate(90deg);
+}
