@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOOKING | THE WANN</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOKING | THE WANN</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -14,19 +14,29 @@
   <p class="booking-sub">Exclusive table reservation – Priority confirmation</p>
   <p class="booking-desc-top">Vui lòng điền thông tin để THE WANN liên hệ xác nhận.</p>
 
-<form class="booking-form"
-      action="https://formsubmit.co/nghjakzz133@gmail.com"
-      method="POST">
-   <input type="hidden" name="_subject" value="BOOKING THE WANN – ĐẶT BÀN MỚI">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://the-wann.pages.dev/thank-you.html">
+  <form class="booking-form"
+        action="https://formsubmit.co/nghjakzz133@gmail.com"
+        method="POST">
+
+    <!-- FORMSUBMIT CONFIG -->
+    <input type="hidden" name="_subject" value="BOOKING THE WANN - DAT BAN MOI">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://the-wann.pages.dev/thank-you.html">
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- CUSTOMER INFO -->
+    <input type="text" name="name" placeholder="Tên khách *" required>
+
+    <input type="tel" name="phone" placeholder="Số điện thoại *" required>
+
+    <input type="date" name="date" required>
 
     <select name="people" required>
       <option value="">Số lượng khách *</option>
-      <option>1 – 2 khách</option>
-      <option>3 – 5 khách</option>
-      <option>6 – 10 khách</option>
+      <option>1 - 2 khách</option>
+      <option>3 - 5 khách</option>
+      <option>6 - 10 khách</option>
       <option>10+ khách</option>
     </select>
 
