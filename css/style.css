@@ -978,3 +978,89 @@ body{
 .lux-menu a{
   margin:14px 0;
 }
+/* ================= LUX MENU – LEFT SLIDE (FINAL) ================= */
+
+/* lớp phủ để bấm ra ngoài tắt menu */
+.lux-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  opacity:0;
+  pointer-events:none;
+  transition:.4s ease;
+  z-index:9998;
+}
+.lux-overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* menu trượt từ trái – KHÔNG full */
+.lux-menu{
+  position:fixed;
+  top:0;
+  left:0;
+  width:82%;
+  max-width:320px;
+  height:100vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+    url('../assets/gallery4.jpg') center/cover no-repeat;
+
+  box-shadow:30px 0 80px rgba(0,0,0,.9);
+  transform:translateX(-100%);
+  transition:transform .6s cubic-bezier(.4,0,.2,1);
+  z-index:9999;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:22px;
+}
+
+/* hiệu ứng đổi nền nhẹ luxury */
+.lux-menu::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.95)),
+    url('../assets/gallery5.jpg') center/cover no-repeat;
+  mix-blend-mode:overlay;
+  opacity:.8;
+  pointer-events:none;
+}
+
+.lux-menu::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,1)),
+    url('../assets/gallery6.jpg') center/cover no-repeat;
+  opacity:.25;
+  pointer-events:none;
+}
+
+.lux-menu.active{
+  transform:translateX(0);
+}
+
+/* menu chữ */
+.lux-menu a{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  font-size:20px;
+  letter-spacing:4px;
+  text-decoration:none;
+  opacity:.75;
+}
+.lux-menu a:first-child{
+  margin-top:-40px; /* HOME lên cao */
+}
+.lux-menu a:hover{
+  opacity:1;
+  color:#d4af37;
+}
