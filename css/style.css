@@ -825,3 +825,46 @@ a:focus-visible, button:focus-visible {
     box-shadow: 0 12px 32px rgba(0,0,0,.6);
   }
 }
+/* ======================================================
+   FIX LINK BLUE (TEL / ZALO / WHATSAPP) – LUXURY
+====================================================== */
+
+/* xoá màu xanh mặc định iOS */
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* link liên hệ – giữ màu trắng/gold */
+a[href^="tel:"],
+a[href^="https://zalo.me"],
+a[href^="https://wa.me"],
+a[href*="whatsapp"],
+a[href*="zalo"] {
+  color: #d4af37 !important; /* gold */
+  font-weight: 700;
+}
+
+/* hover desktop */
+@media (hover: hover) {
+  a[href^="tel:"]:hover,
+  a[href^="https://zalo.me"]:hover,
+  a[href^="https://wa.me"]:hover {
+    color: #ff2a2a !important;
+  }
+}
+
+/* trong footer & contact */
+footer a,
+.contact-page a {
+  color: #d4af37 !important;
+}
+
+/* bỏ gạch chân iOS */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
