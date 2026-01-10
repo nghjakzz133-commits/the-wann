@@ -1459,3 +1459,58 @@ body{
   text-decoration:none;
   box-shadow:0 18px 45px rgba(255,42,42,.6);
 }
+/* ===== FORCE CONTACT FULL SIZE (FIX DỨT ĐIỂM) ===== */
+.contact-page{
+  min-height:100vh !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:24px !important;
+}
+
+.contact-box{
+  width:100% !important;
+  max-width:420px !important;
+  padding:40px 28px !important;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(212,175,55,.22), transparent 60%),
+    linear-gradient(180deg,#0b0b0b,#000) !important;
+  border-radius:24px !important;
+  border:1px solid rgba(212,175,55,.4) !important;
+  box-shadow:0 35px 90px rgba(0,0,0,.9) !important;
+  text-align:center !important;
+}
+
+/* TITLE */
+.contact-box h1{
+  font-size:30px !important;
+  letter-spacing:5px !important;
+  margin-bottom:18px !important;
+}
+
+/* TEXT */
+.contact-box p{
+  font-size:17px !important;
+  line-height:1.95 !important;
+  color:rgba(255,255,255,.78) !important;
+}
+
+/* INFO */
+.contact-info p{
+  font-size:16.5px !important;
+}
+
+/* PHONE */
+.contact-phone{
+  display:inline-block !important;
+  margin:22px auto 12px !important;
+  padding:18px 36px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a) !important;
+  color:#fff !important;
+  font-size:18px !important;
+  font-weight:900 !important;
+  letter-spacing:1.8px !important;
+  text-decoration:none !important;
+  box-shadow:0 22px 55px rgba(255,42,42,.65) !important;
+}
