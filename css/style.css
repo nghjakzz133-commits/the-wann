@@ -1261,3 +1261,17 @@ body{
       0 0 40px rgba(212,175,55,.35);
   }
 }
+/* === STICKY HEADER UX UPGRADE === */
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  transition:background .3s ease, box-shadow .3s ease;
+}
+
+.header.scrolled{
+  background:rgba(0,0,0,.92);
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
