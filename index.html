@@ -160,5 +160,23 @@ menu.addEventListener('click', (e) => {
   }
 });
 </script>
+<script>
+const menu = document.getElementById('luxMenu');
+const toggle = document.getElementById('menuToggle');
+
+const overlay = document.createElement('div');
+overlay.className = 'lux-overlay';
+document.body.appendChild(overlay);
+
+toggle.onclick = () => {
+  menu.classList.add('active');
+  overlay.classList.add('active');
+};
+
+overlay.onclick = () => {
+  menu.classList.remove('active');
+  overlay.classList.remove('active');
+};
+</script>
 </body>
 </html>
