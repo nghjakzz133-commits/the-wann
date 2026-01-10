@@ -1272,3 +1272,93 @@ body{
     padding:18px 32px;
   }
 }
+/* ===== CONTACT PAGE FULL SCREEN ===== */
+.contact-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 16px;
+}
+
+.contact-box{
+  width:100%;
+  max-width:420px;
+  padding:36px 28px;
+  border-radius:22px;
+
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(212,175,55,.18), transparent 60%),
+    linear-gradient(180deg,#0a0a0a,#000);
+
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 30px 80px rgba(0,0,0,.9);
+  text-align:center;
+}
+
+/* TITLE */
+.contact-box h1{
+  font-size:26px;
+  letter-spacing:4px;
+  margin-bottom:14px;
+}
+
+/* TEXT */
+.contact-box p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.85;
+}
+
+/* INFO */
+.contact-info p{
+  font-size:15.5px;
+  margin-top:6px;
+}
+
+/* PHONE BUTTON */
+.contact-phone{
+  display:inline-block;
+  margin:22px auto 10px;
+  padding:18px 42px;
+  border-radius:999px;
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-decoration:none;
+  color:#fff;
+
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+  box-shadow:0 20px 55px rgba(255,42,42,.6);
+}
+
+/* MOBILE TỐI ƯU */
+@media(max-width:768px){
+  .contact-box{
+    max-width:92%;
+    padding:38px 24px;
+  }
+
+  .contact-box h1{
+    font-size:28px;
+  }
+
+  .contact-box p{
+    font-size:17px;
+  }
+}
+
+/* PC */
+@media(min-width:1024px){
+  .contact-box{
+    max-width:520px;
+  }
+
+  .contact-box h1{
+    font-size:30px;
+  }
+
+  .contact-box p{
+    font-size:17px;
+  }
+}
