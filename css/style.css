@@ -1529,3 +1529,14 @@ body{
     padding: 60px 12px;
   }
 }
+/* REMOVE GHOST / GLOW ELEMENT IN CONTACT */
+#contact::before,
+#contact::after,
+.contact-section::before,
+.contact-section::after,
+.glow,
+.light,
+.decor,
+.decor-line {
+  display: none !important;
+}
