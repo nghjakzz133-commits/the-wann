@@ -1156,3 +1156,61 @@ body{
   padding:40px 24px;
   border-radius:22px;
 }
+/* ===== CONTACT PAGE – FONT SIZE FIX ===== */
+.contact-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 16px;
+}
+
+.contact-box{
+  max-width:420px;
+  width:100%;
+  padding:32px 22px;
+}
+
+.contact-box h1{
+  font-size:26px;
+  letter-spacing:3px;
+  margin-bottom:14px;
+}
+
+.contact-box p{
+  font-size:15.5px;
+  line-height:1.8;
+}
+
+.contact-info p{
+  font-size:15px;
+}
+
+.contact-phone{
+  display:inline-block;
+  margin-top:18px;
+  padding:16px 28px;
+  font-size:16px;
+  font-weight:800;
+  border-radius:999px;
+}
+
+/* MOBILE TO HƠN */
+@media(max-width:768px){
+  .contact-box h1{
+    font-size:28px;
+  }
+
+  .contact-box p{
+    font-size:16.5px;
+  }
+
+  .contact-info p{
+    font-size:16px;
+  }
+
+  .contact-phone{
+    font-size:17px;
+    padding:18px 32px;
+  }
+}
