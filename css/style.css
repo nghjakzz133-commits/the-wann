@@ -456,3 +456,372 @@ video {
   height: auto;
   display: block;
 }
+/* ======================================================
+   MOBILE SPACING POLISH – THE WANN
+   ONLY MOBILE – NO LAYOUT CHANGE
+====================================================== */
+
+@media (max-width: 768px) {
+
+  /* section gọn hơn */
+  .section {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  /* hero đầy màn hơn */
+  .hero,
+  .about-hero {
+    min-height: calc(100vh - 64px);
+  }
+
+  /* chữ dễ đọc hơn */
+  p {
+    line-height: 1.75;
+  }
+
+  /* tiêu đề không bị to quá */
+  h1 {
+    font-size: 32px !important;
+    letter-spacing: 4px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    letter-spacing: 3px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  /* khoảng cách giữa block */
+  .about-section,
+  .feature-item,
+  .menu-preview,
+  .cta-lux {
+    margin-bottom: 40px !important;
+  }
+
+  /* gallery nhìn sát hơn */
+  .gallery-grid {
+    gap: 12px !important;
+  }
+
+  /* button gọn nhưng vẫn premium */
+  .hero-cta a,
+  .menu-btn,
+  .cta-btn,
+  .contact-phone {
+    padding: 14px 28px !important;
+    font-size: 15px !important;
+  }
+}
+/* ======================================================
+   UPGRADE 03 – HERO & CTA IMPACT
+   SAFE – NO LAYOUT CHANGE
+====================================================== */
+
+/* HERO: tăng chiều sâu */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 40% at 50% 30%, rgba(212,175,55,.12), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.95));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* tiêu đề hero mạnh hơn */
+.hero-title {
+  text-shadow:
+    0 10px 40px rgba(0,0,0,.9),
+    0 0 40px rgba(212,175,55,.15);
+}
+
+/* CTA nổi bật hơn */
+.hero-cta a:first-child {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta a:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,.35),
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: .6s ease;
+}
+
+.hero-cta a:first-child:hover::before {
+  transform: translateX(100%);
+}
+
+/* CTA phụ tinh tế */
+.hero-cta a:last-child {
+  backdrop-filter: blur(6px);
+}
+
+/* MOBILE HERO */
+@media (max-width: 768px) {
+  .hero-title {
+    text-shadow:
+      0 8px 30px rgba(0,0,0,.95);
+  }
+}
+/* ======================================================
+   UPGRADE 04 – MENU & GALLERY PREMIUM
+====================================================== */
+
+/* gallery nhìn sâu & sang hơn */
+.gallery-grid img,
+.menu-gallery img {
+  transition: transform .35s ease, filter .35s ease, box-shadow .35s ease;
+  box-shadow: 0 18px 50px rgba(0,0,0,.65);
+}
+
+.gallery-grid img:hover,
+.menu-gallery img:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: brightness(1.08);
+  box-shadow: 0 28px 80px rgba(0,0,0,.8);
+}
+
+/* menu preview gọn gàng */
+.menu-preview {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(212,175,55,.12), transparent 60%);
+}
+
+.menu-title {
+  text-shadow: 0 10px 30px rgba(0,0,0,.8);
+}
+/* ======================================================
+   UPGRADE 05 – SUBTLE MOTION
+====================================================== */
+
+/* hover tinh tế toàn site */
+a, button {
+  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+}
+
+button:hover,
+.hero-cta a:hover,
+.menu-btn:hover,
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* card nổi khi hover */
+.feature-item,
+.booking-form,
+.contact-box {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature-item:hover,
+.booking-form:hover,
+.contact-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 90px rgba(0,0,0,.85);
+}
+/* ======================================================
+   UPGRADE 06 – TYPOGRAPHY & SPACING
+====================================================== */
+
+/* chữ gọn – có chiều */
+h1, h2, h3 {
+  letter-spacing: 1.6px;
+}
+
+h2 {
+  margin-bottom: 22px;
+}
+
+p {
+  letter-spacing: .2px;
+}
+
+/* section rõ nhịp hơn */
+.section {
+  position: relative;
+}
+
+.section::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 40px auto 0;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  opacity: .6;
+}
+
+/* mobile tinh chỉnh chữ */
+@media (max-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+}
+/* ======================================================
+   UPGRADE 07 – BRAND FINISHING (FOOTER & DETAILS)
+====================================================== */
+
+/* FOOTER tổng thể */
+footer {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(212,175,55,.12), transparent 60%),
+    linear-gradient(180deg,#050505,#000);
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:70px 20px 40px;
+  text-align:center;
+}
+
+/* logo / tên thương hiệu */
+footer .logo,
+footer h3 {
+  color:#d4af37;
+  letter-spacing:4px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+/* mô tả ngắn */
+footer p {
+  max-width:520px;
+  margin:0 auto 28px;
+  font-size:14.5px;
+  line-height:1.8;
+  opacity:.75;
+}
+
+/* link footer */
+footer a {
+  color:#fff;
+  text-decoration:none;
+  opacity:.75;
+}
+
+footer a:hover {
+  opacity:1;
+  color:#d4af37;
+}
+
+/* divider mảnh */
+footer::after {
+  content:"";
+  display:block;
+  width:80px;
+  height:2px;
+  margin:30px auto 20px;
+  background:linear-gradient(90deg,transparent,#d4af37,transparent);
+  opacity:.6;
+}
+
+/* copyright */
+.footer-copy {
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.5;
+}
+
+/* CTA nhỏ cuối trang */
+.footer-cta {
+  display:inline-block;
+  margin-top:26px;
+  padding:14px 34px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+  color:#fff;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-decoration:none;
+  box-shadow:0 18px 45px rgba(255,42,42,.55);
+}
+
+/* hover nhẹ */
+.footer-cta:hover {
+  transform:translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  footer {
+    padding:60px 16px 36px;
+  }
+  footer p {
+    font-size:15px;
+  }
+}
+/* ======================================================
+   UPGRADE 08 – MICRO DETAIL POLISH
+====================================================== */
+
+/* bo tròn đồng bộ */
+img, .feature-item, .booking-form, .contact-box {
+  border-radius: 18px;
+}
+
+/* shadow mềm hơn – không gắt */
+.feature-item,
+.menu-gallery img,
+.gallery-grid img {
+  box-shadow: 0 16px 44px rgba(0,0,0,.65);
+}
+
+/* hover không làm “nhảy” layout */
+a, button {
+  will-change: transform;
+}
+
+/* focus state chuẩn brand */
+input:focus, textarea:focus, select:focus,
+a:focus-visible, button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212,175,55,.35);
+  border-color: #d4af37;
+}
+
+/* selection màu brand */
+::selection {
+  background: rgba(212,175,55,.35);
+  color: #000;
+}
+
+/* scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,#6a0000,#ff2a2a);
+  border-radius: 8px;
+}
+
+/* divider mảnh cho các block lớn */
+.section > * + * {
+  margin-top: 12px;
+}
+
+/* mobile: giảm shadow chút cho nhẹ */
+@media (max-width: 768px){
+  .feature-item,
+  .menu-gallery img,
+  .gallery-grid img {
+    box-shadow: 0 12px 32px rgba(0,0,0,.6);
+  }
+}
