@@ -932,3 +932,17 @@ body{
 .menu-toggle{
   margin-right:auto;
 }
+/* === LUX MENU: SLIDE SLOW + PARTIAL === */
+.lux-menu{
+  width:70%;
+  max-width:320px;
+  right:auto;
+  left:0;
+
+  transform:translateX(-100%);
+  transition:transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.lux-menu.active{
+  transform:translateX(0);
+}
