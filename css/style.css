@@ -1540,3 +1540,34 @@ body{
 .decor-line {
   display: none !important;
 }
+/* CONTACT SCALE UP – ADD ONLY */
+#contact .contact-box {
+  transform: scale(1.15);
+  transform-origin: center;
+}
+
+/* Mobile tối ưu hơn */
+@media (max-width: 768px) {
+  #contact .contact-box {
+    transform: scale(1.25);
+  }
+}
+/* CONTACT BUTTONS – BLACK & GOLD LUXURY */
+#contact .contact-box a,
+#contact .contact-box button {
+  background: #000 !important;
+  color: #d4af37 !important; /* gold */
+  border: 1px solid rgba(212,175,55,0.5);
+  box-shadow: 0 0 12px rgba(212,175,55,0.15);
+}
+
+#contact .contact-box a:hover,
+#contact .contact-box button:hover {
+  background: #111 !important;
+  box-shadow: 0 0 18px rgba(212,175,55,0.35);
+}
+#contact .contact-box a,
+#contact .contact-box button {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
