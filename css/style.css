@@ -1505,3 +1505,27 @@ body{
   text-decoration: none;
   box-shadow: 0 12px 35px rgba(0,0,0,0.6);
 }
+/* ============================= */
+/* CONTACT FIX – ADD ONLY */
+/* ============================= */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 16px;
+}
+
+#contact .contact-box {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* mobile safe */
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 12px;
+  }
+}
