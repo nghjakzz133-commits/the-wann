@@ -1514,3 +1514,50 @@ body{
   text-decoration:none !important;
   box-shadow:0 22px 55px rgba(255,42,42,.65) !important;
 }
+/* ===== ABOUT PAGE – CORPORATE UPGRADE ===== */
+.about-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+.about-page h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.about-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 40px 0 16px;
+}
+
+.about-page p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  max-width: 900px;
+}
+
+/* chia section rõ ràng */
+.about-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* điểm nhấn doanh nghiệp */
+.about-highlight {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  border-left: 4px solid #c9a24d;
+  padding: 32px;
+  margin: 40px 0;
+}
+
+.about-highlight strong {
+  color: #c9a24d;
+  font-weight: 600;
+}
