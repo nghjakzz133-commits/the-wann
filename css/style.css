@@ -1514,50 +1514,131 @@ body{
   text-decoration:none !important;
   box-shadow:0 22px 55px rgba(255,42,42,.65) !important;
 }
-/* ===== ABOUT PAGE – CORPORATE UPGRADE ===== */
+/* ===== ABOUT PAGE – CORPORATE STYLE ===== */
 .about-page {
+  background: #0b0b0b;
+}
+
+.about-detail {
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  padding: 100px 24px;
 }
 
-.about-page h1 {
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+.about-detail h2 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.about-page h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 40px 0 16px;
-}
-
-.about-page p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.85);
+.about-lead {
   max-width: 900px;
+  margin: 0 auto 60px;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+  opacity: 0.9;
 }
 
-/* chia section rõ ràng */
 .about-section {
-  padding: 60px 0;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* điểm nhấn doanh nghiệp */
-.about-highlight {
-  background: linear-gradient(135deg, #111, #1a1a1a);
-  border-left: 4px solid #c9a24d;
-  padding: 32px;
-  margin: 40px 0;
+.about-text h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #c9a24d;
+  letter-spacing: 1px;
 }
 
-.about-highlight strong {
-  color: #c9a24d;
-  font-weight: 600;
+.about-text p {
+  line-height: 1.8;
+  font-size: 16px;
+  opacity: 0.88;
+}
+/* ===== ABOUT PAGE – CORPORATE LUXURY (BLACK / GOLD / VIP) ===== */
+
+.about-page {
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
+  color: #eaeaea;
+}
+
+/* khối nội dung trung tâm */
+.about-detail {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 24px;
+}
+
+/* tiêu đề chính */
+.about-detail h2 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #d4af37; /* gold */
+}
+
+/* đoạn mở đầu */
+.about-lead {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  font-size: 18px;
+  line-height: 2;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+}
+
+/* từng khối nội dung */
+.about-section {
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+
+/* heading cấp 3 */
+.about-text h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: #d4af37;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* text */
+.about-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+}
+
+/* hình ảnh */
+.about-images img {
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+  border: 1px solid rgba(212,175,55,0.25);
+}
+
+/* hero sang hơn */
+.about-hero-content h1 {
+  font-size: 64px;
+  letter-spacing: 6px;
+}
+
+.about-hero-content p {
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .about-detail {
+    padding: 80px 20px;
+  }
+  .about-detail h2 {
+    font-size: 32px;
+  }
 }
