@@ -666,3 +666,18 @@ body{
   opacity:1;
   transform:rotate(90deg);
 }
+.hero-cta a{
+  padding:18px 42px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
+  font-weight:900;
+  letter-spacing:1.5px;
+  font-size:16px;
+  box-shadow:0 22px 55px rgba(255,42,42,.6);
+}
+.hero-note{
+  margin-top:14px;
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.7;
+}
