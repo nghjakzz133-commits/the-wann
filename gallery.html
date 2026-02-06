@@ -1,40 +1,1377 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>GALLERY | THE WANN</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gallery - THE WANN | Nightclub & Bar Quận 1</title>
+  
+  <meta name="description" content="Khám phá không gian, sự kiện và khoảnh khắc tại THE WANN Nightclub - Beer Club cao cấp tại 51 Bùi Thị Xuân, Quận 1, TP.HCM">
+  <meta name="keywords" content="THE WANN gallery, hình ảnh THE WANN, nightclub photos, Quận 1 nightlife">
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F4E4B8;
+      --gold-dark: #B8942F;
+      --red: #DC2626;
+      --black: #0A0A0A;
+      --dark-gray: #1A1A1A;
+      --charcoal: #252525;
+      --white: #FFFFFF;
+      --off-white: #F5F5F5;
+      
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-elegant: 'Cormorant Garamond', serif;
+      
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* ========== LOADING SCREEN ========== */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loader {
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(212, 175, 55, 0.2);
+      border-top: 3px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loader-text {
+      position: absolute;
+      margin-top: 120px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    
+    /* ========== HEADER ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .header .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      text-decoration: none;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 45px;
+      align-items: center;
+    }
+    
+    .nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav a::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      color: var(--gold);
+    }
+    
+    .nav a:hover::before,
+    .nav a.active::before {
+      width: 100%;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--gold);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      height: 50vh;
+      min-height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+      margin-top: 80px;
+    }
+    
+    .page-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070') center/cover;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    
+    .page-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(220,38,38,0.3) 100%);
+    }
+    
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 40px;
+    }
+    
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+    }
+    
+    .page-hero-subtitle {
+      font-family: var(--font-elegant);
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+    
+    /* ========== FILTER SECTION ========== */
+    .filter-section {
+      padding: 60px 0 40px;
+      background: var(--dark-gray);
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 12px 30px;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    }
+    
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      color: var(--white);
+      font-size: 14px;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* ========== GALLERY GRID ========== */
+    .gallery-section {
+      padding: 80px 0;
+      background: var(--black);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--charcoal);
+      transition: var(--transition);
+    }
+    
+    /* Featured items - larger */
+    .gallery-item.featured {
+      grid-column: span 2;
+      grid-row: span 2;
+      height: 825px;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.15);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.7), rgba(212, 175, 55, 0.7));
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-overlay-icon {
+      font-size: 48px;
+      color: var(--white);
+      margin-bottom: 15px;
+      transform: scale(0);
+      transition: transform 0.4s ease 0.1s;
+    }
+    
+    .gallery-item:hover .gallery-overlay-icon {
+      transform: scale(1);
+    }
+    
+    .gallery-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 10px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease 0.2s;
+    }
+    
+    .gallery-item:hover .gallery-title {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .gallery-category {
+      font-size: 12px;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease 0.3s;
+    }
+    
+    .gallery-item:hover .gallery-category {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    /* Hidden state for filtering */
+    .gallery-item.hidden {
+      display: none;
+    }
+    
+    /* ========== LIGHTBOX ========== */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoomIn 0.4s ease;
+    }
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+    
+    .lightbox-info {
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    
+    .lightbox-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    
+    .lightbox-category {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 50px;
+      color: var(--white);
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 10001;
+    }
+    
+    .lightbox-close:hover {
+      color: var(--gold);
+      transform: rotate(90deg);
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid var(--gold);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .lightbox-nav:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    
+    .lightbox-prev {
+      left: 30px;
+    }
+    
+    .lightbox-next {
+      right: 30px;
+    }
+    
+    .lightbox-counter {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 25px;
+      border: 1px solid var(--gold);
+      letter-spacing: 2px;
+    }
+    
+    /* ========== NO RESULTS ========== */
+    .no-results {
+      text-align: center;
+      padding: 100px 20px;
+      display: none;
+    }
+    
+    .no-results.show {
+      display: block;
+    }
+    
+    .no-results-icon {
+      font-size: 80px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .no-results h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--white);
+      margin-bottom: 15px;
+    }
+    
+    .no-results p {
+      font-size: 16px;
+      color: var(--off-white);
+    }
+    
+    /* ========== LOAD MORE ========== */
+    .load-more-section {
+      text-align: center;
+      padding: 60px 0;
+    }
+    
+    .btn-load-more {
+      padding: 18px 45px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border: 2px solid var(--gold);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    
+    .btn-load-more:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--black);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      text-align: center;
+    }
+    
+    .footer p {
+      font-size: 14px;
+      color: var(--off-white);
+      letter-spacing: 1px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    /* ========== FIXED CONTACT BAR ========== */
+    .fixed-contact-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+      border-top: 2px solid var(--gold);
+    }
+    
+    .fc-item {
+      flex: 1;
+      max-width: 200px;
+      padding: 18px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      color: #fff;
+    }
+    
+    .fc-item.call {
+      background: linear-gradient(135deg, #10B981, #059669);
+    }
+    
+    .fc-item.zalo {
+      background: linear-gradient(135deg, #0068FF, #0052CC);
+    }
+    
+    .fc-item.whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+    
+    .fc-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+    
+    .fc-item span {
+      display: inline-block;
+      margin-left: 8px;
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .lux-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: var(--black);
+      z-index: 9999;
+      padding: 80px 40px;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    
+    .lux-menu.active {
+      right: 0;
+    }
+    
+    .lux-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .lux-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lux-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 40px;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .lux-close:hover {
+      transform: rotate(90deg);
+    }
+    
+    .lux-menu a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 28px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+      letter-spacing: 2px;
+    }
+    
+    .lux-menu a:hover {
+      color: var(--gold);
+      padding-left: 20px;
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1200px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .page-hero-title {
+        font-size: 42px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .gallery-item,
+      .gallery-item.featured {
+        height: 300px;
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      
+      .filter-controls {
+        flex-wrap: wrap;
+      }
+      
+      .filter-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+      
+      .container,
+      .header .container {
+        padding: 0 20px;
+      }
+      
+      .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+      }
+      
+      .lightbox-prev {
+        left: 10px;
+      }
+      
+      .lightbox-next {
+        right: 10px;
+      }
+      
+      .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<section class="section dark">
-  <h2>GALLERY</h2>
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loadingScreen">
+    <div>
+      <div class="loader"></div>
+      <div class="loader-text">THE WANN</div>
+    </div>
+  </div>
 
-  <p>
-    Gallery ghi lại những khoảnh khắc đáng nhớ tại THE WANN:
-    không gian, sự kiện, DJ, khách hàng và những đêm tiệc sôi động.
-  </p>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">THE WANN</a>
+      
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/#features">Services</a>
+        <a href="/gallery" class="active">Gallery</a>
+        <a href="/#menu">Menu</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
 
-  <p>
-    Nội dung hình ảnh sẽ được cập nhật thường xuyên
-    để phản ánh đúng không khí và trải nghiệm thực tế tại club.
-  </p>
+  <!-- MOBILE MENU -->
+  <div class="lux-menu" id="luxMenu">
+    <button class="lux-close" id="luxClose">×</button>
+    <a href="/">Trang chủ</a>
+    <a href="/about">Về chúng tôi</a>
+    <a href="/#features">Dịch vụ</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/#menu">Menu</a>
+    <a href="/#contact">Liên hệ</a>
+  </div>
+  <div class="lux-overlay" id="luxOverlay"></div>
 
-  <div style="text-align:center; margin-top:32px;">
-  <a href="https://drive.google.com/drive/mobile/folders/1qFOyY1VQTtzVHU_SYevwYp3F_KkdwMHv"
-     target="_blank"
-     style="
-       padding:18px 46px;
-       border-radius:999px;
-       background:linear-gradient(135deg,#6a0000,#ff2a2a,#ff5a5a);
-       color:#fff;
-       font-weight:900;
-       letter-spacing:1.5px;
-       text-decoration:none;
-       box-shadow:0 20px 55px rgba(255,42,42,.6);
-     ">
-    XEM ALBUM HÌNH ẢNH
-  </a>
-</div>
-</section>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">GALLERY</h1>
+      <p class="page-hero-subtitle">Khoảnh khắc tại THE WANN</p>
+    </div>
+  </section>
+
+  <!-- FILTER SECTION -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="interior">Không gian</button>
+        <button class="filter-btn" data-filter="events">Sự kiện</button>
+        <button class="filter-btn" data-filter="food">Ẩm thực</button>
+        <button class="filter-btn" data-filter="drinks">Đồ uống</button>
+        <button class="filter-btn" data-filter="party">Party Night</button>
+        <button class="filter-btn" data-filter="vip">VIP Room</button>
+      </div>
+      
+      <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Tìm kiếm ảnh...">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+        
+        <!-- ========== HƯỚNG DẪN NHÚNG ẢNH TỪ GOOGLE DRIVE ==========
+        
+        BƯỚC 1: Lấy link ảnh từ Google Drive
+        - Mở Google Drive folder của bạn
+        - Click phải vào ảnh > Get link > Change to "Anyone with the link"
+        - Copy link dạng: https://drive.google.com/file/d/1ABC123XYZ/view?usp=sharing
+        
+        BƯỚC 2: Convert sang link direct
+        - Lấy ID từ link trên (phần 1ABC123XYZ)
+        - Thay vào format: https://drive.google.com/uc?export=view&id=1ABC123XYZ
+        
+        BƯỚC 3: Thêm vào code
+        - Copy template bên dưới và thay src="..." bằng link direct
+        
+        ============================================================ -->
+        
+        <!-- INTERIOR - Không gian nội thất -->
+        <div class="gallery-item featured" data-category="interior" data-title="Main Dance Floor" data-index="0">
+          <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070" alt="THE WANN Main Dance Floor">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎵</div>
+            <div class="gallery-title">Main Dance Floor</div>
+            <div class="gallery-category">Không gian</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="interior" data-title="LED Lighting System" data-index="1">
+          <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074" alt="LED Lighting">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">💡</div>
+            <div class="gallery-title">LED Lighting System</div>
+            <div class="gallery-category">Không gian</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="interior" data-title="Bar Counter" data-index="2">
+          <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=2067" alt="Bar Counter">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🍸</div>
+            <div class="gallery-title">Premium Bar Counter</div>
+            <div class="gallery-category">Không gian</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="interior" data-title="DJ Booth" data-index="3">
+          <img src="https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?q=80&w=2070" alt="DJ Booth">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎧</div>
+            <div class="gallery-title">Professional DJ Booth</div>
+            <div class="gallery-category">Không gian</div>
+          </div>
+        </div>
+        
+        <!-- VIP ROOMS -->
+        <div class="gallery-item" data-category="vip" data-title="VIP Room Gold" data-index="4">
+          <img src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=2067" alt="VIP Room">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">👑</div>
+            <div class="gallery-title">VIP Room Gold</div>
+            <div class="gallery-category">VIP Room</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="vip" data-title="Private Lounge" data-index="5">
+          <img src="https://images.unsplash.com/photo-1571609803439-bc58a4f75124?q=80&w=2070" alt="Private Lounge">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🛋️</div>
+            <div class="gallery-title">Private Lounge</div>
+            <div class="gallery-category">VIP Room</div>
+          </div>
+        </div>
+        
+        <!-- PARTY NIGHTS -->
+        <div class="gallery-item featured" data-category="party" data-title="Saturday Night Live" data-index="6">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070" alt="Party Night">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎉</div>
+            <div class="gallery-title">Saturday Night Live</div>
+            <div class="gallery-category">Party Night</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="party" data-title="Crowd Energy" data-index="7">
+          <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?q=80&w=2070" alt="Crowd">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔥</div>
+            <div class="gallery-title">Crowd Energy</div>
+            <div class="gallery-category">Party Night</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="party" data-title="DJ Performance" data-index="8">
+          <img src="https://images.unsplash.com/photo-1571266028243-d220c8f11ceb?q=80&w=2067" alt="DJ Performance">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎤</div>
+            <div class="gallery-title">DJ Performance</div>
+            <div class="gallery-category">Party Night</div>
+          </div>
+        </div>
+        
+        <!-- DRINKS -->
+        <div class="gallery-item" data-category="drinks" data-title="Cocktail Selection" data-index="9">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070" alt="Cocktails">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🍹</div>
+            <div class="gallery-title">Signature Cocktails</div>
+            <div class="gallery-category">Đồ uống</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="drinks" data-title="Champagne Service" data-index="10">
+          <img src="https://images.unsplash.com/photo-1560963689-8f3da5a5a6b5?q=80&w=2069" alt="Champagne">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🍾</div>
+            <div class="gallery-title">Premium Champagne</div>
+            <div class="gallery-category">Đồ uống</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="drinks" data-title="Craft Beer" data-index="11">
+          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=2070" alt="Beer">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🍺</div>
+            <div class="gallery-title">Craft Beer Selection</div>
+            <div class="gallery-category">Đồ uống</div>
+          </div>
+        </div>
+        
+        <!-- FOOD -->
+        <div class="gallery-item" data-category="food" data-title="Fusion Cuisine" data-index="12">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070" alt="Food">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🍽️</div>
+            <div class="gallery-title">Fusion Á-Âu</div>
+            <div class="gallery-category">Ẩm thực</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="food" data-title="Appetizers" data-index="13">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2067" alt="Appetizers">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🥘</div>
+            <div class="gallery-title">Premium Appetizers</div>
+            <div class="gallery-category">Ẩm thực</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="food" data-title="Seafood Platter" data-index="14">
+          <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?q=80&w=2064" alt="Seafood">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🦞</div>
+            <div class="gallery-title">Fresh Seafood</div>
+            <div class="gallery-category">Ẩm thực</div>
+          </div>
+        </div>
+        
+        <!-- EVENTS -->
+        <div class="gallery-item featured" data-category="events" data-title="Birthday Celebration" data-index="15">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070" alt="Birthday">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎂</div>
+            <div class="gallery-title">Birthday Party</div>
+            <div class="gallery-category">Sự kiện</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="events" data-title="Corporate Event" data-index="16">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069" alt="Corporate">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">💼</div>
+            <div class="gallery-title">Corporate Event</div>
+            <div class="gallery-category">Sự kiện</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="events" data-title="Live Performance" data-index="17">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070" alt="Live Performance">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎸</div>
+            <div class="gallery-title">Live Music Night</div>
+            <div class="gallery-category">Sự kiện</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="party" data-title="New Year Countdown" data-index="18">
+          <img src="https://images.unsplash.com/photo-1467810563316-b5476525c0f9?q=80&w=2069" alt="New Year">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎆</div>
+            <div class="gallery-title">New Year Countdown</div>
+            <div class="gallery-category">Party Night</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="interior" data-title="Red Theme Decor" data-index="19">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f29da8c037?q=80&w=2071" alt="Interior">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🎨</div>
+            <div class="gallery-title">Red-Black Theme</div>
+            <div class="gallery-category">Không gian</div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- NO RESULTS MESSAGE -->
+      <div class="no-results" id="noResults">
+        <div class="no-results-icon">🔍</div>
+        <h3>Không tìm thấy kết quả</h3>
+        <p>Thử tìm kiếm với từ khóa khác hoặc chọn category khác</p>
+      </div>
+      
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more-section">
+        <button class="btn-load-more" id="loadMoreBtn">XEM THÊM HÌNH ẢNH</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 20</div>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+    
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-info">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-category" id="lightboxCategory"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Trang chủ</a>
+        <a href="/about">Về chúng tôi</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/#contact">Liên hệ</a>
+      </div>
+      <p>© 2026 THE WANN Nightclub & Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FIXED CONTACT BAR -->
+  <div class="fixed-contact-bar">
+    <a href="tel:0778307889" class="fc-item call">
+      📞 <span>Gọi ngay</span>
+    </a>
+    <a href="https://zalo.me/0778307889" class="fc-item zalo">
+      💬 <span>Zalo</span>
+    </a>
+    <a href="https://wa.me/84778307889" class="fc-item whatsapp">
+      🟢 <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // ========== MOBILE MENU ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const luxMenu = document.getElementById('luxMenu');
+    const luxClose = document.getElementById('luxClose');
+    const luxOverlay = document.getElementById('luxOverlay');
+
+    const openMenu = () => {
+      luxMenu.classList.add('active');
+      luxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      luxMenu.classList.remove('active');
+      luxOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    menuToggle.addEventListener('click', openMenu);
+    luxClose.addEventListener('click', closeMenu);
+    luxOverlay.addEventListener('click', closeMenu);
+
+    // ========== FILTER FUNCTIONALITY ==========
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    // Filter by category
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase();
+      applyFilters();
+    });
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      galleryItems.forEach(item => {
+        const category = item.dataset.category;
+        const title = item.dataset.title.toLowerCase();
+        
+        const matchesCategory = currentFilter === 'all' || category === currentFilter;
+        const matchesSearch = searchQuery === '' || title.includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults.classList.add('show');
+      } else {
+        noResults.classList.remove('show');
+      }
+    }
+
+    // ========== LIGHTBOX FUNCTIONALITY ==========
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxCategory = document.getElementById('lightboxCategory');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let currentIndex = 0;
+    let visibleItems = [];
+
+    function updateVisibleItems() {
+      visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+    }
+
+    // Open lightbox
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        updateVisibleItems();
+        const itemIndex = visibleItems.indexOf(item);
+        if (itemIndex !== -1) {
+          openLightbox(itemIndex);
+        }
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const item = visibleItems[currentIndex];
+      const img = item.querySelector('img');
+      const title = item.dataset.title;
+      const category = item.dataset.category;
+
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxTitle.textContent = title;
+      lightboxCategory.textContent = getCategoryName(category);
+      lightboxCounter.textContent = `${currentIndex + 1} / ${visibleItems.length}`;
+
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      openLightbox(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      openLightbox(currentIndex);
+    }
+
+    function getCategoryName(category) {
+      const names = {
+        'interior': 'Không gian',
+        'events': 'Sự kiện',
+        'food': 'Ẩm thực',
+        'drinks': 'Đồ uống',
+        'party': 'Party Night',
+        'vip': 'VIP Room'
+      };
+      return names[category] || category;
+    }
+
+    // Lightbox controls
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxNext.addEventListener('click', nextImage);
+    lightboxPrev.addEventListener('click', prevImage);
+
+    // Close on overlay click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // ========== LOAD MORE FUNCTIONALITY ==========
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    let itemsToShow = 20;
+
+    loadMoreBtn.addEventListener('click', () => {
+      itemsToShow += 12;
+      // In a real scenario, you would load more images from server/API
+      loadMoreBtn.textContent = 'ĐANG CẬP NHẬT THÊM ẢNH...';
+      
+      setTimeout(() => {
+        loadMoreBtn.textContent = 'XEM THÊM HÌNH ẢNH';
+        // Here you would append new gallery items
+      }, 1000);
+    });
+
+    // ========== LAZY LOADING IMAGES ==========
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.src; // Trigger load
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('.gallery-item img').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  </script>
 </body>
 </html>
