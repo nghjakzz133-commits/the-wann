@@ -222,162 +222,98 @@ select{
 </div>
 
 <script>
-/* ================= DATA ================= */
 
 const combos = [
-
-{
-name:"Combo The Wann Food Set A",
-price:3799,
-badge:"HOT",
-meta:"6–8 khách",
-items:["Gỏi hải sản","Gà nướng","Xôi cua","Mì xào","Trái cây"]
-},
-{
-name:"Combo The Wann Food Set B",
-price:3799,
-meta:"6–8 khách",
-items:["Bò nướng","Cá chiên","Chả giò","Cơm chiên hải sản","Trái cây"]
-},
-{
-name:"Combo Beer Party 18",
-price:4599,
-meta:"18 bia + món nhậu",
-items:["18 bia","Khô gà","Xúc xích","Khoai chiên","Trái cây"]
-},
-{
-name:"Combo Beer Party 24",
-price:5999,
-meta:"24 bia + food set",
-items:["24 bia","Gà quay","Mực chiên","Xôi","Trái cây"]
-},
-
 {
 name:"Combo Phantom",
 price:6999,
+type:"beer",
+badge:"HOT",
 meta:"24 Heineken + Full food",
 items:["24 Heineken","Bò BBQ","Gà tre","Mì xào","Trái cây"]
 },
 {
-name:"Combo Luxury",
-price:6999,
-meta:"24 Heineken + Premium set",
-items:["24 Heineken","Mực hấp","Bò sốt","Hải sản","Trái cây"]
-},
-{
-name:"Combo Heineken Gold Table",
-price:7599,
-meta:"24 Heineken + VIP snack",
-items:["24 Heineken","Bò lúc lắc","Gà nướng","Snack VIP"]
-},
-
-{
 name:"Combo Saturn",
 price:8299,
+type:"whisky",
 meta:"2 Gold Label",
-items:["2 Gold Label","Heo quay","Gà tre","Xôi cua"]
+items:["Gold Label","Heo quay","Gà tre","Xôi cua"]
 },
-{
-name:"Combo Gold Celebration",
-price:8899,
-meta:"Gold Label + beer",
-items:["1 Gold Label","12 bia","Set món"]
-},
-{
-name:"Combo Universe",
-price:9599,
-meta:"2 Belaire",
-items:["2 Belaire","Cá chiên","Bò tiêu xanh"]
-},
-{
-name:"Combo Champagne Party",
-price:9399,
-meta:"Fogoso set",
-items:["Fogoso","Snack set","Trái cây"]
-},
-{
-name:"Combo Louis Le Vau",
-price:9639,
-meta:"Champagne set",
-items:["Louis Le Vau","Snack","Fruit"]
-},
-
 {
 name:"Combo Mars",
 price:10119,
+type:"whisky",
 badge:"VIP",
 meta:"2 Chivas 18",
-items:["2 Chivas 18","Tôm hoàng kim","Miến cua"]
+items:["Chivas 18","Tôm hoàng kim","Miến cua"]
 },
-{
-name:"Combo Chivas VIP",
-price:10499,
-meta:"Chivas + beer",
-items:["1 Chivas 18","12 bia","Food set"]
-},
-{
-name:"Combo Jupiter",
-price:10399,
-meta:"2 Hennessy VSOP",
-items:["2 VSOP","Bò wasabi","Mực sashimi"]
-},
-{
-name:"Combo VSOP Gold Night",
-price:11299,
-meta:"VSOP + champagne",
-items:["VSOP","Champagne","Snack"]
-},
-
-{
-name:"Combo XO Night",
-price:14899,
-meta:"Hennessy XO set",
-items:["Hennessy XO","Premium food","Fruit VIP"]
-},
-{
-name:"Combo Blue Label Table",
-price:16999,
-meta:"JW Blue + set",
-items:["Blue Label","Hải sản","Snack"]
-},
-
 {
 name:"Combo Dom VIP",
 price:24319,
+type:"champagne",
 badge:"ULTRA VIP",
 meta:"2 Dom Perignon",
-items:["2 Dom","Tôm hùm","Bò dát vàng","Banquet"]
-},
-{
-name:"Combo Royal Ace",
-price:25999,
-badge:"ROYAL",
-meta:"Ace of Spades",
-items:["Ace of Spades","Premium banquet","VIP fruit"]
+items:["Dom","Tôm hùm","Bò dát vàng","Banquet"]
 }
-
 ];
 
-/* ================= ENGINE ================= */
+const iconMap = {
+beer:"fa-beer-mug-empty",
+whisky:"fa-whiskey-glass",
+champagne:"fa-champagne-glasses",
+default:"fa-gem"
+};
 
 const grid = document.getElementById("grid");
 
 function render(list){
-  grid.innerHTML = list.map(c=>`
-    <div class="card">
-      ${c.badge ? `<div class="badge">${c.badge}</div>` : ""}
-      <h3 class="title">${c.name}</h3>
-      <div class="price">${c.price.toLocaleString()}đ</div>
-      <div class="meta">${c.meta}</div>
+  grid.innerHTML = list.map(c=>{
+    const icon = iconMap[c.type] || iconMap.default;
 
-      <div class="toggle">Xem chi tiết ▼</div>
-      <div class="items">
-        <ul>${c.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+    return `
+    <div class="card">
+
+      ${c.badge ? `<div class="badge"><i class="fa-solid fa-crown"></i> ${c.badge}</div>`:""}
+
+      <h3 class="title">
+        <i class="fa-solid ${icon}"></i>
+        ${c.name}
+      </h3>
+
+      <div class="price">
+        <i class="fa-solid fa-coins"></i>
+        ${c.price.toLocaleString()}đ
       </div>
 
-      <a class="btn" href="tel:0373453757">Đặt combo này</a>
+      <div class="meta">
+        <i class="fa-solid fa-users"></i>
+        ${c.meta}
+      </div>
+
+      <div class="toggle">
+        <i class="fa-solid fa-utensils"></i>
+        Xem món trong combo
+      </div>
+
+      <div class="items">
+        <ul>
+          ${c.items.map(i=>`
+            <li>
+              <i class="fa-solid fa-check"></i>
+              ${i}
+            </li>
+          `).join("")}
+        </ul>
+      </div>
+
+      <a class="btn" href="tel:0373453757">
+        <i class="fa-solid fa-phone"></i>
+        Đặt combo này
+      </a>
+
     </div>
-  `).join("");
+    `;
+  }).join("");
 
   document.querySelectorAll(".toggle").forEach(t=>{
     t.onclick = ()=>{
@@ -390,11 +326,8 @@ function render(list){
 function apply(){
   let arr=[...combos];
 
-  const sortEl = document.getElementById("sort");
-  const filterEl = document.getElementById("filter");
-
-  const s = sortEl ? sortEl.value : "asc";
-  const f = filterEl ? filterEl.value : "all";
+  const s=document.getElementById("sort").value;
+  const f=document.getElementById("filter").value;
 
   if(f==="low") arr=arr.filter(x=>x.price<7000);
   if(f==="mid") arr=arr.filter(x=>x.price>=7000 && x.price<=12000);
@@ -405,14 +338,9 @@ function apply(){
   render(arr);
 }
 
-/* ================= EVENTS ================= */
+document.getElementById("sort").onchange=apply;
+document.getElementById("filter").onchange=apply;
 
-document.getElementById("sort")?.addEventListener("change", apply);
-document.getElementById("filter")?.addEventListener("change", apply);
-
-/* ================= START ================= */
-
-console.log("combos loaded:", combos.length);
 apply();
 
 </script>
