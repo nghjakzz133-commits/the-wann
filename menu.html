@@ -2,53 +2,371 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>MENU | THE WANN</title>
-<link rel="stylesheet" href="css/style.css">
+<title>THE WANN – Combo Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --gold1:#cfae70;
+  --gold2:#f5d48a;
+  --gold3:#9c7a3c;
+  --bg:#0b0b0e;
+  --card:#141419;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#111,#050507 60%);
+  color:#eee;
+  font-family:system-ui,Segoe UI,Arial;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.header h1{
+  margin:0;
+  font-size:42px;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,var(--gold1),var(--gold2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.header p{
+  opacity:.7;
+  margin-top:10px;
+}
+
+/* controls */
+
+.controls{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:35px;
+}
+
+select{
+  background:#111;
+  border:1px solid #333;
+  color:#ddd;
+  padding:10px 14px;
+  border-radius:8px;
+}
+
+/* grid */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+
+/* card */
+
+.card{
+  background:linear-gradient(180deg,#1a1a20,#0f0f14);
+  border:1px solid #2a2a33;
+  border-radius:18px;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  transition:.35s;
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,215,140,.15),transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-6px) scale(1.01);
+  border-color:var(--gold3);
+  box-shadow:0 0 30px rgba(212,175,55,.18);
+}
+
+.card:hover:before{opacity:1}
+
+.badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--gold1),var(--gold2));
+  color:#000;
+  font-weight:700;
+}
+
+.title{
+  font-size:20px;
+  margin:0 0 8px;
+  color:#fff;
+}
+
+.price{
+  font-size:22px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--gold2),#fff1c2);
+  -webkit-background-clip:text;
+  color:transparent;
+  margin-bottom:12px;
+}
+
+.meta{
+  opacity:.7;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.toggle{
+  cursor:pointer;
+  font-size:14px;
+  color:var(--gold2);
+}
+
+.items{
+  max-height:0;
+  overflow:hidden;
+  transition:.35s;
+  font-size:14px;
+  opacity:.85;
+}
+
+.items ul{
+  padding-left:18px;
+  margin:10px 0 0;
+}
+
+.btn{
+  margin-top:16px;
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--gold1),var(--gold2));
+  color:#000;
+  transition:.25s;
+}
+
+.btn:hover{
+  filter:brightness(1.1);
+  box-shadow:0 0 18px rgba(255,215,120,.5);
+}
+
+/* fade in */
+
+.card{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp .6s forwards;
+}
+.card:nth-child(2){animation-delay:.05s}
+.card:nth-child(3){animation-delay:.1s}
+.card:nth-child(4){animation-delay:.15s}
+.card:nth-child(5){animation-delay:.2s}
+
+@keyframes fadeUp{
+  to{opacity:1; transform:none}
+}
+</style>
 </head>
+
 <body>
 
+<div class="container">
 
-<section class="section dark">
-  <h2>MENU & DỊCH VỤ</h2>
+  <div class="header">
+    <h1><i class="fa-solid fa-crown"></i> THE WANN COMBO</h1>
+    <p>Premium Combo Packages • Giá chưa gồm VAT & phí phục vụ</p>
+  </div>
 
-  <p>
-    Menu tại THE WANN bao gồm đa dạng rượu mạnh, champagne,
-    cocktail signature và các combo bàn được thiết kế tối ưu cho từng nhóm khách.
-  </p>
+  <div class="controls">
+    <select id="sort">
+      <option value="asc">Giá thấp → cao</option>
+      <option value="desc">Giá cao → thấp</option>
+    </select>
 
-  <p>
-    • Bàn thường – linh hoạt cho nhóm nhỏ<br>
-    • Bàn VIP – vị trí đẹp, riêng tư<br>
-    • Combo ưu đãi theo sự kiện và ngày đặc biệt
-  </p>
-</section>
+    <select id="filter">
+      <option value="all">Tất cả mức giá</option>
+      <option value="low">Dưới 7 triệu</option>
+      <option value="mid">7–12 triệu</option>
+      <option value="high">Trên 12 triệu</option>
+    </select>
+  </div>
 
-<section class="section dark">
-  <h2>MENU HÌNH ẢNH</h2>
+  <div class="grid" id="grid"></div>
 
-  <div class="menu-gallery" id="menuGallery"></div>
-  <button class="menu-load" id="loadMore">Xem thêm</button>
-</section>
+</div>
 
 <script>
-let current = 0;
-const perLoad = 12;
-const total = 70;
-const gallery = document.getElementById("menuGallery");
-const btn = document.getElementById("loadMore");
+const combos = [
 
-function loadMenu(){
-  for(let i=current+1;i<=current+perLoad && i<=total;i++){
-    const img=document.createElement("img");
-    img.src=`assets/menu/menu-${String(i).padStart(2,'0')}.jpg`;
-    img.loading="lazy";
-    gallery.appendChild(img);
-  }
-  current+=perLoad;
-  if(current>=total) btn.style.display="none";
+/* ===== FOOD / BEER ENTRY ===== */
+
+{
+name:"Combo The Wann Food Set A",
+price:3799,
+badge:"HOT",
+meta:"6–8 khách",
+items:["Gỏi hải sản","Gà nướng","Xôi cua","Mì xào","Trái cây"]
+},
+{
+name:"Combo The Wann Food Set B",
+price:3799,
+meta:"6–8 khách",
+items:["Bò nướng","Cá chiên","Chả giò","Cơm chiên hải sản","Trái cây"]
+},
+{
+name:"Combo Beer Party 18",
+price:4599,
+meta:"18 bia + món nhậu",
+items:["18 bia","Khô gà","Xúc xích","Khoai chiên","Trái cây"]
+},
+{
+name:"Combo Beer Party 24",
+price:5999,
+meta:"24 bia + food set",
+items:["24 bia","Gà quay","Mực chiên","Xôi","Trái cây"]
+},
+
+/* ===== HEINEKEN SET ===== */
+
+{
+name:"Combo Phantom",
+price:6999,
+meta:"24 Heineken + Full food",
+items:["24 Heineken","Bò BBQ","Gà tre","Mì xào","Trái cây"]
+},
+{
+name:"Combo Luxury",
+price:6999,
+meta:"24 Heineken + Premium set",
+items:["24 Heineken","Mực hấp","Bò sốt","Hải sản","Trái cây"]
+},
+{
+name:"Combo Heineken Gold Table",
+price:7599,
+meta:"24 Heineken + VIP snack",
+items:["24 Heineken","Bò lúc lắc","Gà nướng","Snack VIP"]
+},
+
+/* ===== MID WHISKY ===== */
+
+{
+name:"Combo Saturn",
+price:8299,
+meta:"2 Gold Label",
+items:["2 Gold Label","Heo quay","Gà tre","Xôi cua"]
+},
+{
+name:"Combo Gold Celebration",
+price:8899,
+meta:"Gold Label + beer",
+items:["1 Gold Label","12 bia","Set món"]
+},
+{
+name:"Combo Universe",
+price:9599,
+meta:"2 Belaire",
+items:["2 Belaire","Cá chiên","Bò tiêu xanh"]
+},
+{
+name:"Combo Champagne Party",
+price:9399,
+meta:"Fogoso set",
+items:["Fogoso","Snack set","Trái cây"]
+},
+{
+name:"Combo Louis Le Vau",
+price:9639,
+meta:"Champagne set",
+items:["Louis Le Vau","Snack","Fruit"]
+},
+
+/* ===== PREMIUM WHISKY ===== */
+
+{
+name:"Combo Mars",
+price:10119,
+badge:"VIP",
+meta:"2 Chivas 18",
+items:["2 Chivas 18","Tôm hoàng kim","Miến cua"]
+},
+{
+name:"Combo Chivas VIP",
+price:10499,
+meta:"Chivas + beer",
+items:["1 Chivas 18","12 bia","Food set"]
+},
+{
+name:"Combo Jupiter",
+price:10399,
+meta:"2 Hennessy VSOP",
+items:["2 VSOP","Bò wasabi","Mực sashimi"]
+},
+{
+name:"Combo VSOP Gold Night",
+price:11299,
+meta:"VSOP + champagne",
+items:["VSOP","Champagne","Snack"]
+},
+
+/* ===== HIGH TIER ===== */
+
+{
+name:"Combo XO Night",
+price:14899,
+meta:"Hennessy XO set",
+items:["Hennessy XO","Premium food","Fruit VIP"]
+},
+{
+name:"Combo Blue Label Table",
+price:16999,
+meta:"JW Blue + set",
+items:["Blue Label","Hải sản","Snack"]
+},
+
+/* ===== ULTRA VIP ===== */
+
+{
+name:"Combo Dom VIP",
+price:24319,
+badge:"ULTRA VIP",
+meta:"2 Dom Perignon",
+items:["2 Dom","Tôm hùm","Bò dát vàng","Banquet"]
+},
+{
+name:"Combo Royal Ace",
+price:25999,
+badge:"ROYAL",
+meta:"Ace of Spades",
+items:["Ace of Spades","Premium banquet","VIP fruit"]
 }
-btn.onclick=loadMenu;
-loadMenu();
+
+];
 </script>
 
 </body>
