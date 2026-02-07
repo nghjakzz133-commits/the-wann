@@ -1526,6 +1526,39 @@
   z-index: 2;
 }
 
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(58px, 9vw, 110px);
+  font-weight: 800;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+
+  color: transparent;
+  -webkit-text-stroke: 1.2px #fff;
+
+  text-shadow:
+    0 10px 40px rgba(0,0,0,.9);
+}
+
+
+.hero-content {
+  position: relative;
+  transform: translateX(4%);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    transform: translateX(2%);
+  }
+}
+.hero-title {
+  position: relative;
+  left: 2.5%;
+}
+
+
+
+
 </style>
 <link rel="icon" href="logo.png" type="image/png">
   <script type="application/ld+json">
