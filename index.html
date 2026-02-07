@@ -224,15 +224,8 @@
       background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
     }
     
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070') center/cover;
-      animation: kenBurns 20s ease-in-out infinite alternate;
-    }
+    
+    
     
     @keyframes kenBurns {
       0% { transform: scale(1); }
@@ -1487,6 +1480,52 @@
   background: rgba(201,162,77,.06);
 }
 
+/* ===== HERO VIDEO FINAL FIX ===== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: none !important;
+}
+
+/* video background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  filter: brightness(0.6) contrast(1.15) saturate(1.2);
+}
+
+/* overlay tối nhẹ */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.85)
+  );
+}
+
+/* particles nằm trên overlay */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+/* content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
 </style>
 <link rel="icon" href="logo.png" type="image/png">
   <script type="application/ld+json">
@@ -1558,7 +1597,16 @@
 
   <!-- HERO SECTION -->
   <section class="hero" id="home">
-    <div class="hero-bg"></div>
+    <video class="hero-bg"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto">
+  <source src="https://pub-52cf7508df4b4c109b66a730e3ab5569.r2.dev/1JEKCP8S4_725072.mp4" type="video/mp4">
+</video>
+
+
     <div class="hero-overlay"></div>
     <div class="hero-particles" id="particles"></div>
     
