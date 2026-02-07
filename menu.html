@@ -222,41 +222,260 @@ select{
 </div>
 
 <script>
+const iconMap = {
+beer: "fa-beer-mug-empty",
+whisky: "fa-whiskey-glass",
+champagne: "fa-champagne-glasses",
+food: "fa-utensils",
+vip: "fa-crown",
+default: "fa-gem"
+};
+  function detectType(c){
 
+  const text = (c.name + " " + (c.meta||"") + " " + c.items.join(" ")).toLowerCase();
+
+  if(text.includes("heineken") || text.includes("bia")) return "beer";
+  if(text.includes("chivas") || text.includes("vsop") || text.includes("gold label") || text.includes("xo")) return "whisky";
+  if(text.includes("dom") || text.includes("belaire") || text.includes("champagne") || text.includes("fogoso")) return "champagne";
+  if(text.includes("the wann")) return "food";
+  if(c.badge && c.badge.includes("VIP")) return "vip";
+
+  return "default";
+}
 const combos = [
+
+/* ===== COMBO PHANTOM — 6.999 ===== */
 {
 name:"Combo Phantom",
 price:6999,
-type:"beer",
-badge:"HOT",
-meta:"24 Heineken + Full food",
-items:["24 Heineken","Bò BBQ","Gà tre","Mì xào","Trái cây"]
+badge:"BEST SELLER",
+items:[
+"24 Heineken Aluminum",
+"Tôm càng đút lò phô mai",
+"Bò Fuji nướng BBQ",
+"Xôi cua",
+"Cá chẽm sốt Samba",
+"Giò heo thảo mộc",
+"Gà tre mắm nhĩ",
+"Miến xào tôm",
+"Trái cây The Wann"
+]
 },
+
+/* ===== COMBO LUXURY — 6.999 ===== */
+{
+name:"Combo Luxury",
+price:6999,
+badge:"BEST SELLER",
+items:[
+"24 Heineken Aluminum",
+"Mực ống hấp hành gừng",
+"Bò dát vàng sốt tiêu xanh",
+"Cocktail hải sản lớn",
+"Sườn cay Thái Lan",
+"Giò heo mắm nhĩ",
+"Gà tre cơm lam",
+"Mì Ý xào hải sản",
+"Trái cây The Wann"
+]
+},
+
+/* ===== COMBO SATURN — 8.299 ===== */
 {
 name:"Combo Saturn",
 price:8299,
-type:"whisky",
-meta:"2 Gold Label",
-items:["Gold Label","Heo quay","Gà tre","Xôi cua"]
+badge:"BEST SELLER",
+items:[
+"2 chai Gold Label",
+"Trái cây VIP",
+"Heo quay thảo mộc xá tắc",
+"Gà tre nướng mắc mật – cơm lam",
+"Mực ống nướng sốt Thái",
+"Ốc hương hấp sả",
+"Xôi cua"
+]
 },
+
+/* ===== COMBO UNIVERSE — 9.599 ===== */
+{
+name:"Combo Universe",
+price:9599,
+badge:"BEST SELLER",
+items:[
+"2 chai Luc Belaire",
+"Trái cây VIP",
+"Cá chẽm chiên sốt Samba",
+"Bò dát vàng sốt tiêu xanh",
+"Gỏi bưởi tôm mực",
+"Heo quay da giòn Tây Bắc",
+"Mì Phúc Kiến xào hải sản"
+]
+},
+
+/* ===== COMBO MARS — 10.119 ===== */
 {
 name:"Combo Mars",
 price:10119,
-type:"whisky",
-badge:"VIP",
-meta:"2 Chivas 18",
-items:["Chivas 18","Tôm hoàng kim","Miến cua"]
+badge:"BEST SELLER",
+items:[
+"2 chai Chivas 18",
+"Trái cây VIP",
+"Ốc hương sốt trứng muối",
+"Bò Fuji nướng BBQ",
+"Tôm hoàng kim",
+"Miến xào thịt cua",
+"Gà tre nướng lá mắc mật – cơm lam"
+]
 },
-{
-name:"Combo Dom VIP",
-price:24319,
-type:"champagne",
-badge:"ULTRA VIP",
-meta:"2 Dom Perignon",
-items:["Dom","Tôm hùm","Bò dát vàng","Banquet"]
-}
-];
 
+/* ===== COMBO JUPITER — 10.399 ===== */
+{
+name:"Combo Jupiter",
+price:10399,
+badge:"BEST SELLER",
+items:[
+"2 chai Hennessy VSOP",
+"Trái cây VIP",
+"Khai vị The Wann",
+"Mực tê tái",
+"Bò Úc wasabi",
+"Sườn BBQ đút lò",
+"Mì Phúc Kiến xào hải sản"
+]
+},
+
+/* ===== COMBO MERCURY — 24.319 ===== */
+{
+name:"Combo Mercury",
+price:24319,
+badge:"VIP",
+items:[
+"2 chai Dom Perignon",
+"Trái cây VIP",
+"Cocktail hải sản",
+"Bò Fuji dát vàng sốt tiêu xanh",
+"Tôm càng đút lò phô mai",
+"Heo rừng nướng chao",
+"Xôi cua"
+]
+},
+
+/* ===== COMBO LOUIS LE VAU — 9.639 ===== */
+{
+name:"Combo Louis Le Vau",
+price:9639,
+items:[
+"3 chai Louis Le Vau",
+"Trái cây VIP",
+"Ốc hương sốt trứng muối",
+"Bò Fuji nướng BBQ",
+"Tôm hoàng kim",
+"Miến xào thịt cua",
+"Gà tre nướng lá mắc mật – cơm lam",
+"Xôi cua"
+]
+},
+
+/* ===== COMBO FOGOSO — 9.399 ===== */
+{
+name:"Combo Fogoso",
+price:9399,
+badge:"BEST SELLER",
+items:[
+"3 chai Fogoso",
+"Trái cây VIP",
+"Khai vị The Wann",
+"Mực tê tái",
+"Bò Úc wasabi",
+"Sườn BBQ đút lò",
+"Mì Phúc Kiến xào hải sản",
+"Cocktail hải sản size lớn"
+]
+},
+
+/* ===== COMBO THE WANN 1 — 3.799 ===== */
+{
+name:"Combo The Wann 1",
+price:3799,
+badge:"BEST SELLER",
+items:[
+"Gỏi khô mực khai môn",
+"Lườn ngỗng xông khói",
+"Cồi sò điệp măng tây",
+"Sườn heo nướng Tây Bắc cơm lam",
+"Cocktail hải sản lớn",
+"Bò Fuji dát vàng sốt tiêu xanh",
+"Cơm chiên thịt cua",
+"Trái cây The Wann"
+]
+},
+
+/* ===== COMBO THE WANN 2 — 3.799 ===== */
+{
+name:"Combo The Wann 2",
+price:3799,
+badge:"BEST SELLER",
+items:[
+"Gỏi bưởi tôm mực",
+"Chả mực Hạ Long",
+"Xôi cua",
+"Cá tầm nướng",
+"Giò heo thảo mộc",
+"Gà tre nướng mắc mật cơm lam",
+"Mì Ý xào hải sản",
+"Trái cây The Wann"
+]
+},
+
+/* ===== COMBO THE WANN 3 — 3.799 ===== */
+{
+name:"Combo The Wann 3",
+price:3799,
+items:[
+"Gỏi bưởi tôm mực",
+"Bò Úc nướng BBQ",
+"Cocktail hải sản lớn",
+"Cá mú hấp Hongkong",
+"Giò heo thảo mộc",
+"Sò điệp nướng phô mai",
+"Bao tử hầm tiêu",
+"Trái cây The Wann"
+]
+},
+
+/* ===== COMBO THE WANN 4 — 3.799 ===== */
+{
+name:"Combo The Wann 4",
+price:3799,
+items:[
+"Gỏi cá Tây Bắc – cá chép giòn 2 món",
+"Heo quay da giòn",
+"Ốc hương sốt trứng muối",
+"Bò Fuji dát vàng sốt tiêu xanh",
+"Cồi sò điệp măng tây",
+"Cá chẽm sốt Samba",
+"Miến xào tôm",
+"Trái cây The Wann"
+]
+},
+
+/* ===== COMBO THE WANN 5 — 3.799 ===== */
+{
+name:"Combo The Wann 5",
+price:3799,
+items:[
+"Gỏi bưởi tôm mực",
+"Mực ống hấp hành gừng",
+"Xôi cua",
+"Gà tre nướng mắc mật cơm lam",
+"Bò Úc wasabi",
+"Heo rừng nướng chao",
+"Miến xào cua lột",
+"Trái cây The Wann"
+]
+}
+
+];
 const iconMap = {
 beer:"fa-beer-mug-empty",
 whisky:"fa-whiskey-glass",
@@ -268,7 +487,9 @@ const grid = document.getElementById("grid");
 
 function render(list){
   grid.innerHTML = list.map(c=>{
-    const icon = iconMap[c.type] || iconMap.default;
+    
+    const type = detectType(c);
+const icon = iconMap[type] || iconMap.default;
 
     return `
     <div class="card">
@@ -276,9 +497,9 @@ function render(list){
       ${c.badge ? `<div class="badge"><i class="fa-solid fa-crown"></i> ${c.badge}</div>`:""}
 
       <h3 class="title">
-        <i class="fa-solid ${icon}"></i>
-        ${c.name}
-      </h3>
+  <i class="fa-solid ${icon}"></i>
+  ${c.name}
+</h3>
 
       <div class="price">
         <i class="fa-solid fa-coins"></i>
