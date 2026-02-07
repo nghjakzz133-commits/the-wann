@@ -1,37 +1,1551 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>CONTACT | THE WANN</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Liên Hệ & Đặt Bàn - THE WANN | Nightclub Quận 1</title>
+
+  <meta name="description" content="Liên hệ đặt bàn VIP tại THE WANN Nightclub - 51 Bùi Thị Xuân, Quận 1. Hotline: 0778307889 | Zalo: 0373453757. Hỗ trợ 24/7, đặt bàn nhanh chóng.">
+  <meta name="keywords" content="đặt bàn THE WANN, liên hệ THE WANN, booking VIP, hotline nightclub Quận 1">
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F4E4B8;
+      --gold-dark: #B8942F;
+      --red: #DC2626;
+      --red-dark: #991B1B;
+      --black: #0A0A0A;
+      --dark-gray: #1A1A1A;
+      --charcoal: #252525;
+      --white: #FFFFFF;
+      --off-white: #F5F5F5;
+      
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-elegant: 'Cormorant Garamond', serif;
+      
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* ========== LOADING SCREEN ========== */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loader {
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(212, 175, 55, 0.2);
+      border-top: 3px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loader-text {
+      position: absolute;
+      margin-top: 120px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    
+    /* ========== HEADER ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .header .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      text-decoration: none;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 45px;
+      align-items: center;
+    }
+    
+    .nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav a::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      color: var(--gold);
+    }
+    
+    .nav a:hover::before,
+    .nav a.active::before {
+      width: 100%;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--gold);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      height: 50vh;
+      min-height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+      margin-top: 80px;
+    }
+    
+    .page-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074') center/cover;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    
+    .page-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(220,38,38,0.4) 100%);
+    }
+    
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 40px;
+    }
+    
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+    }
+    
+    .page-hero-subtitle {
+      font-family: var(--font-elegant);
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+    
+    /* ========== SECTIONS ========== */
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section.dark {
+      background: var(--dark-gray);
+    }
+    
+    .section.light {
+      background: var(--charcoal);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    
+    .section-subtitle {
+      font-family: var(--font-elegant);
+      font-size: 16px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+    
+    .section-divider {
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 25px;
+    }
+    
+    .section-description {
+      font-size: 17px;
+      color: var(--off-white);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+    
+    /* ========== CONTACT METHODS ========== */
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    
+    .contact-card {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(37, 37, 37, 0.9));
+      padding: 50px 35px;
+      text-align: center;
+      border: 2px solid rgba(212, 175, 55, 0.2);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .contact-card:hover::before {
+      left: 100%;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+    }
+    
+    .contact-icon {
+      font-size: 56px;
+      margin-bottom: 25px;
+      display: inline-block;
+      transition: var(--transition);
+    }
+    
+    .contact-card:hover .contact-icon {
+      transform: scale(1.15) rotate(5deg);
+    }
+    
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--white);
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    
+    .contact-card p {
+      font-size: 15px;
+      color: var(--off-white);
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+    
+    .contact-link {
+      display: inline-block;
+      padding: 15px 35px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    
+    .contact-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    }
+    
+    /* ========== BOOKING MANAGER ========== */
+    .booking-manager {
+      background: linear-gradient(135deg, rgba(37, 37, 37, 0.95), rgba(10, 10, 10, 0.98));
+      border: 2px solid var(--gold);
+      padding: 50px;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .booking-manager::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    
+    .booking-manager-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .manager-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+      object-fit: cover;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .manager-info h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    
+    .manager-role {
+      font-size: 16px;
+      color: var(--off-white);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .manager-quote {
+      font-family: var(--font-elegant);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.8;
+      margin-bottom: 25px;
+      padding-left: 20px;
+      border-left: 3px solid var(--gold);
+    }
+    
+    .manager-stats {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 25px;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: var(--off-white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .manager-contact-btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .manager-btn {
+      padding: 12px 25px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .manager-btn.primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+    
+    .manager-btn.secondary {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+    }
+    
+    .manager-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    .manager-btn.secondary:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    
+    /* ========== CONTACT INFO GRID ========== */
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    
+    .info-card {
+      background: rgba(37, 37, 37, 0.5);
+      padding: 35px;
+      border-left: 4px solid var(--gold);
+      transition: var(--transition);
+    }
+    
+    .info-card:hover {
+      background: rgba(37, 37, 37, 0.8);
+      transform: translateX(10px);
+    }
+    
+    .info-icon {
+      font-size: 40px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    
+    .info-card h4 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    
+    .info-card p {
+      font-size: 15px;
+      color: var(--off-white);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    
+    .info-card a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .info-card a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+    
+    /* ========== MAP SECTION ========== */
+    .map-section {
+      height: 600px;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .map-section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* ========== BOOKING FORM ========== */
+    .booking-form {
+      background: linear-gradient(135deg, rgba(37, 37, 37, 0.9), rgba(10, 10, 10, 0.95));
+      padding: 60px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      color: var(--white);
+      font-size: 15px;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+    
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .form-submit {
+      width: 100%;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+    }
+    
+    .form-note {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    
+    /* ========== SOCIAL PROOF ========== */
+    .social-proof {
+      text-align: center;
+      padding: 60px 0;
+    }
+    
+    .proof-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+    
+    .proof-stat {
+      text-align: center;
+    }
+    
+    .proof-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: var(--gold);
+      font-weight: 900;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .proof-label {
+      font-size: 14px;
+      color: var(--off-white);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--off-white);
+      letter-spacing: 1px;
+    }
+    
+    .trust-badge-icon {
+      font-size: 24px;
+      color: var(--gold);
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--black);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      text-align: center;
+    }
+    
+    .footer p {
+      font-size: 14px;
+      color: var(--off-white);
+      letter-spacing: 1px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    /* ========== FIXED CONTACT BAR ========== */
+    .fixed-contact-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+      border-top: 2px solid var(--gold);
+    }
+    
+    .fc-item {
+      flex: 1;
+      max-width: 200px;
+      padding: 18px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      color: #fff;
+    }
+    
+    .fc-item.call {
+      background: linear-gradient(135deg, #10B981, #059669);
+    }
+    
+    .fc-item.zalo {
+      background: linear-gradient(135deg, #0068FF, #0052CC);
+    }
+    
+    .fc-item.whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+    
+    .fc-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .lux-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: var(--black);
+      z-index: 9999;
+      padding: 80px 40px;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    
+    .lux-menu.active {
+      right: 0;
+    }
+    
+    .lux-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .lux-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lux-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 40px;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .lux-close:hover {
+      transform: rotate(90deg);
+    }
+    
+    .lux-menu a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 28px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+      letter-spacing: 2px;
+    }
+    
+    .lux-menu a:hover {
+      color: var(--gold);
+      padding-left: 20px;
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1200px) {
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+      
+      .booking-manager-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .manager-avatar {
+        margin: 0 auto;
+      }
+      
+      .manager-stats {
+        justify-content: center;
+      }
+      
+      .manager-quote {
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .page-hero-title {
+        font-size: 42px;
+      }
+      
+      .section-title {
+        font-size: 32px;
+      }
+      
+      .contact-info-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .booking-form {
+        padding: 30px 20px;
+      }
+      
+      .proof-stats {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .trust-badges {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .container,
+      .header .container {
+        padding: 0 20px;
+      }
+      
+      .manager-contact-btns {
+        justify-content: center;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-<section class="section dark contact-page" id="contact">
-  <div class="contact-box">
-    <h1>LIÊN HỆ</h1>
-
-    <p><strong>THE WANN Nightclub</strong></p>
-    <p>
-      51 Bùi Thị Xuân, Phường Phạm Ngũ Lão<br>
-      Quận 1, TP.HCM
-    </p>
-
-    <div class="contact-info">
-      <p><strong>Thời gian hoạt động:</strong> 19:00 – 04:00 (Hàng ngày)</p>
-    </div>
-
-    <!-- MAP IMAGE -->
-    <a href="https://maps.google.com/?q=51+Bùi+Thị+Xuân+Quận+1" target="_blank" class="map-preview">
-      <img src="assets/map-the-wann.jpg" alt="Bản đồ THE WANN">
-      <span>Xem trên Google Maps</span>
-    </a>
-
-    <div class="contact-actions">
-      <a href="tel:0778307889" class="contact-btn phone">📞 Gọi Hotline</a>
-      <a href="https://zalo.me/0778307889" target="_blank" class="contact-btn zalo">💬 Zalo</a>
-      <a href="https://wa.me/84778307889" target="_blank" class="contact-btn whatsapp">💬 WhatsApp</a>
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loadingScreen">
+    <div>
+      <div class="loader"></div>
+      <div class="loader-text">THE WANN</div>
     </div>
   </div>
-</section>
+
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">THE WANN</a>
+
+```
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/#features">Services</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/menu">Menu</a>
+    <a href="/contact" class="active">Contact</a>
+  </nav>
+  
+  <button class="menu-toggle" id="menuToggle">☰</button>
+</div>
+```
+
+  </header>
+
+  <!-- MOBILE MENU -->
+
+  <div class="lux-menu" id="luxMenu">
+    <button class="lux-close" id="luxClose">×</button>
+    <a href="/">Trang chủ</a>
+    <a href="/about">Về chúng tôi</a>
+    <a href="/#features">Dịch vụ</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/menu">Menu</a>
+    <a href="/contact">Liên hệ</a>
+  </div>
+  <div class="lux-overlay" id="luxOverlay"></div>
+
+  <!-- PAGE HERO -->
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+
+```
+<div class="page-hero-content">
+  <h1 class="page-hero-title">LIÊN HỆ</h1>
+  <p class="page-hero-subtitle">Booking & Reservation 24/7</p>
+</div>
+```
+
+  </section>
+
+  <!-- CONTACT METHODS -->
+
+  <section class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Get In Touch</div>
+        <h2 class="section-title">Liên Hệ Đặt Bàn</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Chọn cách liên hệ phù hợp với bạn. Đội ngũ của chúng tôi sẵn sàng hỗ trợ 24/7
+        </p>
+      </div>
+
+```
+  <div class="contact-methods">
+    <div class="contact-card">
+      <div class="contact-icon">📞</div>
+      <h3>Hotline</h3>
+      <p>
+        Gọi trực tiếp để đặt bàn nhanh chóng.<br>
+        Hỗ trợ tư vấn 24/7
+      </p>
+      <a href="tel:0778307889" class="contact-link">0778 307 889</a>
+    </div>
+    
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <h3>Zalo</h3>
+      <p>
+        Nhắn tin qua Zalo để được tư vấn<br>
+        chi tiết về bàn VIP & combo
+      </p>
+      <a href="https://zalo.me/0373453757" class="contact-link" target="_blank">Chat Zalo</a>
+    </div>
+    
+    <div class="contact-card">
+      <div class="contact-icon">📱</div>
+      <h3>Facebook</h3>
+      <p>
+        Theo dõi & inbox qua Facebook<br>
+        để nhận ưu đãi mới nhất
+      </p>
+      <a href="https://www.facebook.com/share/1NF2ffcZ9x/" class="contact-link" target="_blank">Messenger</a>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- BOOKING MANAGER -->
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Your Booking Manager</div>
+        <h2 class="section-title">Người Phụ Trách Booking</h2>
+        <div class="section-divider"></div>
+      </div>
+
+```
+  <div class="booking-manager">
+    <div class="booking-manager-content">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=387" 
+           alt="Dương Trọng Nghĩa - Booking Manager" 
+           class="manager-avatar">
+      
+      <div class="manager-info">
+        <h3>Dương Trọng Nghĩa</h3>
+        <div class="manager-role">Booking Manager tại The WANN</div>
+        
+        <div class="manager-quote">
+          "I don't sell time — I deliver value"
+        </div>
+        
+        <div class="manager-stats">
+          <div class="stat">
+            <span class="stat-number">8.4K</span>
+            <span class="stat-label">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">269</span>
+            <span class="stat-label">Following</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+        
+        <div class="manager-contact-btns">
+          <a href="https://zalo.me/0373453757" class="manager-btn primary" target="_blank">
+            💬 Chat Zalo
+          </a>
+          <a href="tel:0778307889" class="manager-btn secondary">
+            📞 Hotline
+          </a>
+          <a href="https://www.facebook.com/share/1NF2ffcZ9x/" class="manager-btn secondary" target="_blank">
+            📘 Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CONTACT INFORMATION -->
+
+  <section class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Information</div>
+        <h2 class="section-title">Thông Tin Liên Hệ</h2>
+        <div class="section-divider"></div>
+      </div>
+
+```
+  <div class="contact-info-grid">
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <h4>Địa chỉ</h4>
+      <p>
+        51-53 Bùi Thị Xuân<br>
+        Phường Bến Thành, Quận 1<br>
+        TP. Hồ Chí Minh, Việt Nam
+      </p>
+    </div>
+    
+    <div class="info-card">
+      <div class="info-icon">🕐</div>
+      <h4>Giờ hoạt động</h4>
+      <p>
+        Hằng ngày: 18:00 - 02:00 sáng<br>
+        Restaurant: 18:00 - 21:00<br>
+        Nightclub: 21:00 - 02:00
+      </p>
+    </div>
+    
+    <div class="info-card">
+      <div class="info-icon">📞</div>
+      <h4>Liên hệ trực tiếp</h4>
+      <p>
+        Hotline: <a href="tel:0778307889">0778 307 889</a><br>
+        Zalo: <a href="https://zalo.me/0373453757" target="_blank">0373 453 757</a><br>
+        Email: booking@thewann.vn
+      </p>
+    </div>
+    
+    <div class="info-card">
+      <div class="info-icon">🚗</div>
+      <h4>Tiện ích</h4>
+      <p>
+        ✓ Bãi đỗ xe miễn phí<br>
+        ✓ Thanh toán thẻ & chuyển khoản<br>
+        ✓ Xuất hóa đơn VAT
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- MAP -->
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Location</div>
+        <h2 class="section-title">Vị Trí Trên Bản Đồ</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Tọa lạc ngay trung tâm Quận 1, thuận tiện di chuyển từ mọi quận huyện
+        </p>
+      </div>
+
+```
+  <div class="map-section">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5373935122957!2d106.69176431533434!3d10.770373062198087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3be3dc26e1%3A0x5a981a5efee9cf32!2zNTEgQsO5aSBUaOG7iyBYdcOibiwgUGjGsOG7nW5nIELhur9uIFRow6BuaCwgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1234567890123!5m2!1svi!2s"
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- BOOKING FORM -->
+
+  <section class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Quick Booking</div>
+        <h2 class="section-title">Form Đặt Bàn Nhanh</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Điền thông tin bên dưới, chúng tôi sẽ liên hệ xác nhận trong vòng 15 phút
+        </p>
+      </div>
+
+```
+  <form class="booking-form" id="bookingForm">
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Họ & Tên *</label>
+        <input type="text" class="form-input" placeholder="Nguyễn Văn A" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Số điện thoại *</label>
+        <input type="tel" class="form-input" placeholder="0912 345 678" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Ngày đặt bàn *</label>
+        <input type="date" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Giờ đến</label>
+        <select class="form-select">
+          <option>18:00</option>
+          <option>19:00</option>
+          <option>20:00</option>
+          <option>21:00</option>
+          <option>22:00</option>
+          <option>23:00</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Số lượng khách</label>
+        <select class="form-select">
+          <option>2-4 người</option>
+          <option>5-8 người</option>
+          <option>9-12 người</option>
+          <option>13-20 người</option>
+          <option>Trên 20 người</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Loại bàn</label>
+        <select class="form-select">
+          <option>Bàn thường</option>
+          <option>Bàn VIP</option>
+          <option>VIP Room</option>
+          <option>Premium VIP Room</option>
+        </select>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="form-label">Ghi chú đặc biệt</label>
+        <textarea class="form-textarea" placeholder="Sinh nhật, tiệc công ty, yêu cầu đặc biệt..."></textarea>
+      </div>
+    </div>
+    
+    <button type="submit" class="form-submit">GỬI YÊU CẦU ĐẶT BÀN</button>
+    
+    <p class="form-note">
+      * Hoặc liên hệ trực tiếp qua Hotline/Zalo để được xác nhận ngay lập tức
+    </p>
+  </form>
+</div>
+```
+
+  </section>
+
+  <!-- SOCIAL PROOF -->
+
+  <section class="section light">
+    <div class="container">
+      <div class="social-proof">
+        <div class="section-header">
+          <div class="section-subtitle">Trust & Credibility</div>
+          <h2 class="section-title">Tại Sao Chọn THE WANN</h2>
+          <div class="section-divider"></div>
+        </div>
+
+```
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <span class="proof-number">5000+</span>
+        <span class="proof-label">Khách hàng hài lòng</span>
+      </div>
+      
+      <div class="proof-stat">
+        <span class="proof-number">300+</span>
+        <span class="proof-label">Sự kiện thành công</span>
+      </div>
+      
+      <div class="proof-stat">
+        <span class="proof-number">4.8/5</span>
+        <span class="proof-label">Đánh giá trung bình</span>
+      </div>
+    </div>
+    
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <span class="trust-badge-icon">✓</span>
+        <span>Hỗ trợ 24/7</span>
+      </div>
+      
+      <div class="trust-badge">
+        <span class="trust-badge-icon">✓</span>
+        <span>Booking nhanh chóng</span>
+      </div>
+      
+      <div class="trust-badge">
+        <span class="trust-badge-icon">✓</span>
+        <span>Đội ngũ chuyên nghiệp</span>
+      </div>
+      
+      <div class="trust-badge">
+        <span class="trust-badge-icon">✓</span>
+        <span>Cam kết chất lượng</span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Trang chủ</a>
+        <a href="/about">Về chúng tôi</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/menu">Menu</a>
+        <a href="/contact">Liên hệ</a>
+      </div>
+      <p>© 2026 THE WANN Nightclub & Bar. All rights reserved.</p>
+      <p style="margin-top: 15px; font-size: 13px;">
+        📍 51-53 Bùi Thị Xuân, Quận 1, TP.HCM | 📞 0778 307 889 | 💬 Zalo: 0373 453 757
+      </p>
+    </div>
+  </footer>
+
+  <!-- FIXED CONTACT BAR -->
+
+  <div class="fixed-contact-bar">
+    <a href="tel:0778307889" class="fc-item call">
+      📞 <span>Gọi ngay</span>
+    </a>
+    <a href="https://zalo.me/0373453757" class="fc-item zalo" target="_blank">
+      💬 <span>Zalo</span>
+    </a>
+    <a href="https://www.facebook.com/share/1NF2ffcZ9x/" class="fc-item whatsapp" target="_blank">
+      📘 <span>Facebook</span>
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // ========== MOBILE MENU ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const luxMenu = document.getElementById('luxMenu');
+    const luxClose = document.getElementById('luxClose');
+    const luxOverlay = document.getElementById('luxOverlay');
+
+    const openMenu = () => {
+      luxMenu.classList.add('active');
+      luxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      luxMenu.classList.remove('active');
+      luxOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (menuToggle) menuToggle.addEventListener('click', openMenu);
+    if (luxClose) luxClose.addEventListener('click', closeMenu);
+    if (luxOverlay) luxOverlay.addEventListener('click', closeMenu);
+
+    // ========== FORM SUBMISSION ==========
+    const bookingForm = document.getElementById('bookingForm');
+    
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const name = bookingForm.querySelector('input[type="text"]').value;
+        const phone = bookingForm.querySelector('input[type="tel"]').value;
+        const date = bookingForm.querySelector('input[type="date"]').value;
+        const time = bookingForm.querySelector('select').value;
+        const guests = bookingForm.querySelectorAll('select')[1].value;
+        const tableType = bookingForm.querySelectorAll('select')[2].value;
+        const notes = bookingForm.querySelector('textarea').value;
+        
+        // Create Zalo message
+        const message = `🎉 ĐẶT BÀN MỚI
+        
+👤 Tên: ${name}
+📞 SĐT: ${phone}
+📅 Ngày: ${date}
+🕐 Giờ: ${time}
+👥 Số khách: ${guests}
+🪑 Loại bàn: ${tableType}
+📝 Ghi chú: ${notes || 'Không có'}
+
+Vui lòng xác nhận booking giúp em. Cảm ơn anh/chị!`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://zalo.me/0373453757?text=${encodedMessage}`, '_blank');
+        
+        // Show success message
+        alert('Đang chuyển sang Zalo để xác nhận booking. Cảm ơn bạn đã chọn THE WANN!');
+      });
+    }
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // ========== SCROLL ANIMATIONS ==========
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements
+    document.querySelectorAll('.contact-card, .info-card, .booking-manager').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(30px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+
+    // ========== COUNTER ANIMATION ==========
+    const animateCounter = (element, target) => {
+      let current = 0;
+      const increment = target / 100;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target.toString().includes('.') ? target : target + '+';
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 20);
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          const numbers = entry.target.querySelectorAll('.proof-number, .stat-number');
+          
+          numbers.forEach(num => {
+            const text = num.textContent;
+            let value;
+            
+            if (text.includes('K')) {
+              value = parseFloat(text) * 1000;
+            } else if (text.includes('/')) {
+              value = parseFloat(text);
+            } else {
+              value = parseInt(text);
+            }
+            
+            if (!isNaN(value)) {
+              num.textContent = '0';
+              animateCounter(num, value);
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.social-proof, .booking-manager').forEach(section => {
+      statsObserver.observe(section);
+    });
+  </script>
+
 </body>
 </html>
