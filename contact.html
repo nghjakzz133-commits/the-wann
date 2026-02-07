@@ -1014,6 +1014,51 @@
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+
+  /* Reset container cho cân tuyệt đối */
+  .booking-manager,
+  .booking-manager-content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Căn giữa toàn bộ khối */
+  .booking-manager-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateX(0);
+  }
+
+  /* Avatar center tuyệt đối */
+  .manager-avatar {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+
+  /* Text + info center */
+  .manager-info {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Stats cân đều */
+  .manager-stats {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Nếu có border vàng bên trái → tắt trên mobile */
+  .booking-manager::before,
+  .booking-manager::after {
+    display: none !important;
+  }
+}
 </style>
 
 </head>
