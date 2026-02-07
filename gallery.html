@@ -829,7 +829,42 @@
         font-size: 40px;
       }
     }
-  </style>
+  .logo a {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: linear-gradient(
+    90deg,
+    #c9a14a,
+    #f5e6b8,
+    #c9a14a
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+/* underline sang */
+.logo a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a14a, transparent);
+  transform: translateX(-50%);
+}
+
+/* hover nhẹ */
+.logo a:hover {
+  text-shadow: 0 0 8px rgba(201, 161, 74, 0.5);
+}
+</style>
 </head>
 
 <body>
@@ -842,22 +877,25 @@
   </div>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <a href="/" class="logo">THE WANN</a>
-      
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/#features">Services</a>
-        <a href="/gallery" class="active">Gallery</a>
-        <a href="/#menu">Menu</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-      
-      <button class="menu-toggle" id="menuToggle">☰</button>
+ <header class="header" id="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">THE WANN</a>
     </div>
-  </header>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+
 
   <!-- MOBILE MENU -->
   <div class="lux-menu" id="luxMenu">
