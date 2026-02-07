@@ -1080,7 +1080,178 @@
 .logo a:hover {
   text-shadow: 0 0 8px rgba(201, 161, 74, 0.5);
 }
-</style>
+
+/* === LUXURY CONTACT BAR REWORK === */
+.fixed-contact-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(5,5,5,.85),
+    rgba(0,0,0,.98)
+  );
+  backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(212,175,55,.35);
+  box-shadow: 0 -20px 60px rgba(0,0,0,.9);
+}
+
+/* bỏ màu xanh – xanh lá – xanh dương blog */
+.fc-item {
+  background: transparent !important;
+  color: var(--gold) !important;
+  font-family: var(--font-display);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: relative;
+}
+
+/* đường ngăn tinh tế */
+.fc-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  width: 1px;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(212,175,55,.4),
+    transparent
+  );
+}
+
+/* hover kiểu VIP – không nhảy màu */
+.fc-item:hover {
+  background: rgba(212,175,55,.08) !important;
+  box-shadow: inset 0 0 30px rgba(212,175,55,.15);
+  transform: translateY(-2px);
+}
+
+/* icon + chữ tách nhịp sang */
+.fc-item span {
+  font-family: var(--font-elegant);
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+/* icon không emoji màu mè */
+.fc-item::first-letter {
+  filter: grayscale(1);
+}
+/* === ALIGN CONTACT BAR – LUXURY TUNING === */
+
+.fixed-contact-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* mỗi nút */
+.fixed-contact-bar a,
+.fixed-contact-bar .fc-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 0;
+  color: #c9a24d;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  position: relative;
+}
+
+/* icon */
+.fixed-contact-bar i,
+.fixed-contact-bar svg {
+  font-size: 14px;
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+/* divider tinh tế giữa các nút */
+.fixed-contact-bar a:not(:last-child)::after,
+.fixed-contact-bar .fc-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(201,162,77,.45),
+    transparent
+  );
+}
+
+/* hover rất nhẹ */
+.fixed-contact-bar a:hover {
+  background: rgba(201,162,77,.05);
+}
+/* === FLOATING LUXURY CONTACT BAR === */
+
+.fixed-contact-bar,
+[class*="contact"][class*="bar"] {
+  position: fixed;
+  bottom: 20px;               /* tách khỏi đáy */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);   /* chừa khoảng thở 2 bên */
+  max-width: 520px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(15,15,15,.85),
+    rgba(0,0,0,.95)
+  ) !important;
+
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(201,162,77,.35);
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.8),
+    inset 0 0 25px rgba(201,162,77,.08);
+
+  z-index: 9999;
+}
+.fixed-contact-bar a,
+.fixed-contact-bar .fc-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 0;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #c9a24d !important;
+  text-transform: uppercase;
+}
+.fixed-contact-bar a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(201,162,77,.4),
+    transparent
+  );
+}
+.fixed-contact-bar a:hover {
+  background: rgba(201,162,77,.06);
+}</style>
 <link rel="icon" href="logo.png" type="image/png">
 </head>
 
