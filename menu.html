@@ -1,565 +1,2035 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>THE WANN – Combo Menu</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <title>Menu - THE WANN | Premium Nightclub & Bar Quận 1</title>
 
-<style>
-:root{
-  --gold1:#cfae70;
-  --gold2:#f5d48a;
-  --gold3:#9c7a3c;
-  --bg:#0b0b0e;
-  --card:#141419;
-}
+  <meta name="description" content="Menu đồ uống, cocktails, rượu cao cấp và món ăn fusion tại THE WANN Nightclub - 51 Bùi Thị Xuân, Quận 1">
+  <meta name="keywords" content="THE WANN menu, menu nightclub, rượu cao cấp, cocktails, bia tươi, fusion food">
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:radial-gradient(circle at top,#111,#050507 60%);
-  color:#eee;
-  font-family:system-ui,Segoe UI,Arial;
-}
+  <!-- GOOGLE FONTS -->
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.header{
-  text-align:center;
-  margin-bottom:40px;
-}
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F4E4B8;
+      --gold-dark: #B8942F;
+      --red: #DC2626;
+      --red-dark: #991B1B;
+      --black: #0A0A0A;
+      --dark-gray: #1A1A1A;
+      --charcoal: #252525;
+      --white: #FFFFFF;
+      --off-white: #F5F5F5;
+      
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-elegant: 'Cormorant Garamond', serif;
+      
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* ========== LOADING SCREEN ========== */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loader {
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(212, 175, 55, 0.2);
+      border-top: 3px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loader-text {
+      position: absolute;
+      margin-top: 120px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    
+    /* ========== HEADER ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .header .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      text-decoration: none;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 45px;
+      align-items: center;
+    }
+    
+    .nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav a::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      color: var(--gold);
+    }
+    
+    .nav a:hover::before,
+    .nav a.active::before {
+      width: 100%;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--gold);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      height: 60vh;
+      min-height: 500px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+      margin-top: 80px;
+    }
+    
+    .page-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070') center/cover;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    
+    .page-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(220,38,38,0.4) 100%);
+    }
+    
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 40px;
+    }
+    
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+    }
+    
+    .page-hero-subtitle {
+      font-family: var(--font-elegant);
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+    
+    .menu-notice {
+      font-size: 14px;
+      color: var(--off-white);
+      background: rgba(220, 38, 38, 0.2);
+      padding: 10px 25px;
+      border: 1px solid var(--red);
+      display: inline-block;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+    
+    /* ========== FILTER SECTION ========== */
+    .filter-section {
+      padding: 40px 0;
+      background: var(--dark-gray);
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 12px 25px;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* ========== MENU SECTION ========== */
+    .menu-section {
+      padding: 80px 0;
+      background: var(--black);
+    }
+    
+    .menu-category-section {
+      margin-bottom: 100px;
+      display: none;
+    }
+    
+    .menu-category-section.active {
+      display: block;
+      animation: fadeIn 0.6s ease;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .category-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .category-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .category-title {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: var(--white);
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .category-divider {
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto;
+    }
+    
+    .category-description {
+      font-size: 16px;
+      color: var(--off-white);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* ========== MENU ITEMS GRID ========== */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .menu-item {
+      background: linear-gradient(135deg, rgba(37, 37, 37, 0.8), rgba(26, 26, 26, 0.9));
+      padding: 30px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .menu-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .menu-item:hover::before {
+      left: 100%;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+    }
+    
+    .menu-item.bestseller {
+      border: 2px solid var(--gold);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(37, 37, 37, 0.9));
+    }
+    
+    .bestseller-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      padding: 5px 15px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 3px 15px rgba(212, 175, 55, 0.5);
+    }
+    
+    .new-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--white);
+      padding: 5px 15px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 3px 15px rgba(220, 38, 38, 0.5);
+    }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .item-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--white);
+      flex: 1;
+      line-height: 1.3;
+    }
+    
+    .item-price {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-left: 20px;
+      white-space: nowrap;
+    }
+    
+    .item-description {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    
+    .item-meta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .item-tag {
+      font-size: 11px;
+      padding: 4px 12px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    /* ========== COMBO PACKAGES ========== */
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .combo-card {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(37, 37, 37, 0.9));
+      padding: 40px 30px;
+      border: 2px solid rgba(220, 38, 38, 0.3);
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .combo-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(135deg, var(--red), transparent);
+      transition: height 0.4s ease;
+      z-index: 0;
+    }
+    
+    .combo-card:hover::after {
+      height: 100%;
+    }
+    
+    .combo-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--red);
+      box-shadow: 0 15px 50px rgba(220, 38, 38, 0.4);
+    }
+    
+    .combo-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .combo-icon {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+    
+    .combo-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--white);
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+    
+    .combo-price {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .combo-includes {
+      text-align: left;
+      margin: 25px 0;
+    }
+    
+    .combo-includes h4 {
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .combo-item {
+      font-size: 13px;
+      color: var(--off-white);
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .combo-item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    
+    .combo-btn {
+      padding: 12px 30px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+      margin-top: 15px;
+    }
+    
+    .combo-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+    }
+    
+    /* ========== QUICK ORDER PANEL ========== */
+    .quick-order {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      width: 350px;
+      background: rgba(10, 10, 10, 0.98);
+      border: 2px solid var(--gold);
+      padding: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      z-index: 500;
+      transform: translateX(400px);
+      transition: var(--transition);
+    }
+    
+    .quick-order.active {
+      transform: translateX(0);
+    }
+    
+    .quick-order-toggle {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border: none;
+      border-radius: 50%;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+      z-index: 501;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .quick-order-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    .quick-order h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .order-summary {
+      font-size: 14px;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .order-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--white);
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    
+    .order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(220, 38, 38, 0.5);
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--black);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      text-align: center;
+    }
+    
+    .footer p {
+      font-size: 14px;
+      color: var(--off-white);
+      letter-spacing: 1px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    /* ========== FIXED CONTACT BAR ========== */
+    .fixed-contact-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+      border-top: 2px solid var(--gold);
+    }
+    
+    .fc-item {
+      flex: 1;
+      max-width: 200px;
+      padding: 18px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      color: #fff;
+    }
+    
+    .fc-item.call {
+      background: linear-gradient(135deg, #10B981, #059669);
+    }
+    
+    .fc-item.zalo {
+      background: linear-gradient(135deg, #0068FF, #0052CC);
+    }
+    
+    .fc-item.whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+    
+    .fc-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .lux-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: var(--black);
+      z-index: 9999;
+      padding: 80px 40px;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    
+    .lux-menu.active {
+      right: 0;
+    }
+    
+    .lux-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .lux-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lux-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 40px;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .lux-close:hover {
+      transform: rotate(90deg);
+    }
+    
+    .lux-menu a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 28px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+      letter-spacing: 2px;
+    }
+    
+    .lux-menu a:hover {
+      color: var(--gold);
+      padding-left: 20px;
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1200px) {
+      .combo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .page-hero-title {
+        font-size: 42px;
+      }
+      
+      .menu-grid,
+      .combo-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .filter-controls {
+        gap: 10px;
+      }
+      
+      .filter-btn {
+        padding: 10px 15px;
+        font-size: 11px;
+      }
+      
+      .container,
+      .header .container {
+        padding: 0 20px;
+      }
+      
+      .quick-order {
+        display: none;
+      }
+      
+      .quick-order-toggle {
+        display: none;
+      }
+    }
+  </style>
 
-.header h1{
-  margin:0;
-  font-size:42px;
-  letter-spacing:2px;
-  background:linear-gradient(90deg,var(--gold1),var(--gold2));
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.header p{
-  opacity:.7;
-  margin-top:10px;
-}
-
-/* controls */
-
-.controls{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-bottom:35px;
-}
-
-select{
-  background:#111;
-  border:1px solid #333;
-  color:#ddd;
-  padding:10px 14px;
-  border-radius:8px;
-}
-
-/* grid */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
-}
-
-/* card */
-
-.card{
-  background:linear-gradient(180deg,#1a1a20,#0f0f14);
-  border:1px solid #2a2a33;
-  border-radius:18px;
-  padding:22px;
-  position:relative;
-  overflow:hidden;
-  transition:.35s;
-}
-
-.card:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(255,215,140,.15),transparent);
-  opacity:0;
-  transition:.4s;
-}
-
-.card:hover{
-  transform:translateY(-6px) scale(1.01);
-  border-color:var(--gold3);
-  box-shadow:0 0 30px rgba(212,175,55,.18);
-}
-
-.card:hover:before{opacity:1}
-
-.badge{
-  position:absolute;
-  top:14px;
-  right:14px;
-  font-size:12px;
-  padding:5px 10px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--gold1),var(--gold2));
-  color:#000;
-  font-weight:700;
-}
-
-.title{
-  font-size:20px;
-  margin:0 0 8px;
-  color:#fff;
-}
-
-.price{
-  font-size:22px;
-  font-weight:800;
-  background:linear-gradient(90deg,var(--gold2),#fff1c2);
-  -webkit-background-clip:text;
-  color:transparent;
-  margin-bottom:12px;
-}
-
-.meta{
-  opacity:.7;
-  font-size:14px;
-  margin-bottom:12px;
-}
-
-.toggle{
-  cursor:pointer;
-  font-size:14px;
-  color:var(--gold2);
-}
-
-.items{
-  max-height:0;
-  overflow:hidden;
-  transition:.35s;
-  font-size:14px;
-  opacity:.85;
-}
-
-.items ul{
-  padding-left:18px;
-  margin:10px 0 0;
-}
-
-.btn{
-  margin-top:16px;
-  display:inline-block;
-  width:100%;
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  letter-spacing:.5px;
-  background:linear-gradient(90deg,var(--gold1),var(--gold2));
-  color:#000;
-  transition:.25s;
-}
-
-.btn:hover{
-  filter:brightness(1.1);
-  box-shadow:0 0 18px rgba(255,215,120,.5);
-}
-
-/* fade in */
-
-.card{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp .6s forwards;
-}
-.card:nth-child(2){animation-delay:.05s}
-.card:nth-child(3){animation-delay:.1s}
-.card:nth-child(4){animation-delay:.15s}
-.card:nth-child(5){animation-delay:.2s}
-
-@keyframes fadeUp{
-  to{opacity:1; transform:none}
-}
-</style>
 </head>
 
 <body>
-
-<div class="container">
-
-  <div class="header">
-    <h1><i class="fa-solid fa-crown"></i> THE WANN COMBO</h1>
-    <p>Premium Combo Packages • Giá chưa gồm VAT & phí phục vụ</p>
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loadingScreen">
+    <div>
+      <div class="loader"></div>
+      <div class="loader-text">THE WANN</div>
+    </div>
   </div>
 
-  <div class="controls">
-    <select id="sort">
-      <option value="asc">Giá thấp → cao</option>
-      <option value="desc">Giá cao → thấp</option>
-    </select>
+  <!-- HEADER -->
 
-    <select id="filter">
-      <option value="all">Tất cả mức giá</option>
-      <option value="low">Dưới 7 triệu</option>
-      <option value="mid">7–12 triệu</option>
-      <option value="high">Trên 12 triệu</option>
-    </select>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">THE WANN</a>
+
+```
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/#features">Services</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/menu" class="active">Menu</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  
+  <button class="menu-toggle" id="menuToggle">☰</button>
+</div>
+```
+
+  </header>
+
+  <!-- MOBILE MENU -->
+
+  <div class="lux-menu" id="luxMenu">
+    <button class="lux-close" id="luxClose">×</button>
+    <a href="/">Trang chủ</a>
+    <a href="/about">Về chúng tôi</a>
+    <a href="/#features">Dịch vụ</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/menu">Menu</a>
+    <a href="/#contact">Liên hệ</a>
+  </div>
+  <div class="lux-overlay" id="luxOverlay"></div>
+
+  <!-- PAGE HERO -->
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+
+```
+<div class="page-hero-content">
+  <h1 class="page-hero-title">MENU</h1>
+  <p class="page-hero-subtitle">Premium Drinks & Fusion Cuisine</p>
+  <div class="menu-notice">Giá menu chưa bao gồm 10% VAT và 7% phí phục vụ</div>
+</div>
+```
+
+  </section>
+
+  <!-- FILTER SECTION -->
+
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">
+          <span>🍽️</span> Tất cả
+        </button>
+        <button class="filter-btn" data-category="combos">
+          <span>🎁</span> Combo Hot
+        </button>
+        <button class="filter-btn" data-category="whisky">
+          <span>🥃</span> Whisky & Cognac
+        </button>
+        <button class="filter-btn" data-category="champagne">
+          <span>🍾</span> Champagne & Wine
+        </button>
+        <button class="filter-btn" data-category="vodka">
+          <span>❄️</span> Vodka & Gin
+        </button>
+        <button class="filter-btn" data-category="cocktails">
+          <span>🍹</span> Cocktails
+        </button>
+        <button class="filter-btn" data-category="beer">
+          <span>🍺</span> Bia & Nước
+        </button>
+        <button class="filter-btn" data-category="food">
+          <span>🍖</span> Món ăn
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+
+  <section class="menu-section">
+    <div class="container">
+
+```
+  <!-- ========== COMBO PACKAGES ========== -->
+  <div class="menu-category-section active" data-category="combos">
+    <div class="category-header">
+      <div class="category-icon">🎁</div>
+      <h2 class="category-title">Combo Packages</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Tiết kiệm hơn với các gói combo được thiết kế đặc biệt cho nhóm bạn, tiệc sinh nhật và sự kiện
+      </p>
+    </div>
+    
+    <div class="combo-grid">
+      <div class="combo-card">
+        <div class="combo-icon">🎉</div>
+        <h3 class="combo-name">PARTY STARTER</h3>
+        <div class="combo-price">2.500.000đ</div>
+        <div class="combo-includes">
+          <h4>Bao gồm:</h4>
+          <div class="combo-item">1 chai Chivas 12 hoặc Johnnie Walker Black</div>
+          <div class="combo-item">6 lon bia Tiger/Heineken</div>
+          <div class="combo-item">1 bình nước khoáng lớn</div>
+          <div class="combo-item">2 dĩa snacks mix</div>
+          <div class="combo-item">Bàn VIP cho 6-8 người</div>
+        </div>
+        <button class="combo-btn" onclick="bookCombo('Party Starter')">ĐẶT BÀN NGAY</button>
+      </div>
+      
+      <div class="combo-card">
+        <div class="combo-icon">👑</div>
+        <h3 class="combo-name">VIP PREMIUM</h3>
+        <div class="combo-price">4.800.000đ</div>
+        <div class="combo-includes">
+          <h4>Bao gồm:</h4>
+          <div class="combo-item">1 chai Hennessy VSOP hoặc Moët Chandon</div>
+          <div class="combo-item">12 lon bia cao cấp</div>
+          <div class="combo-item">2 bình nước khoáng</div>
+          <div class="combo-item">Fruit platter cao cấp</div>
+          <div class="combo-item">VIP Room riêng tư cho 10-12 người</div>
+        </div>
+        <button class="combo-btn" onclick="bookCombo('VIP Premium')">ĐẶT BÀN NGAY</button>
+      </div>
+      
+      <div class="combo-card">
+        <div class="combo-icon">💎</div>
+        <h3 class="combo-name">DIAMOND ELITE</h3>
+        <div class="combo-price">8.500.000đ</div>
+        <div class="combo-includes">
+          <h4>Bao gồm:</h4>
+          <div class="combo-item">1 chai Dom Pérignon hoặc Hennessy XO</div>
+          <div class="combo-item">18 lon bia imported</div>
+          <div class="combo-item">3 bình nước khoáng</div>
+          <div class="combo-item">Deluxe food platter</div>
+          <div class="combo-item">Premium VIP Room 15-20 người</div>
+          <div class="combo-item">Priority service + MC hỗ trợ</div>
+        </div>
+        <button class="combo-btn" onclick="bookCombo('Diamond Elite')">ĐẶT BÀN NGAY</button>
+      </div>
+    </div>
   </div>
 
-  <div class="grid" id="grid"></div>
+  <!-- ========== WHISKY & COGNAC ========== -->
+  <div class="menu-category-section" data-category="whisky">
+    <div class="category-header">
+      <div class="category-icon">🥃</div>
+      <h2 class="category-title">Whisky & Cognac</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Bộ sưu tập rượu whisky và cognac cao cấp từ các thương hiệu nổi tiếng thế giới
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Chivas Regal 12 Years</h3>
+          <div class="item-price">1.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Scotch whisky pha trộn cao cấp, hương vị mượt mà với notes của mật ong, vani và trái cây chín
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Johnnie Walker Black Label</h3>
+          <div class="item-price">1.900.000đ</div>
+        </div>
+        <p class="item-description">
+          Blended Scotch whisky 12 năm tuổi với hương thơm của trái cây chín, vani và khói nhẹ
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Chivas Regal 18 Years</h3>
+          <div class="item-price">3.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Scotch whisky ủ 18 năm với hương vị phức tạp của sô-cô-la đen, cam quýt và hạt phỉ
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Johnnie Walker Blue Label</h3>
+          <div class="item-price">6.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Đỉnh cao của dòng Johnnie Walker, blend từ những loại whisky quý hiếm nhất
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">Ultra Premium</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Hennessy VSOP</h3>
+          <div class="item-price">3.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Cognac Very Superior Old Pale với hương vị vani, mận chín và gỗ sồi tinh tế
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Hennessy XO</h3>
+          <div class="item-price">7.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Extra Old Cognac cao cấp với độ phức tạp tuyệt vời, ủ tối thiểu 10 năm
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Premium</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Macallan 12 Years Double Cask</h3>
+          <div class="item-price">4.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Single malt Scotch whisky ủ trong thùng gỗ sồi Mỹ và Châu Âu, hương vị phong phú
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">Single Malt</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Glenfiddich 12 Years</h3>
+          <div class="item-price">2.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Single malt whisky với hương vị lê, táo xanh và subtle mật ong
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CHAMPAGNE & WINE ========== -->
+  <div class="menu-category-section" data-category="champagne">
+    <div class="category-header">
+      <div class="category-icon">🍾</div>
+      <h2 class="category-title">Champagne & Wine</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Champagne và rượu vang cao cấp cho những dịp đặc biệt và celebration
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Moët & Chandon Impérial Brut</h3>
+          <div class="item-price">4.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Champagne iconic từ Pháp với notes của táo xanh, lê và hương hoa nhẹ nhàng
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Brut</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Dom Pérignon Vintage</h3>
+          <div class="item-price">14.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Prestige cuvée champagne huyền thoại, chỉ sản xuất từ những năm vintage xuất sắc
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Ultra Premium</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Veuve Clicquot Yellow Label</h3>
+          <div class="item-price">4.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Champagne nổi tiếng với nhãn vàng đặc trưng, vị cân bằng và tinh tế
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Brut</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Veuve Clicquot Rosé</h3>
+          <div class="item-price">5.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Champagne hồng sang trọng với hương vị quả mọng đỏ và hoa hồng tươi
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Rosé</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Armand de Brignac Gold (Ace of Spades)</h3>
+          <div class="item-price">22.000.000đ</div>
+        </div>
+        <p class="item-description">
+          Champagne ultra-luxury với chai màu vàng iconic, yêu thích của các celebrities
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Prestige Cuvée</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Louis Roederer Cristal</h3>
+          <div class="item-price">19.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Champagne prestige huyền thoại với chai pha lê đặc trưng, vị tinh tế tuyệt vời
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Luxury</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Red Wine - Château Margaux</h3>
+          <div class="item-price">8.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Bordeaux đỏ cao cấp từ First Growth vineyard, hương vị phức tạp và thanh lịch
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">Bordeaux</span>
+          <span class="item-tag">First Growth</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">White Wine - Cloudy Bay Sauvignon Blanc</h3>
+          <div class="item-price">2.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Rượu vang trắng từ New Zealand, tươi mát với hương chanh leo và cỏ cắt mới
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">750ml</span>
+          <span class="item-tag">New Zealand</span>
+          <span class="item-tag">Crisp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== VODKA & GIN ========== -->
+  <div class="menu-category-section" data-category="vodka">
+    <div class="category-header">
+      <div class="category-icon">❄️</div>
+      <h2 class="category-title">Vodka & Gin</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Vodka premium và gin craft cho những ly cocktail hoàn hảo
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Grey Goose Vodka</h3>
+          <div class="item-price">2.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka premium từ Pháp, siêu mượt với hương vị tinh khiết và thanh lịch
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Belvedere Vodka</h3>
+          <div class="item-price">3.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka luxury từ Ba Lan, distilled 4 lần từ 100% Rye, vị mượt mà độc đáo
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Poland</span>
+          <span class="item-tag">Premium</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Absolut Vodka</h3>
+          <div class="item-price">1.400.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka classic từ Thụy Điển, vị tinh khiết và versatile cho mọi cocktail
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Sweden</span>
+          <span class="item-tag">40% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Ciroc Ultra Premium Vodka</h3>
+          <div class="item-price">3.500.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka độc đáo làm từ nho Pháp, hương vị nhẹ nhàng và sang trọng
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">France</span>
+          <span class="item-tag">Grape-based</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Bombay Sapphire Gin</h3>
+          <div class="item-price">1.600.000đ</div>
+        </div>
+        <p class="item-description">
+          London Dry Gin với 10 loại botanicals, hương vị cân bằng hoàn hảo
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">England</span>
+          <span class="item-tag">47% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Hendrick's Gin</h3>
+          <div class="item-price">2.200.000đ</div>
+        </div>
+        <p class="item-description">
+          Scottish gin độc đáo với essence của dưa chuột và hoa hồng
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">Scotland</span>
+          <span class="item-tag">Unique</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Tanqueray No. TEN</h3>
+          <div class="item-price">1.900.000đ</div>
+        </div>
+        <p class="item-description">
+          Premium gin với whole fresh citrus, ideal cho classic martinis
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">700ml</span>
+          <span class="item-tag">England</span>
+          <span class="item-tag">47.3% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Monkey 47 Schwarzwald Dry Gin</h3>
+          <div class="item-price">2.800.000đ</div>
+        </div>
+        <p class="item-description">
+          Craft gin từ Đức với 47 botanicals, phức tạp và độc đáo
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">500ml</span>
+          <span class="item-tag">Germany</span>
+          <span class="item-tag">Craft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== COCKTAILS ========== -->
+  <div class="menu-category-section" data-category="cocktails">
+    <div class="category-header">
+      <div class="category-icon">🍹</div>
+      <h2 class="category-title">Signature Cocktails</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Cocktails thủ công từ bartenders chuyên nghiệp của THE WANN
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Signature</span>
+        <div class="item-header">
+          <h3 class="item-name">THE WANN Signature</h3>
+          <div class="item-price">280.000đ</div>
+        </div>
+        <p class="item-description">
+          Cocktail độc quyền của THE WANN: Vodka, Lychee liqueur, Elderflower, Fresh lime, Prosecco
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Original Recipe</span>
+          <span class="item-tag">Sparkling</span>
+        </div>
+      </div>
+      
+      <div class="menu-item new">
+        <span class="new-badge">🆕 NEW</span>
+        <div class="item-header">
+          <h3 class="item-name">Red Dragon</h3>
+          <div class="item-price">250.000đ</div>
+        </div>
+        <p class="item-description">
+          Tequila, Dragon fruit, Agave syrup, Fresh lime, Chili rim - spicy & exotic
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Spicy</span>
+          <span class="item-tag">Exotic</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Mojito Classic</h3>
+          <div class="item-price">200.000đ</div>
+        </div>
+        <p class="item-description">
+          White rum, Fresh mint leaves, Lime juice, Sugar, Soda water - tươi mát
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Refreshing</span>
+          <span class="item-tag">Classic</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Cosmopolitan</h3>
+          <div class="item-price">220.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka, Cointreau, Cranberry juice, Fresh lime - sexy & sophisticated
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Fruity</span>
+          <span class="item-tag">Elegant</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Long Island Iced Tea</h3>
+          <div class="item-price">240.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka, Rum, Tequila, Gin, Triple sec, Cola, Lemon - strong & legendary
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Strong</span>
+          <span class="item-tag">Party Favorite</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Margarita</h3>
+          <div class="item-price">210.000đ</div>
+        </div>
+        <p class="item-description">
+          Tequila, Triple sec, Fresh lime juice, Salt rim - tangy & refreshing
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Tangy</span>
+          <span class="item-tag">Classic</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Espresso Martini</h3>
+          <div class="item-price">260.000đ</div>
+        </div>
+        <p class="item-description">
+          Vodka, Coffee liqueur, Fresh espresso, Simple syrup - energizing
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Coffee</span>
+          <span class="item-tag">Creamy</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Passion Fruit Caipirinha</h3>
+          <div class="item-price">230.000đ</div>
+        </div>
+        <p class="item-description">
+          Cachaça, Fresh passion fruit, Lime, Brown sugar - tropical vibes
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Tropical</span>
+          <span class="item-tag">Sweet & Sour</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BEER & DRINKS ========== -->
+  <div class="menu-category-section" data-category="beer">
+    <div class="category-header">
+      <div class="category-icon">🍺</div>
+      <h2 class="category-title">Beer & Beverages</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Bia tươi, bia chai và các loại nước giải khát cao cấp
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Tiger Beer (Lon)</h3>
+          <div class="item-price">65.000đ</div>
+        </div>
+        <p class="item-description">
+          Bia Singapore cao cấp, vị mạnh mẽ cân bằng, lý tưởng cho party
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">330ml</span>
+          <span class="item-tag">5% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Heineken (Lon)</h3>
+          <div class="item-price">70.000đ</div>
+        </div>
+        <p class="item-description">
+          Bia Hà Lan nổi tiếng thế giới, vị nhẹ nhàng thanh mát
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">330ml</span>
+          <span class="item-tag">5% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Corona Extra (Chai)</h3>
+          <div class="item-price">85.000đ</div>
+        </div>
+        <p class="item-description">
+          Bia Mexico với vị nhẹ nhàng, thường uống kèm chanh tươi
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">355ml</span>
+          <span class="item-tag">4.5% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Budweiser (Lon)</h3>
+          <div class="item-price">60.000đ</div>
+        </div>
+        <p class="item-description">
+          Bia Mỹ classic, dễ uống và phổ biến
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">330ml</span>
+          <span class="item-tag">5% ABV</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Hoegaarden (Chai)</h3>
+          <div class="item-price">90.000đ</div>
+        </div>
+        <p class="item-description">
+          Bia lúa mì Belgian với hương vị coriander và cam quýt
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">330ml</span>
+          <span class="item-tag">Wheat Beer</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Strongbow Apple Cider</h3>
+          <div class="item-price">75.000đ</div>
+        </div>
+        <p class="item-description">
+          Rượu táo lên men từ Anh, vị ngọt nhẹ và tươi mát
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">330ml</span>
+          <span class="item-tag">Cider</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Nước khoáng Evian</h3>
+          <div class="item-price">50.000đ</div>
+        </div>
+        <p class="item-description">
+          Nước khoáng thiên nhiên cao cấp từ French Alps
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">500ml</span>
+          <span class="item-tag">Premium Water</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Red Bull Energy Drink</h3>
+          <div class="item-price">60.000đ</div>
+        </div>
+        <p class="item-description">
+          Nước tăng lực cho năng lượng tối đa trong party
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">250ml</span>
+          <span class="item-tag">Energy</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Fresh Juice (Cam/Dứa/Dưa hấu)</h3>
+          <div class="item-price">80.000đ</div>
+        </div>
+        <p class="item-description">
+          Nước ép trái cây tươi 100%, không đường, không chất bảo quản
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Fresh</span>
+          <span class="item-tag">Healthy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOD MENU ========== -->
+  <div class="menu-category-section" data-category="food">
+    <div class="category-header">
+      <div class="category-icon">🍖</div>
+      <h2 class="category-title">Fusion Food Menu</h2>
+      <div class="category-divider"></div>
+      <p class="category-description">
+        Các món ăn Á-Âu fusion được chế biến từ nguyên liệu tươi ngon
+      </p>
+    </div>
+    
+    <div class="menu-grid">
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Bò Fuji Nướng BBQ</h3>
+          <div class="item-price">450.000đ</div>
+        </div>
+        <p class="item-description">
+          Thịt bò Fuji cao cấp ướp gia vị đặc biệt, nướng than hồng, ăn kèm salad và sốt teriyaki
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">BBQ</span>
+          <span class="item-tag">Premium Beef</span>
+          <span class="item-tag">Serves 2-3</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Há Cảo Hải Sản</h3>
+          <div class="item-price">180.000đ</div>
+        </div>
+        <p class="item-description">
+          Dim sum cao cấp nhân tôm, cua, sò điệp tươi, xốt soy gừng đặc biệt
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Dim Sum</span>
+          <span class="item-tag">Seafood</span>
+          <span class="item-tag">8 pieces</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Cocktail Hải Sản</h3>
+          <div class="item-price">380.000đ</div>
+        </div>
+        <p class="item-description">
+          Tôm, mực, sò điệp tươi sống ướp lạnh, sốt cocktail chua ngọt đặc trưng
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Appetizer</span>
+          <span class="item-tag">Fresh Seafood</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Gà Rán Giòn Kiểu Hàn</h3>
+          <div class="item-price">280.000đ</div>
+        </div>
+        <p class="item-description">
+          Đùi gà rán giòn phủ sốt gochujang cay ngọt, hành lá, mè rang
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Korean Style</span>
+          <span class="item-tag">Spicy</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Pizza Hải Sản Đặc Biệt</h3>
+          <div class="item-price">320.000đ</div>
+        </div>
+        <p class="item-description">
+          Pizza crust mỏng giòn, topping tôm, mực, nghêu, phô mai mozzarella
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Italian</span>
+          <span class="item-tag">Seafood</span>
+          <span class="item-tag">Medium</span>
+        </div>
+      </div>
+      
+      <div class="menu-item bestseller">
+        <span class="bestseller-badge">⭐ Best Seller</span>
+        <div class="item-header">
+          <h3 class="item-name">Snacks Mix Platter</h3>
+          <div class="item-price">200.000đ</div>
+        </div>
+        <p class="item-description">
+          Khoai tây chiên, gà popcorn, cheese sticks, onion rings - perfect for sharing
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Sharing</span>
+          <span class="item-tag">Party Snacks</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Fresh Fruit Platter</h3>
+          <div class="item-price">250.000đ</div>
+        </div>
+        <p class="item-description">
+          Hoa quả tươi cao cấp theo mùa: dưa hấu, dứa, nho, dâu tây, xoài
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">Fresh</span>
+          <span class="item-tag">Seasonal</span>
+          <span class="item-tag">Healthy</span>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <div class="item-header">
+          <h3 class="item-name">Sườn Nướng Mật Ong</h3>
+          <div class="item-price">380.000đ</div>
+        </div>
+        <p class="item-description">
+          Sườn heo non ướp sốt BBQ mật ong, nướng chín mềm, ăn kèm khoai tây
+        </p>
+        <div class="item-meta">
+          <span class="item-tag">BBQ</span>
+          <span class="item-tag">Honey Glazed</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+```
 
-<script>
-const iconMap = {
-beer: "fa-beer-mug-empty",
-whisky: "fa-whiskey-glass",
-champagne: "fa-champagne-glasses",
-food: "fa-utensils",
-vip: "fa-crown",
-default: "fa-gem"
-};
-  function detectType(c){
+  </section>
 
-  const text = (c.name + " " + (c.meta||"") + " " + c.items.join(" ")).toLowerCase();
+  <!-- QUICK ORDER PANEL -->
 
-  if(text.includes("heineken") || text.includes("bia")) return "beer";
-  if(text.includes("chivas") || text.includes("vsop") || text.includes("gold label") || text.includes("xo")) return "whisky";
-  if(text.includes("dom") || text.includes("belaire") || text.includes("champagne") || text.includes("fogoso")) return "champagne";
-  if(text.includes("the wann")) return "food";
-  if(c.badge && c.badge.includes("VIP")) return "vip";
+<button class="quick-order-toggle" id="quickOrderToggle">📋</button>
 
-  return "default";
-}
-const combos = [
-
-/* ===== COMBO PHANTOM — 6.999 ===== */
-{
-name:"Combo Phantom",
-price:6999,
-badge:"BEST SELLER",
-items:[
-"24 Heineken Aluminum",
-"Tôm càng đút lò phô mai",
-"Bò Fuji nướng BBQ",
-"Xôi cua",
-"Cá chẽm sốt Samba",
-"Giò heo thảo mộc",
-"Gà tre mắm nhĩ",
-"Miến xào tôm",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO LUXURY — 6.999 ===== */
-{
-name:"Combo Luxury",
-price:6999,
-badge:"BEST SELLER",
-items:[
-"24 Heineken Aluminum",
-"Mực ống hấp hành gừng",
-"Bò dát vàng sốt tiêu xanh",
-"Cocktail hải sản lớn",
-"Sườn cay Thái Lan",
-"Giò heo mắm nhĩ",
-"Gà tre cơm lam",
-"Mì Ý xào hải sản",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO SATURN — 8.299 ===== */
-{
-name:"Combo Saturn",
-price:8299,
-badge:"BEST SELLER",
-items:[
-"2 chai Gold Label",
-"Trái cây VIP",
-"Heo quay thảo mộc xá tắc",
-"Gà tre nướng mắc mật – cơm lam",
-"Mực ống nướng sốt Thái",
-"Ốc hương hấp sả",
-"Xôi cua"
-]
-},
-
-/* ===== COMBO UNIVERSE — 9.599 ===== */
-{
-name:"Combo Universe",
-price:9599,
-badge:"BEST SELLER",
-items:[
-"2 chai Luc Belaire",
-"Trái cây VIP",
-"Cá chẽm chiên sốt Samba",
-"Bò dát vàng sốt tiêu xanh",
-"Gỏi bưởi tôm mực",
-"Heo quay da giòn Tây Bắc",
-"Mì Phúc Kiến xào hải sản"
-]
-},
-
-/* ===== COMBO MARS — 10.119 ===== */
-{
-name:"Combo Mars",
-price:10119,
-badge:"BEST SELLER",
-items:[
-"2 chai Chivas 18",
-"Trái cây VIP",
-"Ốc hương sốt trứng muối",
-"Bò Fuji nướng BBQ",
-"Tôm hoàng kim",
-"Miến xào thịt cua",
-"Gà tre nướng lá mắc mật – cơm lam"
-]
-},
-
-/* ===== COMBO JUPITER — 10.399 ===== */
-{
-name:"Combo Jupiter",
-price:10399,
-badge:"BEST SELLER",
-items:[
-"2 chai Hennessy VSOP",
-"Trái cây VIP",
-"Khai vị The Wann",
-"Mực tê tái",
-"Bò Úc wasabi",
-"Sườn BBQ đút lò",
-"Mì Phúc Kiến xào hải sản"
-]
-},
-
-/* ===== COMBO MERCURY — 24.319 ===== */
-{
-name:"Combo Mercury",
-price:24319,
-badge:"VIP",
-items:[
-"2 chai Dom Perignon",
-"Trái cây VIP",
-"Cocktail hải sản",
-"Bò Fuji dát vàng sốt tiêu xanh",
-"Tôm càng đút lò phô mai",
-"Heo rừng nướng chao",
-"Xôi cua"
-]
-},
-
-/* ===== COMBO LOUIS LE VAU — 9.639 ===== */
-{
-name:"Combo Louis Le Vau",
-price:9639,
-items:[
-"3 chai Louis Le Vau",
-"Trái cây VIP",
-"Ốc hương sốt trứng muối",
-"Bò Fuji nướng BBQ",
-"Tôm hoàng kim",
-"Miến xào thịt cua",
-"Gà tre nướng lá mắc mật – cơm lam",
-"Xôi cua"
-]
-},
-
-/* ===== COMBO FOGOSO — 9.399 ===== */
-{
-name:"Combo Fogoso",
-price:9399,
-badge:"BEST SELLER",
-items:[
-"3 chai Fogoso",
-"Trái cây VIP",
-"Khai vị The Wann",
-"Mực tê tái",
-"Bò Úc wasabi",
-"Sườn BBQ đút lò",
-"Mì Phúc Kiến xào hải sản",
-"Cocktail hải sản size lớn"
-]
-},
-
-/* ===== COMBO THE WANN 1 — 3.799 ===== */
-{
-name:"Combo The Wann 1",
-price:3799,
-badge:"BEST SELLER",
-items:[
-"Gỏi khô mực khai môn",
-"Lườn ngỗng xông khói",
-"Cồi sò điệp măng tây",
-"Sườn heo nướng Tây Bắc cơm lam",
-"Cocktail hải sản lớn",
-"Bò Fuji dát vàng sốt tiêu xanh",
-"Cơm chiên thịt cua",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO THE WANN 2 — 3.799 ===== */
-{
-name:"Combo The Wann 2",
-price:3799,
-badge:"BEST SELLER",
-items:[
-"Gỏi bưởi tôm mực",
-"Chả mực Hạ Long",
-"Xôi cua",
-"Cá tầm nướng",
-"Giò heo thảo mộc",
-"Gà tre nướng mắc mật cơm lam",
-"Mì Ý xào hải sản",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO THE WANN 3 — 3.799 ===== */
-{
-name:"Combo The Wann 3",
-price:3799,
-items:[
-"Gỏi bưởi tôm mực",
-"Bò Úc nướng BBQ",
-"Cocktail hải sản lớn",
-"Cá mú hấp Hongkong",
-"Giò heo thảo mộc",
-"Sò điệp nướng phô mai",
-"Bao tử hầm tiêu",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO THE WANN 4 — 3.799 ===== */
-{
-name:"Combo The Wann 4",
-price:3799,
-items:[
-"Gỏi cá Tây Bắc – cá chép giòn 2 món",
-"Heo quay da giòn",
-"Ốc hương sốt trứng muối",
-"Bò Fuji dát vàng sốt tiêu xanh",
-"Cồi sò điệp măng tây",
-"Cá chẽm sốt Samba",
-"Miến xào tôm",
-"Trái cây The Wann"
-]
-},
-
-/* ===== COMBO THE WANN 5 — 3.799 ===== */
-{
-name:"Combo The Wann 5",
-price:3799,
-items:[
-"Gỏi bưởi tôm mực",
-"Mực ống hấp hành gừng",
-"Xôi cua",
-"Gà tre nướng mắc mật cơm lam",
-"Bò Úc wasabi",
-"Heo rừng nướng chao",
-"Miến xào cua lột",
-"Trái cây The Wann"
-]
-}
-
-];
-
-
-const grid = document.getElementById("grid");
-
-function render(list){
-  grid.innerHTML = list.map(c=>{
-    
-    const type = detectType(c);
-const icon = iconMap[type] || iconMap.default;
-
-    return `
-    <div class="card">
-
-      ${c.badge ? `<div class="badge"><i class="fa-solid fa-crown"></i> ${c.badge}</div>`:""}
-
-      <h3 class="title">
-  <i class="fa-solid ${icon}"></i>
-  ${c.name}
-</h3>
-
-      <div class="price">
-        <i class="fa-solid fa-coins"></i>
-        ${c.price.toLocaleString()}đ
-      </div>
-
-      <div class="meta">
-        <i class="fa-solid fa-users"></i>
-        ${c.meta}
-      </div>
-
-      <div class="toggle">
-        <i class="fa-solid fa-utensils"></i>
-        Xem món trong combo
-      </div>
-
-      <div class="items">
-        <ul>
-          ${c.items.map(i=>`
-            <li>
-              <i class="fa-solid fa-check"></i>
-              ${i}
-            </li>
-          `).join("")}
-        </ul>
-      </div>
-
-      <a class="btn" href="tel:0373453757">
-        <i class="fa-solid fa-phone"></i>
-        Đặt combo này
-      </a>
-
+  <div class="quick-order" id="quickOrder">
+    <h3>QUICK ORDER</h3>
+    <div class="order-summary">
+      <p>Đặt bàn nhanh chóng</p>
+      <p style="color: var(--gold); margin-top: 10px;">Hotline: 0919 918 178</p>
     </div>
-    `;
-  }).join("");
+    <button class="order-btn" onclick="window.location.href='tel:0919918178'">
+      📞 GỌI ĐẶT BÀN NGAY
+    </button>
+  </div>
 
-  document.querySelectorAll(".toggle").forEach(t=>{
-    t.onclick = ()=>{
-      const box = t.nextElementSibling;
-      box.style.maxHeight = box.style.maxHeight ? null : box.scrollHeight+"px";
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Trang chủ</a>
+        <a href="/about">Về chúng tôi</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/menu">Menu</a>
+        <a href="/#contact">Liên hệ</a>
+      </div>
+      <p>© 2026 THE WANN Nightclub & Bar. All rights reserved.</p>
+      <p style="margin-top: 10px; font-size: 12px; color: rgba(255,255,255,0.5);">
+        * Giá menu chưa bao gồm 10% VAT và 7% phí phục vụ
+      </p>
+    </div>
+  </footer>
+
+  <!-- FIXED CONTACT BAR -->
+
+  <div class="fixed-contact-bar">
+    <a href="tel:0919918178" class="fc-item call">
+      📞 <span>Gọi ngay</span>
+    </a>
+    <a href="https://zalo.me/0919918178" class="fc-item zalo">
+      💬 <span>Zalo</span>
+    </a>
+    <a href="https://wa.me/84919918178" class="fc-item whatsapp">
+      🟢 <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // ========== MOBILE MENU ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const luxMenu = document.getElementById('luxMenu');
+    const luxClose = document.getElementById('luxClose');
+    const luxOverlay = document.getElementById('luxOverlay');
+
+    const openMenu = () => {
+      luxMenu.classList.add('active');
+      luxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      luxMenu.classList.remove('active');
+      luxOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (menuToggle) menuToggle.addEventListener('click', openMenu);
+    if (luxClose) luxClose.addEventListener('click', closeMenu);
+    if (luxOverlay) luxOverlay.addEventListener('click', closeMenu);
+
+    // ========== CATEGORY FILTER ==========
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const categorySections = document.querySelectorAll('.menu-category-section');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Show/hide sections
+        if (category === 'all') {
+          categorySections.forEach(section => section.classList.add('active'));
+        } else {
+          categorySections.forEach(section => {
+            if (section.dataset.category === category) {
+              section.classList.add('active');
+            } else {
+              section.classList.remove('active');
+            }
+          });
+        }
+        
+        // Smooth scroll to menu section
+        document.querySelector('.menu-section').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // ========== QUICK ORDER TOGGLE ==========
+    const quickOrderToggle = document.getElementById('quickOrderToggle');
+    const quickOrder = document.getElementById('quickOrder');
+
+    if (quickOrderToggle && quickOrder) {
+      quickOrderToggle.addEventListener('click', () => {
+        quickOrder.classList.toggle('active');
+        
+        if (quickOrder.classList.contains('active')) {
+          quickOrderToggle.textContent = '✕';
+        } else {
+          quickOrderToggle.textContent = '📋';
+        }
+      });
     }
-  });
-}
 
-function apply(){
-  let arr=[...combos];
+    // ========== BOOK COMBO FUNCTION ==========
+    function bookCombo(comboName) {
+      const message = encodeURIComponent(`Xin chào! Tôi muốn đặt bàn với combo "${comboName}"`);
+      window.location.href = `https://zalo.me/0919918178?text=${message}`;
+    }
 
-  const s=document.getElementById("sort").value;
-  const f=document.getElementById("filter").value;
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
 
-  if(f==="low") arr=arr.filter(x=>x.price<7000);
-  if(f==="mid") arr=arr.filter(x=>x.price>=7000 && x.price<=12000);
-  if(f==="high") arr=arr.filter(x=>x.price>12000);
+    // ========== SCROLL ANIMATIONS ==========
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-  arr.sort((a,b)=> s==="asc"?a.price-b.price:b.price-a.price);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
 
-  render(arr);
-}
-
-document.getElementById("sort").onchange=apply;
-document.getElementById("filter").onchange=apply;
-
-apply();
-
-</script>
+    // Observe all menu items
+    document.querySelectorAll('.menu-item, .combo-card').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(30px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+  </script>
 
 </body>
 </html>
