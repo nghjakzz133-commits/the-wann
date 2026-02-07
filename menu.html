@@ -222,9 +222,9 @@ select{
 </div>
 
 <script>
-const combos = [
+/* ================= DATA ================= */
 
-/* ===== FOOD / BEER ENTRY ===== */
+const combos = [
 
 {
 name:"Combo The Wann Food Set A",
@@ -252,8 +252,6 @@ meta:"24 bia + food set",
 items:["24 bia","Gà quay","Mực chiên","Xôi","Trái cây"]
 },
 
-/* ===== HEINEKEN SET ===== */
-
 {
 name:"Combo Phantom",
 price:6999,
@@ -272,8 +270,6 @@ price:7599,
 meta:"24 Heineken + VIP snack",
 items:["24 Heineken","Bò lúc lắc","Gà nướng","Snack VIP"]
 },
-
-/* ===== MID WHISKY ===== */
 
 {
 name:"Combo Saturn",
@@ -306,8 +302,6 @@ meta:"Champagne set",
 items:["Louis Le Vau","Snack","Fruit"]
 },
 
-/* ===== PREMIUM WHISKY ===== */
-
 {
 name:"Combo Mars",
 price:10119,
@@ -334,8 +328,6 @@ meta:"VSOP + champagne",
 items:["VSOP","Champagne","Snack"]
 },
 
-/* ===== HIGH TIER ===== */
-
 {
 name:"Combo XO Night",
 price:14899,
@@ -348,8 +340,6 @@ price:16999,
 meta:"JW Blue + set",
 items:["Blue Label","Hải sản","Snack"]
 },
-
-/* ===== ULTRA VIP ===== */
 
 {
 name:"Combo Dom VIP",
@@ -367,8 +357,64 @@ items:["Ace of Spades","Premium banquet","VIP fruit"]
 }
 
 ];
-console.log("combos loaded", combos.length);
+
+/* ================= ENGINE ================= */
+
+const grid = document.getElementById("grid");
+
+function render(list){
+  grid.innerHTML = list.map(c=>`
+    <div class="card">
+      ${c.badge ? `<div class="badge">${c.badge}</div>` : ""}
+      <h3 class="title">${c.name}</h3>
+      <div class="price">${c.price.toLocaleString()}đ</div>
+      <div class="meta">${c.meta}</div>
+
+      <div class="toggle">Xem chi tiết ▼</div>
+      <div class="items">
+        <ul>${c.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+      </div>
+
+      <a class="btn" href="tel:0373453757">Đặt combo này</a>
+    </div>
+  `).join("");
+
+  document.querySelectorAll(".toggle").forEach(t=>{
+    t.onclick = ()=>{
+      const box = t.nextElementSibling;
+      box.style.maxHeight = box.style.maxHeight ? null : box.scrollHeight+"px";
+    }
+  });
+}
+
+function apply(){
+  let arr=[...combos];
+
+  const sortEl = document.getElementById("sort");
+  const filterEl = document.getElementById("filter");
+
+  const s = sortEl ? sortEl.value : "asc";
+  const f = filterEl ? filterEl.value : "all";
+
+  if(f==="low") arr=arr.filter(x=>x.price<7000);
+  if(f==="mid") arr=arr.filter(x=>x.price>=7000 && x.price<=12000);
+  if(f==="high") arr=arr.filter(x=>x.price>12000);
+
+  arr.sort((a,b)=> s==="asc"?a.price-b.price:b.price-a.price);
+
+  render(arr);
+}
+
+/* ================= EVENTS ================= */
+
+document.getElementById("sort")?.addEventListener("change", apply);
+document.getElementById("filter")?.addEventListener("change", apply);
+
+/* ================= START ================= */
+
+console.log("combos loaded:", combos.length);
 apply();
+
 </script>
 
 </body>
