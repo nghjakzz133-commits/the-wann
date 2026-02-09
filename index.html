@@ -1758,9 +1758,15 @@ body {
 
 /* Hero video layer fix cho iOS */
 .hero-bg {
-  z-index: -2 !important;
-  filter: brightness(.55) contrast(1.1) saturate(1.1);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* ⬅️ đổi từ âm → 0 */
+  filter: brightness(0.55) contrast(1.1) saturate(1.1);
 }
+
 
 .hero-overlay {
   z-index: -1 !important;
@@ -1793,7 +1799,16 @@ html {
 html, body {
   overflow-x: hidden !important;
 }
-  </style>
+  .hero {
+  position: relative;
+  z-index: 0; /* QUAN TRỌNG */
+}
+.hero-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+</style>
 <link rel="icon" href="logo.png" type="image/png">
   <script type="application/ld+json">
 {
