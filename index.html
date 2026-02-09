@@ -1697,7 +1697,91 @@ body {
   left: 3%;
 }
 ```
+/* ====== HOTFIX GITHUB PAGES + SAFARI RENDER ====== */
 
+/* Header luôn có nền — tránh Safari flash trắng */
+.header {
+  background: rgba(10,10,10,.88) !important;
+  backdrop-filter: blur(16px);
+}
+
+.header.scrolled {
+  background: rgba(10,10,10,.96) !important;
+}
+
+/* Tet banner không bị lệch khi header đổi size */
+.tet-banner {
+  top: 80px !important;
+}
+
+.header.scrolled + .tet-banner {
+  top: 60px !important;
+}
+
+/* Hero offset chuẩn theo header + banner */
+.hero {
+  margin-top: 150px !important;
+}
+
+@media (max-width:768px){
+  .hero {
+    margin-top: 200px !important;
+  }
+}
+
+/* Logo gradient có fallback màu khi webkit-text-fill fail */
+.logo a {
+  color: #d4af37 !important;
+  background: linear-gradient(90deg,#c9a14a,#f5e6b8,#c9a14a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fallback nếu Safari không support clip */
+@supports not (-webkit-background-clip: text) {
+  .logo a {
+    background: none !important;
+    color: #d4af37 !important;
+  }
+}
+
+/* Hero video layer fix cho iOS */
+.hero-bg {
+  z-index: -2 !important;
+  filter: brightness(.55) contrast(1.1) saturate(1.1);
+}
+
+.hero-overlay {
+  z-index: -1 !important;
+}
+
+/* Ngăn pseudo element button đè màu text trên Safari */
+.btn-primary,
+.btn-outline,
+.promo-cta {
+  isolation: isolate;
+}
+
+/* Button giữ đúng màu khi hover (Safari bug) */
+.btn-primary {
+  color: #000 !important;
+}
+
+/* Fixed contact bar đậm nền hơn */
+.fixed-contact-bar {
+  background: rgba(0,0,0,.94) !important;
+  backdrop-filter: blur(18px);
+}
+
+/* Ngăn iOS auto zoom làm lệch layout */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Ngăn overflow gây lệch ngang */
+html, body {
+  overflow-x: hidden !important;
+}
   </style>
 <link rel="icon" href="logo.png" type="image/png">
   <script type="application/ld+json">
