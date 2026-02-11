@@ -1391,7 +1391,36 @@
     img.loaded {
       opacity: 1;
     }
-  </style>
+ .hero{
+  min-height:calc(100vh - 72px);
+  background:none !important;
+  padding:0;
+}
+
+.hero-video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:160px 20px 80px;
+}
+
+</style>
 </head>
 
 <body>
@@ -1492,6 +1521,12 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
+    <!-- VIDEO BACKGROUND -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="https://pub-52cf7508df4b4c109b66a730e3ab5569.r2.dev/1JEKCP8S4_725072.mp4" type="video/mp4">
+  </video>
+      <!-- DARK OVERLAY -->
+  <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="urgent-banner">
         <span class="tracker-pulse"></span>
