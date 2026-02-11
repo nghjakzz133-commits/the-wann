@@ -2,30 +2,2261 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chính sách bảo mật | THE WANN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KP9L2RBV');
+  </script>
+  
+  <title>Dịch Vụ VIP - THE WANN Nightclub Q1 | Bottle Service & Event Planning</title>
+  <meta name="description" content="Dịch vụ VIP cao cấp tại THE WANN: Bottle Service, Đặt bàn VIP, Tổ chức sự kiện, Birthday parties. Trải nghiệm đẳng cấp quốc tế tại Q1 Sài Gòn.">
+  
+  <link rel="canonical" href="https://the-wann.pages.dev/services">
+  <link rel="icon" href="/logo.png" type="image/png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dịch Vụ VIP - THE WANN Nightclub">
+  <meta property="og:description" content="Bottle Service, Event Planning, VIP Tables - Trải nghiệm đẳng cấp quốc tế">
+  <meta property="og:image" content="https://the-wann.pages.dev/assets/services-og.jpg">
+  <meta property="og:url" content="https://the-wann.pages.dev/services">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Righteous&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========== RESET ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    :root {
+      --gold: #FFD700;
+      --gold-light: #FFF4C4;
+      --gold-dark: #DAA520;
+      --red: #FF2D2D;
+      --red-dark: #CC0000;
+      --black: #000000;
+      --dark: #1A1A1A;
+      --dark-2: #0F0F0F;
+      --white: #FFFFFF;
+      --gray: #999999;
+      --gray-light: #CCCCCC;
+      
+      --font-display: 'Bebas Neue', cursive;
+      --font-accent: 'Righteous', cursive;
+      --font-body: 'Work Sans', sans-serif;
+      
+      --shadow-gold: 0 8px 32px rgba(255, 215, 0, 0.4);
+      --shadow-red: 0 8px 32px rgba(255, 45, 45, 0.5);
+      --shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.8);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* ========== HEADER - CONSISTENT WITH HOMEPAGE ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      border-bottom: 2px solid var(--gold);
+      padding: 14px 0;
+      box-shadow: var(--shadow-dark);
+    }
+    
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+      position: relative;
+      text-decoration: none;
+    }
+    
+    .logo::after {
+      content: '✦';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      animation: sparkle 2s infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.5; transform: translateY(-50%) scale(1.2); }
+    }
+    
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* MOBILE MENU */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 360px;
+      height: 100vh;
+      background: linear-gradient(135deg, var(--black), var(--dark));
+      z-index: 999;
+      padding: 100px 30px 40px;
+      transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9);
+      overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .menu-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 12px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .menu-link.active {
+      background: rgba(255, 215, 0, 0.15);
+      border-color: var(--gold);
+    }
+    
+    .menu-link:active {
+      transform: scale(0.98);
+      background: rgba(255, 215, 0, 0.15);
+    }
+    
+    .menu-link-icon {
+      font-size: 24px;
+      width: 32px;
+      text-align: center;
+    }
+    
+    .menu-cta {
+      padding: 20px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-red);
+    }
+    
+    .menu-cta-title {
+      font-family: var(--font-accent);
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .menu-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .menu-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .menu-cta-btn:active {
+      transform: scale(0.97);
+    }
+    
+    .menu-cta-btn.secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .menu-info {
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px dashed rgba(255, 215, 0, 0.3);
+      border-radius: 12px;
+    }
+    
+    .menu-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .menu-info-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .menu-info-icon {
+      font-size: 18px;
+      min-width: 24px;
+    }
+    
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(26,26,26,0.8)),
+                  url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070') center/cover;
+      padding: 120px 20px 80px;
+      margin-top: 72px;
+      overflow: hidden;
+    }
+    
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+    }
+    
+    .page-hero::after {
+      content: '✦✦✦';
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 20px;
+      opacity: 0.5;
+    }
+    
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      animation: fadeInUp 0.8s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .page-hero-tag {
+      display: inline-block;
+      background: var(--red);
+      color: var(--gold);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-red);
+    }
+    
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 10vw, 96px);
+      font-weight: 400;
+      line-height: 0.95;
+      color: var(--gold);
+      margin-bottom: 24px;
+      letter-spacing: 6px;
+      text-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+    }
+    
+    .page-hero-subtitle {
+      font-size: clamp(18px, 4vw, 24px);
+      color: var(--gold-light);
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    
+    /* ========== SERVICES INTRO ========== */
+    .services-intro {
+      background: var(--dark);
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services-intro::before {
+      content: '🍾';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      font-size: 300px;
+      opacity: 0.03;
+      transform: rotate(-15deg);
+    }
+    
+    .intro-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .intro-content h2 {
+      font-family: var(--font-accent);
+      font-size: clamp(32px, 7vw, 56px);
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .intro-content p {
+      font-size: clamp(16px, 3vw, 20px);
+      color: var(--gray-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    
+    .intro-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 700px;
+      margin: 40px auto 0;
+    }
+    
+    .intro-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    
+    .intro-feature-icon {
+      font-size: 24px;
+      min-width: 32px;
+    }
+    
+    /* ========== MAIN SERVICES GRID ========== */
+    .services-main {
+      background: var(--black);
+      padding: 100px 20px;
+    }
+    
+    .services-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      gap: 40px;
+    }
+    
+    .service-card {
+      background: linear-gradient(135deg, var(--dark-2), var(--dark));
+      border: 2px solid var(--gold);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+    }
+    
+    .service-header {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    
+    .service-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .service-card:hover .service-header img {
+      transform: scale(1.1);
+    }
+    
+    .service-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--red);
+      color: var(--gold);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-red);
+    }
+    
+    .service-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(0, 0, 0, 0.8));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .service-icon {
+      font-size: 80px;
+      text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+    }
+    
+    .service-body {
+      padding: 40px 32px;
+    }
+    
+    .service-body h3 {
+      font-family: var(--font-accent);
+      font-size: clamp(28px, 5vw, 36px);
+      color: var(--gold);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .service-description {
+      font-size: 16px;
+      color: var(--gray-light);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    
+    .service-highlights {
+      margin-bottom: 32px;
+    }
+    
+    .service-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding: 16px;
+      background: rgba(255, 215, 0, 0.05);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+    }
+    
+    .service-highlight-icon {
+      font-size: 24px;
+      min-width: 28px;
+      color: var(--gold);
+    }
+    
+    .service-highlight-text {
+      flex: 1;
+    }
+    
+    .service-highlight-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+    
+    .service-highlight-text p {
+      color: var(--gray-light);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .service-pricing {
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 45, 45, 0.1));
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    
+    .service-price-tag {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--gray);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    
+    .service-price {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    
+    .service-price-note {
+      font-size: 14px;
+      color: var(--gray-light);
+    }
+    
+    .service-cta {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      box-shadow: var(--shadow-gold);
+    }
+    
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .btn-secondary:active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* ========== VIP BENEFITS SECTION ========== */
+    .vip-benefits {
+      background: linear-gradient(135deg, var(--dark), var(--black));
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .vip-benefits::before {
+      content: '👑';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      font-size: 400px;
+      opacity: 0.02;
+      transform: rotate(-25deg);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-tag {
+      display: inline-block;
+      background: var(--red);
+      color: var(--gold);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-red);
+    }
+    
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 8vw, 80px);
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: 4px;
+    }
+    
+    .section-subtitle {
+      font-size: clamp(16px, 3vw, 20px);
+      color: var(--gold-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .benefits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .benefit-card {
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      background: rgba(255, 215, 0, 0.1);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    
+    .benefit-card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .benefit-card h4 {
+      font-family: var(--font-accent);
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    
+    .benefit-card p {
+      color: var(--gray-light);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    /* ========== PROCESS TIMELINE ========== */
+    .booking-process {
+      background: var(--black);
+      padding: 100px 20px;
+    }
+    
+    .process-timeline {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--gold), var(--red));
+    }
+    
+    .process-step {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 50px;
+    }
+    
+    .process-step:last-child {
+      margin-bottom: 0;
+    }
+    
+    .process-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--black);
+      font-weight: 700;
+      box-shadow: var(--shadow-gold);
+    }
+    
+    .process-content {
+      background: var(--dark);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    
+    .process-content h4 {
+      font-family: var(--font-accent);
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    
+    .process-content p {
+      color: var(--gray-light);
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      background: var(--dark);
+      padding: 100px 20px;
+    }
+    
+    .testimonials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+    
+    .testimonial-card {
+      background: var(--black);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+    }
+    
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--black);
+      font-family: var(--font-accent);
+      flex-shrink: 0;
+    }
+    
+    .testimonial-info h5 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    
+    .testimonial-service {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .stars {
+      color: var(--gold);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .testimonial-text {
+      color: var(--gray-light);
+      font-size: 16px;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    
+    .testimonial-date {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    
+    /* ========== FAQ SECTION ========== */
+    .faq {
+      background: var(--black);
+      padding: 100px 20px;
+    }
+    
+    .faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: var(--dark);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--gold);
+    }
+    
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .faq-question h4 {
+      font-family: var(--font-body);
+      font-size: 18px;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    
+    .faq-icon {
+      font-size: 24px;
+      color: var(--gold);
+      transition: transform 0.3s ease;
+      min-width: 24px;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(255, 215, 0, 0.2);
+    }
+    
+    .faq-answer p {
+      color: var(--gray-light);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+    }
+    
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.9)),
+                  url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070') center/cover fixed;
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+    
+    .final-cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 9vw, 88px);
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1;
+      letter-spacing: 4px;
+    }
+    
+    .final-cta h2 .highlight {
+      color: var(--gold);
+      display: block;
+    }
+    
+    .final-cta p {
+      font-size: clamp(16px, 3vw, 22px);
+      color: var(--gold-light);
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--black);
+      padding: 50px 20px;
+      border-top: 2px solid var(--gold);
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    
+    .footer-text {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    
+    .social-btn {
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--gold);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-btn:active {
+      background: var(--gold);
+      color: var(--black);
+      transform: scale(0.9);
+    }
+    
+    .footer-copyright {
+      color: var(--gray);
+      font-size: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* ========== FLOATING ACTION BAR ========== */
+    .floating-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      border-top: 2px solid var(--gold);
+      padding: 14px 16px;
+      z-index: 999;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+    }
+    
+    .floating-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    
+    .floating-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .floating-info p {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .floating-info span {
+      color: var(--gray);
+      font-size: 12px;
+    }
+    
+    .floating-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+      box-shadow: var(--shadow-gold);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .floating-btn:active {
+      transform: scale(0.95);
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      
+      .mobile-menu,
+      .menu-overlay {
+        display: none;
+      }
+      
+      .header-content {
+        padding: 0 40px;
+      }
+      
+      .page-hero {
+        min-height: 70vh;
+        padding: 140px 40px 100px;
+      }
+      
+      .intro-features {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .service-cta {
+        flex-direction: row;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .cta-buttons {
+        flex-direction: row;
+      }
+      
+      .floating-bar {
+        padding: 18px 40px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .process-timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .process-step {
+        width: 50%;
+        padding-left: 0;
+        padding-right: 80px;
+      }
+      
+      .process-step:nth-child(even) {
+        margin-left: 50%;
+        padding-right: 0;
+        padding-left: 80px;
+      }
+      
+      .process-number {
+        left: auto;
+        right: -30px;
+      }
+      
+      .process-step:nth-child(even) .process-number {
+        right: auto;
+        left: -30px;
+      }
+    }
+    
+    /* ========== LOADING ========== */
+    .loading {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 215, 0, 0.2);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+    
+    /* ========== UTILITIES ========== */
+    img {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    img.loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP9L2RBV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-<h1>Chính sách bảo mật</h1>
+  <!-- LOADING SCREEN -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">THE WANN</div>
+  </div>
 
-<p>
-THE WANN cam kết bảo mật thông tin cá nhân của khách hàng.
-</p>
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-<p>
-Các thông tin như tên, số điện thoại, nội dung đặt bàn chỉ được
-sử dụng cho mục đích liên hệ và hỗ trợ dịch vụ.
-</p>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">THE WANN</a>
+      
+      <!-- HAMBURGER MENU -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
-<p>
-Chúng tôi không chia sẻ thông tin cá nhân của khách hàng cho
-bên thứ ba khi chưa có sự đồng ý.
-</p>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="menu-cta">
+      <div class="menu-cta-title">🔥 Đặt Bàn Ngay</div>
+      <div class="menu-cta-buttons">
+        <a href="https://zalo.me/0778307889" class="menu-cta-btn">
+          💬 CHAT ZALO - HỖ TRỢ NHANH
+        </a>
+        <a href="tel:0778307889" class="menu-cta-btn secondary">
+          📞 GỌI ĐIỆN
+        </a>
+      </div>
+    </div>
+    
+    <div class="menu-links">
+      <a href="/" class="menu-link">
+        <span class="menu-link-icon">🏠</span>
+        <span>Trang Chủ</span>
+      </a>
+      <a href="/services" class="menu-link active">
+        <span class="menu-link-icon">✨</span>
+        <span>Dịch Vụ VIP</span>
+      </a>
+      <a href="/#gallery" class="menu-link">
+        <span class="menu-link-icon">📸</span>
+        <span>Hình Ảnh</span>
+      </a>
+      <a href="/#menu" class="menu-link">
+        <span class="menu-link-icon">🍾</span>
+        <span>Menu & Combo</span>
+      </a>
+      <a href="/#reviews" class="menu-link">
+        <span class="menu-link-icon">⭐</span>
+        <span>Đánh Giá</span>
+      </a>
+      <a href="/#contact" class="menu-link">
+        <span class="menu-link-icon">📍</span>
+        <span>Liên Hệ</span>
+      </a>
+    </div>
+    
+    <div class="menu-info">
+      <div class="menu-info-item">
+        <span class="menu-info-icon">📍</span>
+        <span>51 Bùi Thị Xuân, Q1, TP.HCM</span>
+      </div>
+      <div class="menu-info-item">
+        <span class="menu-info-icon">🕐</span>
+        <span>21:00 - 04:00 (Mỗi ngày)</span>
+      </div>
+      <div class="menu-info-item">
+        <span class="menu-info-icon">💬</span>
+        <span>Zalo/WhatsApp: 0778 307 889</span>
+      </div>
+    </div>
+  </div>
 
-<p>
-Mọi thắc mắc về bảo mật vui lòng liên hệ hotline 0778 307 889.
-</p>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="page-hero-tag">✨ VIP SERVICES</div>
+      <h1>DỊCH VỤ VIP</h1>
+      <p class="page-hero-subtitle">
+        Trải nghiệm đẳng cấp quốc tế với dịch vụ chuyên nghiệp, 
+        không gian sang trọng và ưu đãi độc quyền tại THE WANN
+      </p>
+    </div>
+  </section>
 
+  <!-- SERVICES INTRO -->
+  <section class="services-intro">
+    <div class="intro-content">
+      <h2>Đẳng Cấp Nightlife Sài Gòn</h2>
+      <p>
+        THE WANN mang đến trải nghiệm nightlife cao cấp với hệ thống dịch vụ VIP 
+        toàn diện. Từ đặt bàn riêng tư, bottle service đẳng cấp đến tổ chức sự kiện 
+        hoành tráng, chúng tôi cam kết mang lại những đêm tiệc đáng nhớ nhất.
+      </p>
+      <p>
+        Đội ngũ chuyên nghiệp, không gian hiện đại và âm nhạc đỉnh cao - 
+        tất cả hòa quyện tạo nên trải nghiệm VIP độc nhất vô nhị.
+      </p>
+      
+      <div class="intro-features">
+        <div class="intro-feature">
+          <span class="intro-feature-icon">⚡</span>
+          <span>Fast-Track Entry</span>
+        </div>
+        <div class="intro-feature">
+          <span class="intro-feature-icon">👑</span>
+          <span>VIP Treatment</span>
+        </div>
+        <div class="intro-feature">
+          <span class="intro-feature-icon">🎯</span>
+          <span>Premium Location</span>
+        </div>
+        <div class="intro-feature">
+          <span class="intro-feature-icon">🎉</span>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SERVICES -->
+  <section class="services-main">
+    <div class="services-grid">
+      
+      <!-- SERVICE 1: VIP TABLE & BOTTLE SERVICE -->
+      <div class="service-card">
+        <div class="service-header">
+          <img data-src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2070" alt="VIP Table Service">
+          <div class="service-badge">POPULAR</div>
+          <div class="service-overlay">
+            <div class="service-icon">🍾</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3>VIP Table & Bottle Service</h3>
+          <p class="service-description">
+            Trải nghiệm đẳng cấp với bàn VIP riêng tư, vị trí đẹp nhất club, 
+            phục vụ bottle service chuyên nghiệp cùng đội ngũ waitress tận tâm.
+          </p>
+          
+          <div class="service-highlights">
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎯</div>
+              <div class="service-highlight-text">
+                <strong>Bàn VIP Premium</strong>
+                <p>Vị trí đẹp nhất: gần DJ booth, sân khấu hoặc khu vực riêng tư. Chỗ ngồi thoải mái cho 6-15 người.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🍸</div>
+              <div class="service-highlight-text">
+                <strong>Premium Spirits Selection</strong>
+                <p>Rượu cao cấp: Hennessy, Dom Pérignon, Belvedere, Belaire. Full mixers, ice, garnishes.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">👸</div>
+              <div class="service-highlight-text">
+                <strong>Dedicated Bottle Girl</strong>
+                <p>Waitress riêng phục vụ tận bàn, pha chế cocktail, giữ bàn sạch sẽ suốt đêm.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">⚡</div>
+              <div class="service-highlight-text">
+                <strong>Skip The Line</strong>
+                <p>Vào thẳng, không xếp hàng. VIP entry riêng cho nhóm bottle service.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-pricing">
+            <div class="service-price-tag">Từ</div>
+            <div class="service-price">3.799.000đ</div>
+            <div class="service-price-note">Combo The Wann Food Set (6-8 người)</div>
+          </div>
+          
+          <div class="service-cta">
+            <a href="https://zalo.me/0778307889" class="btn btn-primary">
+              💬 BOOK ZALO
+            </a>
+            <a href="tel:0778307889" class="btn btn-secondary">
+              📞 GỌI NGAY
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: PRIVATE EVENTS & PARTIES -->
+      <div class="service-card">
+        <div class="service-header">
+          <img data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070" alt="Private Events">
+          <div class="service-badge">EXCLUSIVE</div>
+          <div class="service-overlay">
+            <div class="service-icon">🎉</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3>Private Events & Parties</h3>
+          <p class="service-description">
+            Tổ chức sự kiện riêng tư hoàn hảo: Sinh nhật, corporate party, bachelor/ette, 
+            product launch. Full venue hoặc khu vực riêng biệt.
+          </p>
+          
+          <div class="service-highlights">
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎊</div>
+              <div class="service-highlight-text">
+                <strong>Venue Buyout Option</strong>
+                <p>Thuê nguyên club hoặc khu vực VIP riêng. Tùy chỉnh decoration, lighting theo theme của bạn.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎂</div>
+              <div class="service-highlight-text">
+                <strong>Birthday VIP Package</strong>
+                <p>Champagne parade, cake, sparklers, LED sign với tên của bạn. Tặng ảnh/video chuyên nghiệp.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎵</div>
+              <div class="service-highlight-text">
+                <strong>Customized Music & Entertainment</strong>
+                <p>DJ riêng chơi nhạc theo yêu cầu. Live performers, MC, dancers theo package.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🍽️</div>
+              <div class="service-highlight-text">
+                <strong>Premium Catering</strong>
+                <p>Buffet cao cấp, finger food, custom menu. Bar riêng với bartender chuyên nghiệp.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-pricing">
+            <div class="service-price-tag">Liên hệ</div>
+            <div class="service-price">Custom</div>
+            <div class="service-price-note">Báo giá chi tiết theo quy mô sự kiện</div>
+          </div>
+          
+          <div class="service-cta">
+            <a href="https://zalo.me/0778307889" class="btn btn-primary">
+              💬 TƯ VẤN ZALO
+            </a>
+            <a href="tel:0778307889" class="btn btn-secondary">
+              📞 HOTLINE
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: CORPORATE HOSPITALITY -->
+      <div class="service-card">
+        <div class="service-header">
+          <img data-src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069" alt="Corporate Events">
+          <div class="service-badge">BUSINESS</div>
+          <div class="service-overlay">
+            <div class="service-icon">💼</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3>Corporate Hospitality</h3>
+          <p class="service-description">
+            Giải pháp toàn diện cho doanh nghiệp: Team building, client entertainment, 
+            product launch, year-end party. Chuyên nghiệp, uy tín, bảo mật.
+          </p>
+          
+          <div class="service-highlights">
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🏢</div>
+              <div class="service-highlight-text">
+                <strong>Full Event Planning</strong>
+                <p>Từ concept đến execution. Event manager riêng hỗ trợ 24/7, rundown chi tiết, backup plan.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎤</div>
+              <div class="service-highlight-text">
+                <strong>AV Equipment & Stage</strong>
+                <p>Sound system chuyên nghiệp, LED screen, lighting đẳng cấp. Hỗ trợ presentation, livestream.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🤝</div>
+              <div class="service-highlight-text">
+                <strong>VIP Client Entertainment</strong>
+                <p>Private area cho clients quan trọng. Bàn riêng, menu đặc biệt, phục vụ chuyên nghiệp.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">📊</div>
+              <div class="service-highlight-text">
+                <strong>Invoicing & Reporting</strong>
+                <p>Hóa đơn VAT đầy đủ, báo cáo chi tiết post-event. Hỗ trợ accounting theo yêu cầu công ty.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-pricing">
+            <div class="service-price-tag">Từ</div>
+            <div class="service-price">50M+</div>
+            <div class="service-price-note">Tùy quy mô (50-500 khách)</div>
+          </div>
+          
+          <div class="service-cta">
+            <a href="https://zalo.me/0778307889" class="btn btn-primary">
+              💬 CHAT ZALO
+            </a>
+            <a href="tel:0778307889" class="btn btn-secondary">
+              📞 LIÊN HỆ
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 4: CELEBRITY & INFLUENCER HOSTING -->
+      <div class="service-card">
+        <div class="service-header">
+          <img data-src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070" alt="Celebrity Hosting">
+          <div class="service-badge">PREMIUM</div>
+          <div class="service-overlay">
+            <div class="service-icon">⭐</div>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3>Celebrity & Influencer Hosting</h3>
+          <p class="service-description">
+            Dịch vụ cao cấp dành cho celebrity, influencer, KOL. Bảo mật tuyệt đối, 
+            không gian riêng tư, phục vụ đẳng cấp quốc tế.
+          </p>
+          
+          <div class="service-highlights">
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🔒</div>
+              <div class="service-highlight-text">
+                <strong>Maximum Privacy & Security</strong>
+                <p>Lối vào riêng, khu vực VIP tách biệt, bodyguard support. NDA signing nếu cần.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">📸</div>
+              <div class="service-highlight-text">
+                <strong>Media & Content Support</strong>
+                <p>Photographer/videographer chuyên nghiệp. Hỗ trợ content creation, Instagram-worthy spots.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🎁</div>
+              <div class="service-highlight-text">
+                <strong>VIP Perks & Gifts</strong>
+                <p>Complimentary bottles, exclusive merchandise, special treatment throughout the night.</p>
+              </div>
+            </div>
+            
+            <div class="service-highlight">
+              <div class="service-highlight-icon">🚗</div>
+              <div class="service-highlight-text">
+                <strong>Concierge Services</strong>
+                <p>Limousine pick-up/drop-off, hotel booking, after-party arrangement. Full hospitality package.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-pricing">
+            <div class="service-price-tag">Liên hệ</div>
+            <div class="service-price">Exclusive</div>
+            <div class="service-price-note">Package tùy chỉnh theo yêu cầu</div>
+          </div>
+          
+          <div class="service-cta">
+            <a href="https://zalo.me/0778307889" class="btn btn-primary">
+              💬 ZALO VIP
+            </a>
+            <a href="tel:0778307889" class="btn btn-secondary">
+              📞 HOTLINE
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIP BENEFITS -->
+  <section class="vip-benefits">
+    <div class="section-header">
+      <div class="section-tag">👑 VIP PERKS</div>
+      <h2 class="section-title">ƯU ĐÃI ĐỘC QUYỀN</h2>
+      <p class="section-subtitle">
+        Những đặc quyền chỉ dành cho khách VIP tại THE WANN
+      </p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-card-icon">⚡</span>
+        <h4>Fast-Track Entry</h4>
+        <p>Vào thẳng không xếp hàng, lối riêng cho VIP guests, priority check-in</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">🎯</span>
+        <h4>Best Table Selection</h4>
+        <p>Chọn vị trí đẹp nhất: near DJ booth, dance floor view, private corner</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">🍾</span>
+        <h4>Bottle Presentation</h4>
+        <p>Sparklers, LED parade, bottle girl show - Instagram moment đỉnh cao</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">👨‍💼</span>
+        <h4>VIP Host Support</h4>
+        <p>Personal host phục vụ suốt đêm, giải quyết mọi yêu cầu ngay lập tức</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">🎁</span>
+        <h4>Complimentary Perks</h4>
+        <p>Free shots, signature cocktails, special gifts theo dịp đặc biệt</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">🎵</span>
+        <h4>DJ Shoutouts</h4>
+        <p>Birthday/celebration announcement, dedicated song request</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">💳</span>
+        <h4>Flexible Payment</h4>
+        <p>Pre-booking deposit, cash/card accepted, corporate invoicing available</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-card-icon">🔄</span>
+        <h4>Loyalty Rewards</h4>
+        <p>Return customer benefits, exclusive deals, birthday month specials</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING PROCESS -->
+  <section class="booking-process">
+    <div class="section-header">
+      <div class="section-tag">📋 QUY TRÌNH</div>
+      <h2 class="section-title">ĐẶT BÀN VIP</h2>
+      <p class="section-subtitle">
+        5 bước đơn giản để book bàn VIP tại THE WANN
+      </p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="process-number">01</div>
+        <div class="process-content">
+          <h4>Chat Zalo / Gọi Hotline</h4>
+          <p>
+            Liên hệ qua Zalo 0778307889 (ưu tiên) hoặc gọi hotline. 
+            Team sẽ tư vấn chi tiết về vị trí bàn, package phù hợp, giá cả minh bạch.
+          </p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="process-number">02</div>
+        <div class="process-content">
+          <h4>Chọn Bàn & Package</h4>
+          <p>
+            Xem sơ đồ bàn, chọn vị trí ưng ý. Chọn bottle package hoặc combo phù hợp 
+            với số người. Confirm ngày giờ, special requests (birthday, decoration...).
+          </p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="process-number">03</div>
+        <div class="process-content">
+          <h4>Đặt Cọc (Optional)</h4>
+          <p>
+            Deposit 30-50% để giữ bàn chắc chắn (đặc biệt weekend/event night). 
+            Chuyển khoản hoặc thanh toán tại club. Nhận confirmation booking ngay.
+          </p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="process-number">04</div>
+        <div class="process-content">
+          <h4>Đến Club - Check In</h4>
+          <p>
+            Đến trước 30 phút để check-in thoải mái. VIP host đón tiếp, dẫn vào bàn. 
+            Confirm bottle selection, mixers preference, special requests cuối cùng.
+          </p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="process-number">05</div>
+        <div class="process-content">
+          <h4>Enjoy & Celebrate</h4>
+          <p>
+            Tận hưởng đêm tiệc đẳng cấp! Bottle girl phục vụ tận tâm, VIP host support 24/7. 
+            Thanh toán cuối đêm, nhận invoice đầy đủ. See you again! 🎉
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-tag">💬 FEEDBACK</div>
+      <h2 class="section-title">KHÁCH HÀNG VIP</h2>
+      <p class="section-subtitle">
+        Trải nghiệm thực tế từ những khách hàng đã sử dụng dịch vụ VIP
+      </p>
+    </div>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">DT</div>
+          <div class="testimonial-info">
+            <h5>David Trần - CEO Tech Startup</h5>
+            <div class="testimonial-service">Corporate Event</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Tổ chức year-end party cho 80 người tại THE WANN, team support rất chuyên nghiệp. 
+          Từ planning đến execution đều smooth. Nhân viên nhiệt tình, âm thanh ánh sáng đỉnh, 
+          clients của tôi rất ấn tượng. Highly recommended cho corporate events!"
+        </p>
+        <div class="testimonial-date">December 2025</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">LN</div>
+          <div class="testimonial-info">
+            <h5>Linh Nguyễn - Fashion Influencer</h5>
+            <div class="testimonial-service">Birthday Party VIP</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Birthday lần này tại THE WANN quá memorable! VIP table decoration cực xịn, 
+          champagne parade với sparklers như trong phim. Photographer hỗ trợ chụp ảnh rất đẹp. 
+          Bottle girl xinh và professional. Worth every penny! 🎂✨"
+        </p>
+        <div class="testimonial-date">January 2026</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">MH</div>
+          <div class="testimonial-info">
+            <h5>Michael Hoàng - Investment Banker</h5>
+            <div class="testimonial-service">Regular VIP Guest</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Tôi đã book VIP table ở đây 5-6 lần rồi. Service luôn consistent và excellent. 
+          VIP host remember preferences của tôi, favorite table, rượu ưa thích. 
+          Đây là cách treat clients của tôi - professional, classy, impressive."
+        </p>
+        <div class="testimonial-date">Regular Customer 2025-2026</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">PT</div>
+          <div class="testimonial-info">
+            <h5>Phương Trinh - Marketing Manager</h5>
+            <div class="testimonial-service">Bachelorette Party</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Tổ chức bachelorette party cho bestie tại THE WANN, team hỗ trợ tuyệt vời! 
+          Từ decoration, photo booth, đến surprise cake và DJ shoutout. 
+          Giá hợp lý, quality cao. Recommend 100% cho girls' night out!"
+        </p>
+        <div class="testimonial-date">November 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-header">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">CÂU HỎI THƯỜNG GẶP</h2>
+      <p class="section-subtitle">
+        Giải đáp các thắc mắc về dịch vụ VIP tại THE WANN
+      </p>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Giá bottle service tại THE WANN bao nhiêu?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Bottle service packages tại THE WANN bắt đầu từ 3.799.000đ cho combo cơ bản (6-8 người). 
+            Giá tùy thuộc vào loại rượu (vodka, whiskey, champagne), vị trí bàn (dance floor, near DJ booth, private area), 
+            và ngày đặt (weekend thường cao hơn weekday). Premium bottles như Dom Pérignon, Hennessy XO sẽ có giá riêng. 
+            Liên hệ Zalo để được tư vấn package phù hợp với budget và số người.
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Cần đặt bàn trước bao lâu?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Weekday (Thứ 4-6): Có thể book same-day hoặc 1-2 ngày trước. Weekend (Thứ 7-CN): Nên book trước 3-7 ngày 
+            để đảm bảo có bàn đẹp. Special events (New Year, Valentine, Tết...): Book trước 2-4 tuần. 
+            Last-minute bookings vẫn được accept nếu còn bàn, nhưng choice vị trí sẽ hạn chế hơn. 
+            Tip: Book qua Zalo để được response nhanh nhất!
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Có cần đặt cọc không?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Deposit không bắt buộc cho weekday. Weekend và special events: thường yêu cầu deposit 30-50% để giữ bàn. 
+            Deposit được trừ vào bill cuối đêm. Nếu cancel trước 24h, refund 100% deposit. 
+            Cancel trong vòng 24h: giữ lại 50% deposit fee. No-show: không refund. 
+            Thanh toán deposit qua chuyển khoản hoặc tại club. Nhận confirmation booking ngay sau khi deposit.
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Bottle service bao gồm những gì?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Full bottle service package bao gồm: (1) Reserved VIP table với ghế/sofa tùy vị trí; 
+            (2) Premium bottles theo choice (vodka/whiskey/champagne); 
+            (3) Full mixers: soda, juice, Red Bull, garnishes (lemon, lime, mint...); 
+            (4) Ice bucket, cups, napkins; (5) Dedicated bottle girl phục vụ tận bàn cả đêm; 
+            (6) VIP entry - skip general admission line; (7) VIP host support 24/7 trong club. 
+            Add-ons có thể order riêng: food platters, extra bottles, birthday cake, decoration...
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Có thể request DJ chơi nhạc không?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Có! VIP guests được priority song requests. Gửi request list qua VIP host hoặc bottle girl, 
+            DJ sẽ cố gắng chơi trong set (không guarantee 100% vì phụ thuộc vibe chung của club). 
+            Birthday/special celebration: DJ sẽ shoutout tên bạn và chơi dedicated song. 
+            Private events: có thể hire riêng DJ để chơi full playlist theo yêu cầu (fee riêng). 
+            Playlist style: Hip-Hop, EDM, House, Top 40, Viet Remix - đều ok!
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Dress code cho VIP guests?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Smart casual to upscale. NAM: Long pants (jeans ok nhưng clean, không rách nhiều), 
+            collared shirt hoặc nice t-shirt, giày (sneakers ok nhưng không dép lê/sandals). 
+            NỮ: Dress, skirt, jeans với nice top, heels hoặc nice flats. 
+            Tránh: shorts, flip-flops, sportswear, overly casual attire. 
+            VIP guests có slight flexibility hơn general admission, nhưng vẫn cần dress up để match club vibe. 
+            Birthday girl/special guests: bất cứ outfit nào bạn muốn - it's your night!
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Có parking/valet service không?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            THE WANN không có parking riêng, nhưng có nhiều bãi gửi xe gần đó (50-100m): 
+            Parking Vincom Center (24/7), Parkson parking, street parking trên Bùi Thị Xuân. 
+            Phí parking: 15.000-30.000đ/giờ. Valet service: chưa available hiện tại. 
+            Recommend: Grab/taxi để tránh parking hassle, đặc biệt nếu plan uống nhiều. 
+            Bike parking: có khu vực trông xe máy an toàn ngay club (5.000-10.000đ).
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Có thể bring food/drinks từ ngoài vào không?</h4>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Outside food/drinks KHÔNG được phép (standard nightclub policy). 
+            Exception: Birthday cake - được phép bring nếu có VIP table booking, 
+            nhưng phải notify trước. Corkage fee có thể apply. 
+            THE WANN có full food menu (snacks, finger food, main courses) và 
+            full bar với mọi loại rượu/cocktails. VIP tables có thể order food delivery to table. 
+            Special dietary requirements (vegetarian, allergic...): thông báo trước, kitchen sẽ accommodate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-content">
+      <h2>
+        SẴN SÀNG
+        <span class="highlight">TRẢI NGHIỆM VIP?</span>
+      </h2>
+      <p>
+        Liên hệ ngay để book bàn VIP hoặc tổ chức sự kiện đặc biệt tại THE WANN. 
+        Đội ngũ chuyên nghiệp luôn sẵn sàng tư vấn 24/7.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://zalo.me/0778307889" class="btn btn-primary">
+          💬 CHAT ZALO NGAY
+        </a>
+        <a href="tel:0778307889" class="btn btn-secondary">
+          📞 0778 307 889
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">THE WANN</div>
+    <p class="footer-text">
+      Nightclub & Bar cao cấp tại trung tâm Quận 1, Sài Gòn. 
+      Trải nghiệm nightlife đẳng cấp quốc tế.
+    </p>
+    
+    <div class="footer-social">
+      <a href="https://zalo.me/0778307889" class="social-btn" title="Chat Zalo">💬</a>
+      <a href="https://wa.me/84778307889" class="social-btn" title="WhatsApp">📱</a>
+      <a href="tel:0778307889" class="social-btn" title="Gọi điện">📞</a>
+    </div>
+
+    <p class="footer-copyright">
+      © 2026 THE WANN Nightclub & Bar. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- FLOATING ACTION BAR -->
+  <div class="floating-bar">
+    <div class="floating-content">
+      <div class="floating-info">
+        <p>✨ DỊCH VỤ VIP - ĐẶT BÀN NGAY</p>
+        <span>Tư vấn miễn phí 24/7</span>
+      </div>
+      <a href="https://zalo.me/0778307889" class="floating-btn">
+        💬 ZALO
+      </a>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ========== LOADING ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 1000);
+    });
+
+    // ========== HAMBURGER MENU ==========
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // ========== FAQ ACCORDION ==========
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // ========== LAZY LOAD IMAGES ==========
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      imageObserver.observe(img);
+    });
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const offset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ========== SCROLL ANIMATIONS ==========
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card, .benefit-card, .testimonial-card, .process-step').forEach(el => {
+      el.style.opacity = '0';
+      animationObserver.observe(el);
+    });
+
+    // ========== TRACK CLICKS ==========
+    document.querySelectorAll('a[href^="tel"], a[href*="zalo"], a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          const action = this.href.includes('zalo') ? 'zalo_click_services' : 
+                        this.href.includes('tel') ? 'phone_click_services' : 'whatsapp_click_services';
+          gtag('event', 'contact_action', {
+            'event_category': 'Services_Contact',
+            'event_label': action,
+            'value': this.href
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'VIP Services',
+      content_category: 'Services'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
 </body>
 </html>
