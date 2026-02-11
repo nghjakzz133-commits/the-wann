@@ -14,7 +14,7 @@
   </script>
   
   <title>🔥 Ưu Đãi TẾT 2026 - Tặng Combo 800K | THE WANN Nightclub Q1</title>
-  <meta name="description" content="⚡ MIỄN PHÍ combo 800K khi đặt bàn VIP Tết 2026 tại THE WANN - Nightclub #1 Bến Thành. Book ngay 0778307889 - Chỉ còn 15 bàn!">
+  <meta name="description" content="⚡ MIỄN PHÍ combo 800K khi đặt bàn VIP Tết 2026 tại THE WANN - Nightclub #1 Bến Thành. Book ngay Zalo 0778307889 - Chỉ còn 15 bàn!">
   
   <link rel="canonical" href="https://the-wann.pages.dev/">
   <link rel="icon" href="/logo.png" type="image/png">
@@ -28,7 +28,7 @@
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Righteous&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     /* ========== RESET ========== */
@@ -40,21 +40,23 @@
     }
     
     :root {
-      --gold: #D4AF37;
-      --gold-light: #F4E4B8;
-      --gold-dark: #B8942F;
-      --red: #DC2626;
-      --red-dark: #B91C1C;
-      --black: #0A0A0A;
+      --gold: #FFD700;
+      --gold-light: #FFF4C4;
+      --gold-dark: #DAA520;
+      --red: #FF2D2D;
+      --red-dark: #CC0000;
+      --black: #000000;
       --dark: #1A1A1A;
       --white: #FFFFFF;
-      --gray: #999;
+      --gray: #999999;
       
-      --font-display: 'Playfair Display', serif;
-      --font-body: 'Inter', sans-serif;
+      --font-display: 'Bebas Neue', cursive;
+      --font-accent: 'Righteous', cursive;
+      --font-body: 'Work Sans', sans-serif;
       
-      --shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.4);
-      --shadow-red: 0 10px 40px rgba(220, 38, 38, 0.4);
+      --shadow-gold: 0 8px 32px rgba(255, 215, 0, 0.4);
+      --shadow-red: 0 8px 32px rgba(255, 45, 45, 0.5);
+      --shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.8);
     }
     
     html {
@@ -70,21 +72,22 @@
       overflow-x: hidden;
     }
     
-    /* ========== HEADER - STICKY ========== */
+    /* ========== HEADER - STICKY WITH HAMBURGER ========== */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(0, 0, 0, 0.98);
       backdrop-filter: blur(20px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-      padding: 12px 0;
+      border-bottom: 2px solid var(--gold);
+      padding: 14px 0;
+      box-shadow: var(--shadow-dark);
     }
     
     .header-content {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 20px;
       display: flex;
@@ -94,39 +97,286 @@
     
     .logo {
       font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 3px;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 4px;
       color: var(--gold);
-      text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+      position: relative;
     }
     
-    .header-cta {
+    .logo::after {
+      content: '✦';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      animation: sparkle 2s infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.5; transform: translateY(-50%) scale(1.2); }
+    }
+    
+    /* HAMBURGER MENU */
+    .hamburger {
       display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-    
-    .header-phone {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--black);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      border-radius: 50px;
-      white-space: nowrap;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 1001;
       transition: all 0.3s ease;
     }
     
-    .header-phone:active {
-      transform: scale(0.95);
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     }
     
-    /* ========== HERO - CONVERSION FOCUSED ========== */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* MOBILE MENU */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 360px;
+      height: 100vh;
+      background: linear-gradient(135deg, var(--black), var(--dark));
+      z-index: 999;
+      padding: 100px 30px 40px;
+      transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9);
+      overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .menu-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 12px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      transform-origin: left;
+    }
+    
+    .menu-link:active {
+      transform: scale(0.98);
+      background: rgba(255, 215, 0, 0.15);
+    }
+    
+    .menu-link-icon {
+      font-size: 24px;
+      width: 32px;
+      text-align: center;
+    }
+    
+    .menu-cta {
+      padding: 20px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-red);
+    }
+    
+    .menu-cta-title {
+      font-family: var(--font-accent);
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .menu-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .menu-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .menu-cta-btn:active {
+      transform: scale(0.97);
+    }
+    
+    .menu-cta-btn.secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .menu-info {
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px dashed rgba(255, 215, 0, 0.3);
+      border-radius: 12px;
+    }
+    
+    .menu-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .menu-info-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .menu-info-icon {
+      font-size: 18px;
+      min-width: 24px;
+    }
+    
+    /* ========== TET BANNER - NEW ========== */
+    .tet-banner {
+      position: relative;
+      margin-top: 72px;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+      padding: 16px 20px;
+      overflow: hidden;
+      border-bottom: 3px solid var(--gold);
+    }
+    
+    .tet-banner::before {
+      content: '🧧🧧🧧🧧🧧🧧🧧🧧🧧🧧';
+      position: absolute;
+      top: -15px;
+      left: 0;
+      width: 200%;
+      font-size: 40px;
+      opacity: 0.1;
+      animation: scroll-left 20s linear infinite;
+    }
+    
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .tet-banner-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .tet-banner-text {
+      flex: 1;
+    }
+    
+    .tet-banner-title {
+      font-family: var(--font-accent);
+      font-size: 16px;
+      color: var(--gold);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .tet-banner-subtitle {
+      font-size: 13px;
+      color: var(--white);
+      font-weight: 500;
+    }
+    
+    .tet-banner-badge {
+      background: var(--gold);
+      color: var(--black);
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 13px;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
+      animation: pulse-badge 2s infinite;
+    }
+    
+    @keyframes pulse-badge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* ========== HERO - UPDATED ========== */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -135,7 +385,7 @@
       justify-content: center;
       background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(26,26,26,0.7)),
                   url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074') center/cover;
-      padding: 100px 20px 60px;
+      padding: 140px 20px 80px;
       overflow: hidden;
     }
     
@@ -146,14 +396,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
     }
     
     .hero-content {
       position: relative;
       z-index: 10;
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
       animation: fadeInUp 0.8s ease;
     }
     
@@ -170,10 +420,12 @@
     
     /* URGENT BANNER */
     .urgent-banner {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: var(--red);
       color: var(--gold);
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 50px;
       font-weight: 800;
       font-size: 14px;
@@ -185,73 +437,115 @@
     }
     
     @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      0%, 100% { transform: scale(1); box-shadow: var(--shadow-red); }
+      50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(255, 45, 45, 0.7); }
     }
     
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 8vw, 64px);
-      font-weight: 900;
-      line-height: 1.1;
+      font-size: clamp(40px, 10vw, 80px);
+      font-weight: 400;
+      line-height: 1;
       color: var(--white);
       margin-bottom: 20px;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+      letter-spacing: 4px;
     }
     
     .hero h1 .highlight {
       color: var(--gold);
       display: block;
+      margin-top: 12px;
     }
     
     .hero-subtitle {
-      font-size: clamp(18px, 4vw, 24px);
+      font-size: clamp(18px, 4vw, 26px);
       color: var(--gold-light);
-      margin-bottom: 32px;
+      margin-bottom: 40px;
       font-weight: 600;
     }
     
-    /* COUNTDOWN TIMER */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
+    /* LIVE ACTIVITY TRACKER - REPLACES COUNTDOWN */
+    .live-tracker {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 24px 20px;
       margin-bottom: 40px;
-      flex-wrap: wrap;
+      backdrop-filter: blur(10px);
     }
     
-    .countdown-item {
-      background: rgba(212, 175, 55, 0.1);
-      border: 2px solid var(--gold);
+    .tracker-title {
+      font-family: var(--font-accent);
+      font-size: 14px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    
+    .tracker-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .tracker-item {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
       border-radius: 12px;
-      padding: 16px;
-      min-width: 80px;
+      padding: 14px;
       text-align: center;
     }
     
-    .countdown-number {
+    .tracker-value {
       font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 900;
+      font-size: 32px;
       color: var(--gold);
-      display: block;
-      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
     }
     
-    .countdown-label {
+    .tracker-pulse {
+      width: 10px;
+      height: 10px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    
+    .tracker-label {
       font-size: 12px;
       color: var(--gray);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-top: 8px;
     }
     
-    /* CTA BUTTONS - LARGER FOR MOBILE */
+    .tracker-status {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(255, 45, 45, 0.2);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    
+    /* CTA BUTTONS - ZALO PRIORITY */
     .hero-cta {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      max-width: 400px;
+      gap: 14px;
+      max-width: 450px;
       margin: 0 auto 32px;
     }
     
@@ -271,26 +565,49 @@
       border: none;
       cursor: pointer;
       white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    .btn:active::before {
+      width: 300px;
+      height: 300px;
     }
     
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--gold-dark));
       color: var(--black);
       box-shadow: var(--shadow-gold);
+      border: 3px solid var(--gold);
     }
     
-    .btn-primary:active {
-      transform: scale(0.97);
+    .btn-primary .btn-icon {
+      font-size: 22px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
     
     .btn-secondary {
       background: transparent;
       color: var(--white);
       border: 2px solid var(--white);
-    }
-    
-    .btn-secondary:active {
-      background: rgba(255, 255, 255, 0.1);
     }
     
     /* SOCIAL PROOF */
@@ -300,7 +617,7 @@
       gap: 24px;
       flex-wrap: wrap;
       padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .proof-item {
@@ -309,14 +626,14 @@
     
     .proof-number {
       font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 36px;
       color: var(--gold);
       display: block;
+      letter-spacing: 2px;
     }
     
     .proof-label {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--gray);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -348,21 +665,22 @@
       display: inline-block;
       background: var(--red);
       color: var(--gold);
-      padding: 8px 20px;
+      padding: 10px 24px;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 16px;
+      box-shadow: var(--shadow-red);
     }
     
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 6vw, 48px);
-      font-weight: 900;
+      font-size: clamp(32px, 7vw, 64px);
       color: var(--gold);
       margin-bottom: 16px;
+      letter-spacing: 3px;
     }
     
     .section-subtitle {
@@ -382,7 +700,7 @@
     }
     
     .promo-card {
-      background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(0, 0, 0, 0.5));
+      background: linear-gradient(135deg, rgba(255, 45, 45, 0.1), rgba(0, 0, 0, 0.5));
       border: 2px solid var(--gold);
       border-radius: 20px;
       padding: 32px 24px;
@@ -398,7 +716,7 @@
       right: 0;
       width: 150px;
       height: 150px;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent);
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
       border-radius: 50%;
     }
     
@@ -408,22 +726,23 @@
       right: 20px;
       background: var(--red);
       color: var(--gold);
-      padding: 6px 16px;
+      padding: 8px 18px;
       border-radius: 50px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
+      box-shadow: var(--shadow-red);
     }
     
     .promo-icon {
-      font-size: 48px;
+      font-size: 56px;
       margin-bottom: 20px;
     }
     
     .promo-card h3 {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 4vw, 28px);
+      font-family: var(--font-accent);
+      font-size: clamp(24px, 5vw, 32px);
       color: var(--gold);
       margin-bottom: 20px;
       line-height: 1.2;
@@ -436,17 +755,17 @@
     .benefit {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding: 12px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 8px;
-      border-left: 3px solid var(--gold);
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      border-left: 4px solid var(--gold);
     }
     
     .benefit-icon {
-      font-size: 20px;
-      min-width: 24px;
+      font-size: 24px;
+      min-width: 28px;
     }
     
     .benefit-text {
@@ -456,37 +775,39 @@
     .benefit-text strong {
       display: block;
       color: var(--white);
-      margin-bottom: 4px;
-      font-size: 16px;
+      margin-bottom: 6px;
+      font-size: 17px;
     }
     
     .benefit-text p {
       color: var(--gold-light);
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 15px;
+      line-height: 1.6;
     }
     
     .promo-value {
-      background: linear-gradient(90deg, rgba(220, 38, 38, 0.2), rgba(212, 175, 55, 0.2));
-      padding: 20px;
-      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(255, 45, 45, 0.2), rgba(255, 215, 0, 0.2));
+      padding: 24px;
+      border-radius: 16px;
       text-align: center;
       margin-top: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
     }
     
     .promo-value .value {
       font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 900;
+      font-size: 48px;
       color: var(--red);
       display: block;
       margin-bottom: 8px;
+      letter-spacing: 2px;
     }
     
     .promo-value p {
       color: var(--gold);
-      font-size: 14px;
+      font-size: 15px;
       margin: 0;
+      font-weight: 600;
     }
     
     /* ========== SOCIAL PROOF SECTION ========== */
@@ -505,9 +826,15 @@
     
     .review-card {
       background: var(--dark);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      border: 1px solid rgba(255, 215, 0, 0.2);
       border-radius: 16px;
       padding: 28px 24px;
+      transition: all 0.3s ease;
+    }
+    
+    .review-card:active {
+      transform: translateY(-4px);
+      border-color: var(--gold);
     }
     
     .review-header {
@@ -529,12 +856,14 @@
       font-weight: 900;
       color: var(--black);
       flex-shrink: 0;
+      font-family: var(--font-accent);
     }
     
     .review-info h4 {
       color: var(--white);
       font-size: 16px;
       margin-bottom: 4px;
+      font-weight: 600;
     }
     
     .stars {
@@ -545,7 +874,7 @@
     .review-text {
       color: var(--gold-light);
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.8;
       font-style: italic;
     }
     
@@ -554,24 +883,25 @@
       align-items: center;
       gap: 6px;
       margin-top: 12px;
-      padding: 6px 12px;
-      background: rgba(212, 175, 55, 0.1);
+      padding: 8px 14px;
+      background: rgba(255, 215, 0, 0.1);
       border-radius: 20px;
       font-size: 12px;
       color: var(--gold);
+      font-weight: 600;
     }
     
     /* ========== STATS BAR ========== */
     .stats-bar {
       background: linear-gradient(135deg, var(--red-dark), var(--red));
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
     
     .stats-grid {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       text-align: center;
     }
@@ -587,12 +917,12 @@
     
     .stat-number {
       font-family: var(--font-display);
-      font-size: 48px;
-      font-weight: 900;
+      font-size: 56px;
       color: var(--gold);
       display: block;
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
     
     .stat-label {
@@ -600,6 +930,7 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 600;
     }
     
     /* ========== GALLERY ========== */
@@ -643,7 +974,7 @@
     .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.8), rgba(0, 0, 0, 0.8));
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(0, 0, 0, 0.8));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -676,7 +1007,7 @@
       align-items: baseline;
       gap: 16px;
       padding: 20px 0;
-      border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+      border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
     }
     
     .menu-item:last-child {
@@ -687,20 +1018,20 @@
       flex: 1;
       font-size: 16px;
       color: var(--white);
-      line-height: 1.4;
+      line-height: 1.5;
     }
     
     .menu-price {
       font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 20px;
       color: var(--gold);
       white-space: nowrap;
+      letter-spacing: 1px;
     }
     
     /* ========== FINAL CTA ========== */
     .final-cta {
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.9)),
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.9)),
                   url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074') center/cover fixed;
       padding: 100px 20px;
       text-align: center;
@@ -723,17 +1054,18 @@
     
     .final-cta h2 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 6vw, 56px);
-      font-weight: 900;
+      font-size: clamp(36px, 8vw, 72px);
       color: var(--white);
       margin-bottom: 20px;
-      line-height: 1.2;
+      line-height: 1.1;
+      letter-spacing: 3px;
     }
     
     .final-cta p {
-      font-size: clamp(16px, 3vw, 20px);
+      font-size: clamp(16px, 3vw, 22px);
       color: var(--gold-light);
       margin-bottom: 40px;
+      line-height: 1.8;
     }
     
     /* ========== CONTACT INFO ========== */
@@ -746,7 +1078,7 @@
       max-width: 900px;
       margin: 0 auto;
       display: grid;
-      gap: 24px;
+      gap: 20px;
     }
     
     .contact-item {
@@ -755,8 +1087,14 @@
       gap: 16px;
       padding: 24px;
       background: var(--black);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      border-radius: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:active {
+      border-color: var(--gold);
+      transform: translateY(-2px);
     }
     
     .contact-icon {
@@ -766,7 +1104,7 @@
     
     .contact-details h4 {
       color: var(--gold);
-      font-size: 16px;
+      font-size: 17px;
       margin-bottom: 8px;
       font-weight: 700;
     }
@@ -776,7 +1114,7 @@
       color: var(--gold-light);
       font-size: 15px;
       text-decoration: none;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     
     .contact-details a:hover {
@@ -786,45 +1124,45 @@
     /* ========== FOOTER ========== */
     .footer {
       background: var(--black);
-      padding: 40px 20px;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 50px 20px;
+      border-top: 2px solid var(--gold);
       text-align: center;
     }
     
     .footer-logo {
       font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 900;
+      font-size: 36px;
       color: var(--gold);
-      margin-bottom: 16px;
-      letter-spacing: 3px;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
     }
     
     .footer-text {
       color: var(--gray);
       font-size: 14px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.8;
     }
     
     .footer-social {
       display: flex;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
     
     .social-btn {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       border: 2px solid var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 24px;
       color: var(--gold);
       text-decoration: none;
       transition: all 0.3s ease;
@@ -843,22 +1181,22 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* ========== FLOATING ACTION BAR ========== */
+    /* ========== FLOATING ACTION BAR - ZALO PRIORITY ========== */
     .floating-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 10, 10, 0.98);
+      background: rgba(0, 0, 0, 0.98);
       backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 12px 16px;
+      border-top: 2px solid var(--gold);
+      padding: 14px 16px;
       z-index: 999;
-      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
     }
     
     .floating-content {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       gap: 12px;
@@ -872,7 +1210,7 @@
     
     .floating-info p {
       color: var(--gold);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       margin: 0;
       white-space: nowrap;
@@ -882,7 +1220,7 @@
     
     .floating-info span {
       color: var(--gray);
-      font-size: 11px;
+      font-size: 12px;
     }
     
     .floating-btn {
@@ -899,6 +1237,8 @@
       white-space: nowrap;
       box-shadow: var(--shadow-gold);
       transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     
     .floating-btn:active {
@@ -907,12 +1247,34 @@
     
     /* ========== TABLET/DESKTOP ========== */
     @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      
+      .mobile-menu,
+      .menu-overlay {
+        display: none;
+      }
+      
       .header-content {
         padding: 0 40px;
       }
       
+      .tet-banner {
+        margin-top: 76px;
+        padding: 20px 40px;
+      }
+      
+      .tet-banner-title {
+        font-size: 20px;
+      }
+      
+      .tet-banner-subtitle {
+        font-size: 15px;
+      }
+      
       .hero {
-        padding: 120px 40px 80px;
+        padding: 160px 40px 100px;
       }
       
       .hero-cta {
@@ -921,13 +1283,21 @@
       }
       
       .btn {
-        padding: 18px 48px;
+        padding: 20px 48px;
         font-size: 15px;
+      }
+      
+      .tracker-grid {
+        grid-template-columns: repeat(4, 1fr);
       }
       
       .promo-grid,
       .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
       }
       
       .gallery-grid {
@@ -944,18 +1314,17 @@
       }
       
       .floating-bar {
-        padding: 16px 40px;
+        padding: 18px 40px;
       }
     }
     
     @media (min-width: 1024px) {
-      .countdown-item {
-        min-width: 100px;
-        padding: 20px;
+      .tracker-value {
+        font-size: 40px;
       }
       
-      .countdown-number {
-        font-size: 48px;
+      .stat-number {
+        font-size: 64px;
       }
     }
     
@@ -965,8 +1334,10 @@
       inset: 0;
       background: var(--black);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 20px;
       z-index: 9999;
       transition: opacity 0.5s ease;
     }
@@ -979,7 +1350,7 @@
     .spinner {
       width: 60px;
       height: 60px;
-      border: 4px solid rgba(212, 175, 55, 0.2);
+      border: 4px solid rgba(255, 215, 0, 0.2);
       border-top-color: var(--gold);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
@@ -989,9 +1360,16 @@
       to { transform: rotate(360deg); }
     }
     
+    .loading-text {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+    
     /* ========== UTILITIES ========== */
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -1026,25 +1404,98 @@
   <!-- LOADING SCREEN -->
   <div class="loading" id="loading">
     <div class="spinner"></div>
+    <div class="loading-text">THE WANN</div>
   </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- HEADER -->
   <header class="header">
     <div class="header-content">
       <div class="logo">THE WANN</div>
-      <div class="header-cta">
-        <a href="tel:0778307889" class="header-phone">
-          📞 <span>0778 307 889</span>
-        </a>
+      
+      <!-- HAMBURGER MENU -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="menu-cta">
+      <div class="menu-cta-title">🔥 Đặt Bàn Ngay</div>
+      <div class="menu-cta-buttons">
+        <a href="https://zalo.me/0778307889" class="menu-cta-btn">
+          💬 CHAT ZALO - HỖ TRỢ NHANH
+        </a>
+        <a href="tel:0778307889" class="menu-cta-btn secondary">
+          📞 GỌI ĐIỆN
+        </a>
+      </div>
+    </div>
+    
+    <div class="menu-links">
+      <a href="#promo" class="menu-link">
+        <span class="menu-link-icon">🎁</span>
+        <span>Ưu Đãi Tết</span>
+      </a>
+      <a href="#gallery" class="menu-link">
+        <span class="menu-link-icon">📸</span>
+        <span>Hình Ảnh</span>
+      </a>
+      <a href="#menu" class="menu-link">
+        <span class="menu-link-icon">🍾</span>
+        <span>Menu & Combo</span>
+      </a>
+      <a href="#reviews" class="menu-link">
+        <span class="menu-link-icon">⭐</span>
+        <span>Đánh Giá</span>
+      </a>
+      <a href="#contact" class="menu-link">
+        <span class="menu-link-icon">📍</span>
+        <span>Liên Hệ</span>
+      </a>
+    </div>
+    
+    <div class="menu-info">
+      <div class="menu-info-item">
+        <span class="menu-info-icon">📍</span>
+        <span>51 Bùi Thị Xuân, Q1, TP.HCM</span>
+      </div>
+      <div class="menu-info-item">
+        <span class="menu-info-icon">🕐</span>
+        <span>21:00 - 04:00 (Mỗi ngày)</span>
+      </div>
+      <div class="menu-info-item">
+        <span class="menu-info-icon">💬</span>
+        <span>Zalo/WhatsApp: 0778 307 889</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TET BANNER -->
+  <div class="tet-banner">
+    <div class="tet-banner-content">
+      <div class="tet-banner-text">
+        <div class="tet-banner-title">🧧 ƯU ĐÃI TẾT ẤT TỴ 2026</div>
+        <div class="tet-banner-subtitle">Tặng combo 800K + Giảm 10% bill</div>
+      </div>
+      <div class="tet-banner-badge">
+        CHỈ 12 BÀN
+      </div>
+    </div>
+  </div>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <div class="urgent-banner">
-        ⚡ CHỈ CÒN <span id="remaining">12</span> BÀN ⚡
+        <span class="tracker-pulse"></span>
+        KHUYẾN MÃI ĐANG DIỄN RA
       </div>
       
       <h1>
@@ -1056,33 +1507,45 @@
         🎁 Tặng 2 món ăn + 5 lon bia · Giảm thêm 10% bill
       </p>
 
-      <!-- COUNTDOWN -->
-      <div class="countdown">
-        <div class="countdown-item">
-          <span class="countdown-number" id="days">03</span>
-          <span class="countdown-label">Ngày</span>
+      <!-- LIVE ACTIVITY TRACKER -->
+      <div class="live-tracker">
+        <div class="tracker-title">⚡ Trạng Thái Đặt Bàn Hôm Nay</div>
+        <div class="tracker-grid">
+          <div class="tracker-item">
+            <div class="tracker-value">
+              <span class="tracker-pulse"></span>
+              <span id="liveBookings">28</span>
+            </div>
+            <div class="tracker-label">Đã đặt</div>
+          </div>
+          <div class="tracker-item">
+            <div class="tracker-value" id="remainingTables">12</div>
+            <div class="tracker-label">Còn trống</div>
+          </div>
+          <div class="tracker-item">
+            <div class="tracker-value">
+              <span class="tracker-pulse"></span>
+              <span id="liveVisitors">8</span>
+            </div>
+            <div class="tracker-label">Đang xem</div>
+          </div>
+          <div class="tracker-item">
+            <div class="tracker-value">VIP</div>
+            <div class="tracker-label">Bàn đẹp</div>
+          </div>
         </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="hours">14</span>
-          <span class="countdown-label">Giờ</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="minutes">28</span>
-          <span class="countdown-label">Phút</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="seconds">45</span>
-          <span class="countdown-label">Giây</span>
+        <div class="tracker-status">
+          🔥 <span id="recentBooking">Minh Anh</span> vừa đặt bàn 2 phút trước
         </div>
       </div>
 
-      <!-- CTA BUTTONS -->
+      <!-- CTA BUTTONS - ZALO FIRST -->
       <div class="hero-cta">
-        <a href="tel:0778307889" class="btn btn-primary">
-          📞 GỌI NGAY - BOOK BÀN VIP
+        <a href="https://zalo.me/0778307889" class="btn btn-primary">
+          <span class="btn-icon">💬</span> CHAT ZALO - HỖ TRỢ NHANH
         </a>
-        <a href="https://zalo.me/0778307889" class="btn btn-secondary">
-          💬 CHAT ZALO
+        <a href="tel:0778307889" class="btn btn-secondary">
+          📞 GỌI NGAY 0778 307 889
         </a>
       </div>
 
@@ -1105,10 +1568,10 @@
   </section>
 
   <!-- TET PROMOTION -->
-  <section class="promo">
+  <section class="promo" id="promo">
     <div class="section-header">
       <div class="section-tag">🧧 ƯU ĐÃI ĐẶC BIỆT</div>
-      <h2 class="section-title">Quà Tặng Tết 2026</h2>
+      <h2 class="section-title">QUÀ TẶNG TẾT 2026</h2>
       <p class="section-subtitle">
         Đặt bàn VIP hôm nay - Nhận ngay 2 ưu đãi khủng
       </p>
@@ -1193,8 +1656,8 @@
     </div>
 
     <div class="text-center mt-40">
-      <a href="tel:0778307889" class="btn btn-primary">
-        📞 ĐẶT BÀN NGAY - NHẬN ƯU ĐÃI
+      <a href="https://zalo.me/0778307889" class="btn btn-primary">
+        💬 ĐẶT BÀN ZALO - NHẬN ƯU ĐÃI
       </a>
     </div>
   </section>
@@ -1222,10 +1685,10 @@
   </section>
 
   <!-- REVIEWS -->
-  <section class="reviews">
+  <section class="reviews" id="reviews">
     <div class="section-header">
       <div class="section-tag">⭐ ĐÁNH GIÁ</div>
-      <h2 class="section-title">Khách Hàng Nói Gì</h2>
+      <h2 class="section-title">KHÁCH HÀNG NÓI GÌ</h2>
       <p class="section-subtitle">
         Hơn 2,500 khách hàng đã trải nghiệm và hài lòng
       </p>
@@ -1256,7 +1719,7 @@
           </div>
         </div>
         <p class="review-text">
-          "Tổ chức sinh nhật ở đây rất tuyệt. Team hỗ trợ nhiệt tình, 
+          "Tổ chức sinh nhật ở đây rất tuyệt. Team hỗ trợ nhiệt tình qua Zalo, 
           không gian sang trọng, bạn bè ai cũng khen. Recommend!"
         </p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
@@ -1271,7 +1734,7 @@
           </div>
         </div>
         <p class="review-text">
-          "Đặt bàn VIP rất dễ dàng qua Zalo. Vị trí đẹp, view sân khấu tốt. 
+          "Đặt bàn VIP rất dễ dàng qua Zalo, phản hồi cực nhanh. Vị trí đẹp, view sân khấu tốt. 
           Ưu đãi Tết này quá hời luôn!"
         </p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
@@ -1295,10 +1758,10 @@
   </section>
 
   <!-- GALLERY -->
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <div class="section-header">
       <div class="section-tag">📸 HÌNH ẢNH</div>
-      <h2 class="section-title">Không Gian THE WANN</h2>
+      <h2 class="section-title">KHÔNG GIAN THE WANN</h2>
       <p class="section-subtitle">
         Trải nghiệm nightlife đẳng cấp tại trung tâm Q1
       </p>
@@ -1329,10 +1792,10 @@
   </section>
 
   <!-- MENU PREVIEW -->
-  <section class="menu">
+  <section class="menu" id="menu">
     <div class="section-header">
       <div class="section-tag">🍾 MENU</div>
-      <h2 class="section-title">Combo VIP Packages</h2>
+      <h2 class="section-title">COMBO VIP PACKAGES</h2>
       <p class="section-subtitle">
         Giá combo đã bao gồm ăn uống - Phù hợp nhóm 6-10 người
       </p>
@@ -1366,8 +1829,8 @@
     </div>
 
     <div class="text-center mt-40">
-      <a href="tel:0778307889" class="btn btn-primary">
-        📋 XEM MENU ĐẦY ĐỦ
+      <a href="https://zalo.me/0778307889" class="btn btn-primary">
+        💬 CHAT ZALO - XEM MENU ĐẦY ĐỦ
       </a>
     </div>
   </section>
@@ -1375,36 +1838,45 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="final-cta-content">
-      <h2>Book Bàn VIP Ngay Hôm Nay</h2>
+      <h2>BOOK BÀN VIP NGAY HÔM NAY</h2>
       <p>
-        🔥 Chỉ còn <strong>12 bàn</strong> cho chương trình Tết 2026<br>
-        ⏰ Ưu đãi kết thúc sau 3 ngày
+        🔥 Chỉ còn <strong id="finalRemaining">12 bàn</strong> cho chương trình Tết 2026<br>
+        💬 Chat Zalo để được tư vấn và đặt bàn nhanh nhất
       </p>
       <div class="hero-cta">
-        <a href="tel:0778307889" class="btn btn-primary">
-          📞 0778 307 889
+        <a href="https://zalo.me/0778307889" class="btn btn-primary">
+          💬 CHAT ZALO NGAY
         </a>
-        <a href="https://zalo.me/0778307889" class="btn btn-secondary">
-          💬 CHAT ZALO
+        <a href="tel:0778307889" class="btn btn-secondary">
+          📞 0778 307 889
         </a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="section-header">
       <div class="section-tag">📍 LIÊN HỆ</div>
-      <h2 class="section-title">Thông Tin & Địa Chỉ</h2>
+      <h2 class="section-title">THÔNG TIN & ĐỊA CHỈ</h2>
     </div>
 
     <div class="contact-grid">
       <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div class="contact-details">
+          <h4>Zalo / WhatsApp (Ưu tiên)</h4>
+          <p><a href="https://zalo.me/0778307889">Chat Zalo: 0778 307 889</a></p>
+          <p>Hỗ trợ nhanh - Tư vấn chi tiết - Đặt bàn dễ dàng</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
         <div class="contact-icon">📞</div>
         <div class="contact-details">
-          <h4>Hotline / Zalo / WhatsApp</h4>
+          <h4>Hotline</h4>
           <p><a href="tel:0778307889">0778 307 889</a></p>
-          <p>Hỗ trợ 24/7 - Đặt bàn nhanh</p>
+          <p>Hỗ trợ 24/7 - Gọi trực tiếp</p>
         </div>
       </div>
 
@@ -1420,18 +1892,7 @@
         <div class="contact-icon">🕐</div>
         <div class="contact-details">
           <h4>Giờ mở cửa</h4>
-          <p>Thứ 4 - Chủ Nhật: 21:00 - 04:00<br>Thứ 2, 3: Nghỉ</p>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">💬</div>
-        <div class="contact-details">
-          <h4>Kênh liên hệ</h4>
-          <p>
-            <a href="https://zalo.me/0778307889">Zalo Chat</a> · 
-            <a href="https://wa.me/84778307889">WhatsApp</a>
-          </p>
+          <p>Mỗi ngày: 21:00 - 04:00<br>(Mở cửa cả tuần)</p>
         </div>
       </div>
     </div>
@@ -1446,9 +1907,9 @@
     </p>
     
     <div class="footer-social">
-      <a href="https://zalo.me/0778307889" class="social-btn">💬</a>
-      <a href="https://wa.me/84778307889" class="social-btn">📱</a>
-      <a href="tel:0778307889" class="social-btn">📞</a>
+      <a href="https://zalo.me/0778307889" class="social-btn" title="Chat Zalo">💬</a>
+      <a href="https://wa.me/84778307889" class="social-btn" title="WhatsApp">📱</a>
+      <a href="tel:0778307889" class="social-btn" title="Gọi điện">📞</a>
     </div>
 
     <p class="footer-copyright">
@@ -1456,15 +1917,15 @@
     </p>
   </footer>
 
-  <!-- FLOATING ACTION BAR -->
+  <!-- FLOATING ACTION BAR - ZALO PRIORITY -->
   <div class="floating-bar">
     <div class="floating-content">
       <div class="floating-info">
-        <p>🔥 ƯU ĐÃI TẾT - TẶNG COMBO 800K</p>
-        <span>Chỉ còn <strong id="remaining-float">12</strong> bàn</span>
+        <p>🔥 TẾT 2026 - TẶNG COMBO 800K</p>
+        <span>Còn <strong id="floatingRemaining">12</strong> bàn trống</span>
       </div>
-      <a href="tel:0778307889" class="floating-btn">
-        📞 ĐẶT NGAY
+      <a href="https://zalo.me/0778307889" class="floating-btn">
+        💬 ZALO
       </a>
     </div>
   </div>
@@ -1475,56 +1936,77 @@
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loading').classList.add('hidden');
-      }, 800);
+      }, 1000);
     });
 
-    // ========== COUNTDOWN TIMER ==========
-    function updateCountdown() {
-      // Set target date (3 days from now)
-      const targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 3);
-      targetDate.setHours(23, 59, 59);
+    // ========== HAMBURGER MENU ==========
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
 
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    hamburger.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
 
-    // ========== REMAINING TABLES ANIMATION ==========
-    function animateRemaining() {
-      const remaining = document.getElementById('remaining');
-      const remainingFloat = document.getElementById('remaining-float');
-      
-      // Simulate decreasing availability
-      const initialCount = 15;
-      const minCount = 8;
-      const randomCount = Math.floor(Math.random() * (initialCount - minCount + 1)) + minCount;
-      
-      let current = initialCount;
-      const interval = setInterval(() => {
-        if (current > randomCount) {
-          current--;
-          remaining.textContent = current;
-          remainingFloat.textContent = current;
-        } else {
-          clearInterval(interval);
+    // Close menu when clicking a link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          toggleMenu();
         }
-      }, 3000);
+      });
+    });
+
+    // ========== LIVE ACTIVITY TRACKER ==========
+    const names = ['Minh Anh', 'Tuấn Hưng', 'Linh Phương', 'Quang Dũng', 'Hải Yến', 'Thanh Tùng', 'Bảo Ngọc', 'Anh Tuấn'];
+    let currentBookings = 28;
+    let currentVisitors = 8;
+    let remainingTables = 12;
+
+    function updateLiveStats() {
+      // Random visitor count (6-12)
+      currentVisitors = Math.floor(Math.random() * 7) + 6;
+      document.getElementById('liveVisitors').textContent = currentVisitors;
+
+      // Occasionally increase bookings and decrease tables
+      if (Math.random() > 0.7 && remainingTables > 5) {
+        currentBookings++;
+        remainingTables--;
+        
+        // Update all remaining displays
+        document.getElementById('remainingTables').textContent = remainingTables;
+        document.getElementById('floatingRemaining').textContent = remainingTables;
+        document.getElementById('finalRemaining').textContent = remainingTables + ' bàn';
+        
+        // Update bookings count
+        document.getElementById('liveBookings').textContent = currentBookings;
+        
+        // Update recent booking name
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const timeAgo = Math.floor(Math.random() * 5) + 1;
+        document.getElementById('recentBooking').textContent = randomName;
+        
+        // Show notification (optional enhancement)
+        const tracker = document.querySelector('.tracker-status');
+        tracker.style.animation = 'none';
+        setTimeout(() => {
+          tracker.style.animation = 'pulse 0.5s ease';
+        }, 10);
+      }
     }
 
-    setTimeout(animateRemaining, 2000);
+    // Update every 8-15 seconds
+    setInterval(updateLiveStats, Math.random() * 7000 + 8000);
+
+    // Initial update after 3 seconds
+    setTimeout(updateLiveStats, 3000);
 
     // ========== LAZY LOAD IMAGES ==========
     const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -1565,10 +2047,12 @@
       link.addEventListener('click', function() {
         // Send event to Google Analytics
         if (typeof gtag !== 'undefined') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-CONVERSION_ID',
+          const action = this.href.includes('zalo') ? 'zalo_click' : 
+                        this.href.includes('tel') ? 'phone_click' : 'whatsapp_click';
+          gtag('event', 'contact_action', {
             'event_category': 'Contact',
-            'event_label': this.href
+            'event_label': action,
+            'value': this.href
           });
         }
       });
@@ -1583,9 +2067,27 @@
         document.body.style.transition = '';
       }, 400);
     });
+
+    // ========== SCROLL ANIMATIONS ==========
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.promo-card, .review-card, .stat-item').forEach(el => {
+      animationObserver.observe(el);
+    });
   </script>
 
-  <!-- Facebook Pixel Code (thêm pixel ID của bạn) -->
+  <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -1595,7 +2097,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID'); // Thay YOUR_PIXEL_ID
+    fbq('init', 'YOUR_PIXEL_ID');
     fbq('track', 'PageView');
   </script>
   <noscript>
