@@ -13,15 +13,15 @@
   })(window,document,'script','dataLayer','GTM-KP9L2RBV');
   </script>
   
-  <title>🔥 Ưu Đãi TẾT 2026 - Tặng Combo 800K | THE WANN Nightclub Q1</title>
-  <meta name="description" content="⚡ MIỄN PHÍ combo 800K khi đặt bàn VIP Tết 2026 tại THE WANN - Nightclub #1 Bến Thành. Book ngay Zalo 0373453757 - Chỉ còn 15 bàn!">
+  <title>🔥 Ưu Đãi THÁNG 3 RỰC RỠ - Tặng Combo 800K | THE WANN Nightclub Q1</title>
+  <meta name="description" content="⚡ MIỄN PHÍ combo 800K khi đặt bàn VIP Tháng 3 tại THE WANN - Nightclub #1 Bến Thành. Book ngay Zalo 0373453757 - Số lượng có hạn!">
   
   <link rel="canonical" href="https://the-wann.pages.dev/">
   <link rel="icon" href="/logo.png" type="image/png">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="🔥 MIỄN PHÍ Combo 800K - Ưu Đãi TẾT THE WANN">
-  <meta property="og:description" content="Đặt bàn VIP ngay - Tặng combo ăn uống + 5 lon bia. Giảm thêm 10% bill. Chỉ 15 bàn!">
+  <meta property="og:title" content="🔥 MIỄN PHÍ Combo 800K - Ưu Đãi THÁNG 3 THE WANN">
+  <meta property="og:description" content="Đặt bàn VIP ngay - Tặng combo ăn uống + 5 lon bia. Giảm thêm 10% bill. Số lượng có hạn!">
   <meta property="og:image" content="https://the-wann.pages.dev/assets/hero-bg.jpg">
   <meta property="og:url" content="https://the-wann.pages.dev/">
   
@@ -302,7 +302,7 @@
       min-width: 24px;
     }
     
-    /* ========== TET BANNER - NEW ========== */
+    /* ========== PROMO BANNER ========== */
     .tet-banner {
       position: relative;
       margin-top: 72px;
@@ -313,7 +313,7 @@
     }
     
     .tet-banner::before {
-      content: '🧧🧧🧧🧧🧧🧧🧧🧧🧧🧧';
+      content: '🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸';
       position: absolute;
       top: -15px;
       left: 0;
@@ -376,46 +376,47 @@
       50% { transform: scale(1.05); }
     }
     
-    /* ========== HERO - UPDATED ========== */
+    /* ========== HERO ========== */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: calc(100vh - 72px);
+      background: none !important;
+      padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(26,26,26,0.7)),
-                  url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074') center/cover;
-      padding: 140px 20px 80px;
       overflow: hidden;
     }
     
-    .hero::before {
-      content: '';
+    .hero-video {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
     }
     
     .hero-content {
       position: relative;
-      z-index: 10;
+      z-index: 2;
+      padding: 160px 20px 80px;
       text-align: center;
       max-width: 900px;
       animation: fadeInUp 0.8s ease;
     }
     
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     /* URGENT BANNER */
@@ -465,7 +466,7 @@
       font-weight: 600;
     }
     
-    /* LIVE ACTIVITY TRACKER - REPLACES COUNTDOWN */
+    /* LIVE ACTIVITY TRACKER */
     .live-tracker {
       background: rgba(0, 0, 0, 0.6);
       border: 2px solid var(--gold);
@@ -540,7 +541,7 @@
       font-weight: 600;
     }
     
-    /* CTA BUTTONS - ZALO PRIORITY */
+    /* CTA BUTTONS */
     .hero-cta {
       display: flex;
       flex-direction: column;
@@ -639,7 +640,7 @@
       letter-spacing: 1px;
     }
     
-    /* ========== TET PROMO SECTION ========== */
+    /* ========== PROMO SECTION ========== */
     .promo {
       background: linear-gradient(135deg, var(--dark), var(--black));
       padding: 80px 20px;
@@ -648,7 +649,7 @@
     }
     
     .promo::before {
-      content: '🧧';
+      content: '🌸';
       position: absolute;
       top: -100px;
       right: -100px;
@@ -810,7 +811,7 @@
       font-weight: 600;
     }
     
-    /* ========== SOCIAL PROOF SECTION ========== */
+    /* ========== REVIEWS ========== */
     .reviews {
       background: var(--black);
       padding: 80px 20px;
@@ -1181,7 +1182,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* ========== FLOATING ACTION BAR - ZALO PRIORITY ========== */
+    /* ========== FLOATING ACTION BAR ========== */
     .floating-bar {
       position: fixed;
       bottom: 0;
@@ -1247,85 +1248,27 @@
     
     /* ========== TABLET/DESKTOP ========== */
     @media (min-width: 768px) {
-      .hamburger {
-        display: none;
-      }
-      
-      .mobile-menu,
-      .menu-overlay {
-        display: none;
-      }
-      
-      .header-content {
-        padding: 0 40px;
-      }
-      
-      .tet-banner {
-        margin-top: 76px;
-        padding: 20px 40px;
-      }
-      
-      .tet-banner-title {
-        font-size: 20px;
-      }
-      
-      .tet-banner-subtitle {
-        font-size: 15px;
-      }
-      
-      .hero {
-        padding: 160px 40px 100px;
-      }
-      
-      .hero-cta {
-        flex-direction: row;
-        max-width: none;
-      }
-      
-      .btn {
-        padding: 20px 48px;
-        font-size: 15px;
-      }
-      
-      .tracker-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      
-      .promo-grid,
-      .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      
-      .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .gallery-item:first-child {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-      
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .floating-bar {
-        padding: 18px 40px;
-      }
+      .hamburger { display: none; }
+      .mobile-menu, .menu-overlay { display: none; }
+      .header-content { padding: 0 40px; }
+      .tet-banner { margin-top: 76px; padding: 20px 40px; }
+      .tet-banner-title { font-size: 20px; }
+      .tet-banner-subtitle { font-size: 15px; }
+      .hero-content { padding: 160px 40px 100px; }
+      .hero-cta { flex-direction: row; max-width: none; }
+      .btn { padding: 20px 48px; font-size: 15px; }
+      .tracker-grid { grid-template-columns: repeat(4, 1fr); }
+      .promo-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .floating-bar { padding: 18px 40px; }
     }
     
     @media (min-width: 1024px) {
-      .tracker-value {
-        font-size: 40px;
-      }
-      
-      .stat-number {
-        font-size: 64px;
-      }
+      .tracker-value { font-size: 40px; }
+      .stat-number { font-size: 64px; }
     }
     
     /* ========== LOADING ========== */
@@ -1356,9 +1299,7 @@
       animation: spin 0.8s linear infinite;
     }
     
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
     
     .loading-text {
       font-family: var(--font-display);
@@ -1368,117 +1309,23 @@
     }
     
     /* ========== UTILITIES ========== */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+    .text-center { text-align: center; }
+    .mt-40 { margin-top: 40px; }
     
-    .text-center {
-      text-align: center;
+    img { opacity: 0; transition: opacity 0.5s ease; }
+    img.loaded { opacity: 1; }
+
+    /* Desktop nav */
+    .nav-menu { display: flex; gap: 25px; }
+    .nav-menu a { color: #fff; text-decoration: none; transition: 0.3s; }
+    .nav-menu a:hover { color: gold; }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
     }
-    
-    .mt-40 {
-      margin-top: 40px;
-    }
-    
-    /* ========== LAZY LOAD ========== */
-    img {
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    
-    img.loaded {
-      opacity: 1;
-    }
- .hero{
-  min-height:calc(100vh - 72px);
-  background:none !important;
-  padding:0;
-}
-
-.hero-video{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:1;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  padding:160px 20px 80px;
-}
-.header {
-  background: #000;
-  padding: 15px 30px;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: gold;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* Desktop menu */
-.nav-menu {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-menu a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.nav-menu a:hover {
-  color: gold;
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-
-  .nav-menu {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -1498,31 +1345,23 @@
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- HEADER -->
-<header class="header">
-  <div class="header-content">
-
-    <div class="logo">THE WANN</div>
-
-    <!-- DESKTOP MENU -->
-    <nav class="nav-menu">
-      <a href="index.html">Trang Chủ</a>
-      <a href="about.html">Giới Thiệu</a>
-      <a href="menu.html">Menu</a>
-      <a href="services.html">Dịch Vụ</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Đặt Bàn</a>
-      <a href="contact.html">Liên Hệ</a>
-    </nav>
-
-    <!-- HAMBURGER -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">THE WANN</div>
+      <nav class="nav-menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="about.html">Giới Thiệu</a>
+        <a href="menu.html">Menu</a>
+        <a href="services.html">Dịch Vụ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Đặt Bàn</a>
+        <a href="contact.html">Liên Hệ</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-
-  </div>
-</header>
+  </header>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
@@ -1537,81 +1376,39 @@
         </a>
       </div>
     </div>
-    
-   <div class="menu-links">
-  <a href="index.html" class="menu-link">
-    <span class="menu-link-icon">🏠</span>
-    <span>Trang Chủ</span>
-  </a>
-
-  <a href="about.html" class="menu-link">
-    <span class="menu-link-icon">👑</span>
-    <span>Giới Thiệu</span>
-  </a>
-
-  <a href="menu.html" class="menu-link">
-    <span class="menu-link-icon">🍾</span>
-    <span>Menu & Combo</span>
-  </a>
-<a href="services.html" class="menu-link">
-  <span class="menu-link-icon">✨</span>
-  <span>Dịch Vụ</span>
-</a>
-
-  <a href="gallery.html" class="menu-link">
-    <span class="menu-link-icon">📸</span>
-    <span>Gallery</span>
-  </a>
-
-  <a href="booking.html" class="menu-link">
-    <span class="menu-link-icon">🪑</span>
-    <span>Đặt Bàn</span>
-  </a>
-
-  <a href="contact.html" class="menu-link">
-    <span class="menu-link-icon">📍</span>
-    <span>Liên Hệ</span>
-  </a>
-</div>
-
-    
+    <div class="menu-links">
+      <a href="index.html" class="menu-link"><span class="menu-link-icon">🏠</span><span>Trang Chủ</span></a>
+      <a href="about.html" class="menu-link"><span class="menu-link-icon">👑</span><span>Giới Thiệu</span></a>
+      <a href="menu.html" class="menu-link"><span class="menu-link-icon">🍾</span><span>Menu & Combo</span></a>
+      <a href="services.html" class="menu-link"><span class="menu-link-icon">✨</span><span>Dịch Vụ</span></a>
+      <a href="gallery.html" class="menu-link"><span class="menu-link-icon">📸</span><span>Gallery</span></a>
+      <a href="booking.html" class="menu-link"><span class="menu-link-icon">🪑</span><span>Đặt Bàn</span></a>
+      <a href="contact.html" class="menu-link"><span class="menu-link-icon">📍</span><span>Liên Hệ</span></a>
+    </div>
     <div class="menu-info">
-      <div class="menu-info-item">
-        <span class="menu-info-icon">📍</span>
-        <span>51 Bùi Thị Xuân, Q1, TP.HCM</span>
-      </div>
-      <div class="menu-info-item">
-        <span class="menu-info-icon">🕐</span>
-        <span>21:00 - 04:00 (Mỗi ngày)</span>
-      </div>
-      <div class="menu-info-item">
-        <span class="menu-info-icon">💬</span>
-        <span>Zalo/WhatsApp: 0778 307 889</span>
-      </div>
+      <div class="menu-info-item"><span class="menu-info-icon">📍</span><span>51 Bùi Thị Xuân, Q1, TP.HCM</span></div>
+      <div class="menu-info-item"><span class="menu-info-icon">🕐</span><span>21:00 - 04:00 (Mỗi ngày)</span></div>
+      <div class="menu-info-item"><span class="menu-info-icon">💬</span><span>Zalo/WhatsApp: 0778 307 889</span></div>
     </div>
   </div>
 
-  <!-- TET BANNER -->
+  <!-- PROMO BANNER -->
   <div class="tet-banner">
     <div class="tet-banner-content">
       <div class="tet-banner-text">
-        <div class="tet-banner-title">🧧 ƯU ĐÃI TẾT ẤT TỴ 2026</div>
+        <div class="tet-banner-title">🌸 THÁNG 3 RỰC RỠ - ƯU ĐÃI CẢ THÁNG</div>
         <div class="tet-banner-subtitle">Tặng combo 800K + Giảm 10% bill</div>
       </div>
-      <div class="tet-banner-badge">
-        CHỈ 12 BÀN
-      </div>
+      <div class="tet-banner-badge">THÁNG 3</div>
     </div>
   </div>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <!-- VIDEO BACKGROUND -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="https://pub-52cf7508df4b4c109b66a730e3ab5569.r2.dev/1JEKCP8S4_725072.mp4" type="video/mp4">
-  </video>
-      <!-- DARK OVERLAY -->
-  <div class="hero-overlay"></div>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://pub-52cf7508df4b4c109b66a730e3ab5569.r2.dev/1JEKCP8S4_725072.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="urgent-banner">
         <span class="tracker-pulse"></span>
@@ -1620,7 +1417,7 @@
       
       <h1>
         MIỄN PHÍ COMBO 800K
-        <span class="highlight">ƯU ĐÃI TẾT 2026</span>
+        <span class="highlight">THÁNG 3 RỰC RỠ</span>
       </h1>
       
       <p class="hero-subtitle">
@@ -1639,7 +1436,7 @@
             <div class="tracker-label">Đã đặt</div>
           </div>
           <div class="tracker-item">
-            <div class="tracker-value" id="remainingTables">12</div>
+            <div class="tracker-value" id="remainingTables">15</div>
             <div class="tracker-label">Còn trống</div>
           </div>
           <div class="tracker-item">
@@ -1659,7 +1456,7 @@
         </div>
       </div>
 
-      <!-- CTA BUTTONS - ZALO FIRST -->
+      <!-- CTA BUTTONS -->
       <div class="hero-cta">
         <a href="https://zalo.me/0373453757" class="btn btn-primary">
           <span class="btn-icon">💬</span> CHAT ZALO - HỖ TRỢ NHANH
@@ -1687,11 +1484,11 @@
     </div>
   </section>
 
-  <!-- TET PROMOTION -->
+  <!-- PROMOTION SECTION -->
   <section class="promo" id="promo">
     <div class="section-header">
-      <div class="section-tag">🧧 ƯU ĐÃI ĐẶC BIỆT</div>
-      <h2 class="section-title">QUÀ TẶNG TẾT 2026</h2>
+      <div class="section-tag">🌸 ƯU ĐÃI ĐẶC BIỆT</div>
+      <h2 class="section-title">THÁNG 3 RỰC RỠ</h2>
       <p class="section-subtitle">
         Đặt bàn VIP hôm nay - Nhận ngay 2 ưu đãi khủng
       </p>
@@ -1703,7 +1500,6 @@
         <div class="promo-badge">HOT</div>
         <div class="promo-icon">🍺</div>
         <h3>Tặng Combo Ăn Uống</h3>
-        
         <div class="promo-benefits">
           <div class="benefit">
             <div class="benefit-icon">✨</div>
@@ -1712,7 +1508,6 @@
               <p>Gà rán giòn + Hải sản mix premium</p>
             </div>
           </div>
-          
           <div class="benefit">
             <div class="benefit-icon">🍻</div>
             <div class="benefit-text">
@@ -1720,7 +1515,6 @@
               <p>Bia tươi ngon phục vụ lạnh tại bàn</p>
             </div>
           </div>
-          
           <div class="benefit">
             <div class="benefit-icon">⏰</div>
             <div class="benefit-text">
@@ -1729,7 +1523,6 @@
             </div>
           </div>
         </div>
-
         <div class="promo-value">
           <span class="value">800.000đ</span>
           <p>Giá trị quà tặng MIỄN PHÍ</p>
@@ -1741,7 +1534,6 @@
         <div class="promo-badge">VIP</div>
         <div class="promo-icon">💰</div>
         <h3>Giảm Giá Hóa Đơn</h3>
-        
         <div class="promo-benefits">
           <div class="benefit">
             <div class="benefit-icon">🎯</div>
@@ -1750,7 +1542,6 @@
               <p>Giảm ngay 5% tổng hóa đơn</p>
             </div>
           </div>
-          
           <div class="benefit">
             <div class="benefit-icon">👑</div>
             <div class="benefit-text">
@@ -1758,7 +1549,6 @@
               <p>Giảm 10% - Ưu đãi tối đa cho VIP</p>
             </div>
           </div>
-          
           <div class="benefit">
             <div class="benefit-icon">🎊</div>
             <div class="benefit-text">
@@ -1767,7 +1557,6 @@
             </div>
           </div>
         </div>
-
         <div class="promo-value">
           <span class="value">5-10%</span>
           <p>Giảm giá trực tiếp</p>
@@ -1809,69 +1598,39 @@
     <div class="section-header">
       <div class="section-tag">⭐ ĐÁNH GIÁ</div>
       <h2 class="section-title">KHÁCH HÀNG NÓI GÌ</h2>
-      <p class="section-subtitle">
-        Hơn 2,500 khách hàng đã trải nghiệm và hài lòng
-      </p>
+      <p class="section-subtitle">Hơn 2,500 khách hàng đã trải nghiệm và hài lòng</p>
     </div>
-
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar">MA</div>
-          <div class="review-info">
-            <h4>Minh Anh Nguyễn</h4>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="review-info"><h4>Minh Anh Nguyễn</h4><div class="stars">★★★★★</div></div>
         </div>
-        <p class="review-text">
-          "Không gian cực đỉnh, âm thanh chất lượng cao, DJ chơi nhạc cực hay. 
-          Phục vụ chuyên nghiệp nhiệt tình. Chắc chắn sẽ quay lại!"
-        </p>
+        <p class="review-text">"Không gian cực đỉnh, âm thanh chất lượng cao, DJ chơi nhạc cực hay. Phục vụ chuyên nghiệp nhiệt tình. Chắc chắn sẽ quay lại!"</p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
       </div>
-
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar">TH</div>
-          <div class="review-info">
-            <h4>Tuấn Hưng</h4>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="review-info"><h4>Tuấn Hưng</h4><div class="stars">★★★★★</div></div>
         </div>
-        <p class="review-text">
-          "Tổ chức sinh nhật ở đây rất tuyệt. Team hỗ trợ nhiệt tình qua Zalo, 
-          không gian sang trọng, bạn bè ai cũng khen. Recommend!"
-        </p>
+        <p class="review-text">"Tổ chức sinh nhật ở đây rất tuyệt. Team hỗ trợ nhiệt tình qua Zalo, không gian sang trọng, bạn bè ai cũng khen. Recommend!"</p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
       </div>
-
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar">LP</div>
-          <div class="review-info">
-            <h4>Linh Phương</h4>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="review-info"><h4>Linh Phương</h4><div class="stars">★★★★★</div></div>
         </div>
-        <p class="review-text">
-          "Đặt bàn VIP rất dễ dàng qua Zalo, phản hồi cực nhanh. Vị trí đẹp, view sân khấu tốt. 
-          Ưu đãi Tết này quá hời luôn!"
-        </p>
+        <p class="review-text">"Đặt bàn VIP rất dễ dàng qua Zalo, phản hồi cực nhanh. Vị trí đẹp, view sân khấu tốt. Ưu đãi tháng 3 này quá hời luôn!"</p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
       </div>
-
       <div class="review-card">
         <div class="review-header">
           <div class="review-avatar">QD</div>
-          <div class="review-info">
-            <h4>Quang Dũng</h4>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="review-info"><h4>Quang Dũng</h4><div class="stars">★★★★★</div></div>
         </div>
-        <p class="review-text">
-          "Nightclub số 1 Sài Gòn mà giá cả hợp lý. Nhóm tôi 8 người 
-          vừa đủ combo, thoải mái cả đêm. Will come back!"
-        </p>
+        <p class="review-text">"Nightclub số 1 Sài Gòn mà giá cả hợp lý. Nhóm tôi 8 người vừa đủ combo, thoải mái cả đêm. Will come back!"</p>
         <span class="review-verified">✓ Khách hàng đã xác thực</span>
       </div>
     </div>
@@ -1882,32 +1641,14 @@
     <div class="section-header">
       <div class="section-tag">📸 HÌNH ẢNH</div>
       <h2 class="section-title">KHÔNG GIAN THE WANN</h2>
-      <p class="section-subtitle">
-        Trải nghiệm nightlife đẳng cấp tại trung tâm Q1
-      </p>
+      <p class="section-subtitle">Trải nghiệm nightlife đẳng cấp tại trung tâm Q1</p>
     </div>
-
     <div class="gallery-grid">
-      <div class="gallery-item">
-        <img data-src="https://i.postimg.cc/Sst0dRpS/TOFI8033.jpg" alt="THE WANN Main Floor">
-        <div class="gallery-overlay"><span>🎵</span></div>
-      </div>
-      <div class="gallery-item">
-        <img data-src="https://i.postimg.cc/DypgzGdY/TW-4631.jpg" alt="VIP Lounge">
-        <div class="gallery-overlay"><span>🍾</span></div>
-      </div>
-      <div class="gallery-item">
-        <img data-src="https://i.postimg.cc/nzLrMX1R/3R1A9269.jpg" alt="Party Night">
-        <div class="gallery-overlay"><span>🎉</span></div>
-      </div>
-      <div class="gallery-item">
-        <img data-src="https://i.postimg.cc/3NmkQP1Z/QM-8485.jpg" alt="DJ Booth">
-        <div class="gallery-overlay"><span>🎧</span></div>
-      </div>
-      <div class="gallery-item">
-        <img data-src="https://i.postimg.cc/sXFyC1NH/TW-5134.jpg" alt="Bar Area">
-        <div class="gallery-overlay"><span>🍸</span></div>
-      </div>
+      <div class="gallery-item"><img data-src="https://i.postimg.cc/Sst0dRpS/TOFI8033.jpg" alt="THE WANN Main Floor"><div class="gallery-overlay"><span>🎵</span></div></div>
+      <div class="gallery-item"><img data-src="https://i.postimg.cc/DypgzGdY/TW-4631.jpg" alt="VIP Lounge"><div class="gallery-overlay"><span>🍾</span></div></div>
+      <div class="gallery-item"><img data-src="https://i.postimg.cc/nzLrMX1R/3R1A9269.jpg" alt="Party Night"><div class="gallery-overlay"><span>🎉</span></div></div>
+      <div class="gallery-item"><img data-src="https://i.postimg.cc/3NmkQP1Z/QM-8485.jpg" alt="DJ Booth"><div class="gallery-overlay"><span>🎧</span></div></div>
+      <div class="gallery-item"><img data-src="https://i.postimg.cc/sXFyC1NH/TW-5134.jpg" alt="Bar Area"><div class="gallery-overlay"><span>🍸</span></div></div>
     </div>
   </section>
 
@@ -1916,38 +1657,16 @@
     <div class="section-header">
       <div class="section-tag">🍾 MENU</div>
       <h2 class="section-title">COMBO VIP PACKAGES</h2>
-      <p class="section-subtitle">
-        Giá combo đã bao gồm ăn uống - Phù hợp nhóm 6-10 người
-      </p>
+      <p class="section-subtitle">Giá combo đã bao gồm ăn uống - Phù hợp nhóm 6-10 người</p>
     </div>
-
     <div class="menu-grid">
-      <div class="menu-item">
-        <span class="menu-name">Combo The Wann Food Set (6-8 khách)</span>
-        <span class="menu-price">3.799.000đ</span>
-      </div>
-      <div class="menu-item">
-        <span class="menu-name">Combo Phantom – 24 Heineken + Món Ăn</span>
-        <span class="menu-price">6.999.000đ</span>
-      </div>
-      <div class="menu-item">
-        <span class="menu-name">Combo Saturn – 2 Gold Label + Full Food</span>
-        <span class="menu-price">8.299.000đ</span>
-      </div>
-      <div class="menu-item">
-        <span class="menu-name">Combo Universe – 2 Belaire + Hải Sản</span>
-        <span class="menu-price">9.599.000đ</span>
-      </div>
-      <div class="menu-item">
-        <span class="menu-name">Combo Jupiter – 2 Hennessy VSOP + Premium</span>
-        <span class="menu-price">10.399.000đ</span>
-      </div>
-      <div class="menu-item">
-        <span class="menu-name">Combo Mercury – 2 Dom + VIP Banquet</span>
-        <span class="menu-price">24.319.000đ</span>
-      </div>
+      <div class="menu-item"><span class="menu-name">Combo The Wann Food Set (6-8 khách)</span><span class="menu-price">3.799.000đ</span></div>
+      <div class="menu-item"><span class="menu-name">Combo Phantom – 24 Heineken + Món Ăn</span><span class="menu-price">6.999.000đ</span></div>
+      <div class="menu-item"><span class="menu-name">Combo Saturn – 2 Gold Label + Full Food</span><span class="menu-price">8.299.000đ</span></div>
+      <div class="menu-item"><span class="menu-name">Combo Universe – 2 Belaire + Hải Sản</span><span class="menu-price">9.599.000đ</span></div>
+      <div class="menu-item"><span class="menu-name">Combo Jupiter – 2 Hennessy VSOP + Premium</span><span class="menu-price">10.399.000đ</span></div>
+      <div class="menu-item"><span class="menu-name">Combo Mercury – 2 Dom + VIP Banquet</span><span class="menu-price">24.319.000đ</span></div>
     </div>
-
     <div class="text-center mt-40">
       <a href="https://zalo.me/0373453757" class="btn btn-primary">
         💬 CHAT ZALO - XEM MENU ĐẦY ĐỦ
@@ -1960,16 +1679,12 @@
     <div class="final-cta-content">
       <h2>BOOK BÀN VIP NGAY HÔM NAY</h2>
       <p>
-        🔥 Chỉ còn <strong id="finalRemaining">12 bàn</strong> cho chương trình Tết 2026<br>
+        🔥 Ưu đãi <strong>THÁNG 3 RỰC RỠ</strong> - Số lượng có hạn<br>
         💬 Chat Zalo để được tư vấn và đặt bàn nhanh nhất
       </p>
       <div class="hero-cta">
-        <a href="https://zalo.me/0373453757" class="btn btn-primary">
-          💬 CHAT ZALO NGAY
-        </a>
-        <a href="tel:0778307889" class="btn btn-secondary">
-          📞 0778 307 889
-        </a>
+        <a href="https://zalo.me/0373453757" class="btn btn-primary">💬 CHAT ZALO NGAY</a>
+        <a href="tel:0778307889" class="btn btn-secondary">📞 0778 307 889</a>
       </div>
     </div>
   </section>
@@ -1980,7 +1695,6 @@
       <div class="section-tag">📍 LIÊN HỆ</div>
       <h2 class="section-title">THÔNG TIN & ĐỊA CHỈ</h2>
     </div>
-
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-icon">💬</div>
@@ -1990,7 +1704,6 @@
           <p>Hỗ trợ nhanh - Tư vấn chi tiết - Đặt bàn dễ dàng</p>
         </div>
       </div>
-
       <div class="contact-item">
         <div class="contact-icon">📞</div>
         <div class="contact-details">
@@ -1999,7 +1712,6 @@
           <p>Hỗ trợ 24/7 - Gọi trực tiếp</p>
         </div>
       </div>
-
       <div class="contact-item">
         <div class="contact-icon">📍</div>
         <div class="contact-details">
@@ -2007,7 +1719,6 @@
           <p>51 Bùi Thị Xuân, Phường Bến Thành<br>Quận 1, TP. Hồ Chí Minh</p>
         </div>
       </div>
-
       <div class="contact-item">
         <div class="contact-icon">🕐</div>
         <div class="contact-details">
@@ -2021,45 +1732,36 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-logo">THE WANN</div>
-    <p class="footer-text">
-      Nightclub & Bar cao cấp tại trung tâm Quận 1, Sài Gòn. 
-      Trải nghiệm nightlife đẳng cấp quốc tế.
-    </p>
-    
+    <p class="footer-text">Nightclub & Bar cao cấp tại trung tâm Quận 1, Sài Gòn. Trải nghiệm nightlife đẳng cấp quốc tế.</p>
     <div class="footer-social">
       <a href="https://zalo.me/0373453757" class="social-btn" title="Chat Zalo">💬</a>
       <a href="https://wa.me/84778307889" class="social-btn" title="WhatsApp">📱</a>
       <a href="tel:0778307889" class="social-btn" title="Gọi điện">📞</a>
     </div>
-
-    <p class="footer-copyright">
-      © 2026 THE WANN Nightclub & Bar. All rights reserved.
-    </p>
+    <p class="footer-copyright">© 2026 THE WANN Nightclub & Bar. All rights reserved.</p>
   </footer>
 
-  <!-- FLOATING ACTION BAR - ZALO PRIORITY -->
+  <!-- FLOATING ACTION BAR -->
   <div class="floating-bar">
     <div class="floating-content">
       <div class="floating-info">
-        <p>🔥 TẾT 2026 - TẶNG COMBO 800K</p>
-        <span>Còn <strong id="floatingRemaining">12</strong> bàn trống</span>
+        <p>🌸 THÁNG 3 RỰC RỠ - TẶNG COMBO 800K</p>
+        <span>Ưu đãi cả tháng 3 · Số lượng có hạn</span>
       </div>
-      <a href="https://zalo.me/0373453757" class="floating-btn">
-        💬 ZALO
-      </a>
+      <a href="https://zalo.me/0373453757" class="floating-btn">💬 ZALO</a>
     </div>
   </div>
 
   <!-- JAVASCRIPT -->
   <script>
-    // ========== LOADING ==========
+    // LOADING
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loading').classList.add('hidden');
       }, 1000);
     });
 
-    // ========== HAMBURGER MENU ==========
+    // HAMBURGER MENU
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuOverlay = document.getElementById('menuOverlay');
@@ -2074,61 +1776,36 @@
 
     hamburger.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking a link
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          toggleMenu();
-        }
+        if (window.innerWidth < 768) toggleMenu();
       });
     });
 
-    // ========== LIVE ACTIVITY TRACKER ==========
+    // LIVE ACTIVITY TRACKER
     const names = ['Minh Anh', 'Tuấn Hưng', 'Linh Phương', 'Quang Dũng', 'Hải Yến', 'Thanh Tùng', 'Bảo Ngọc', 'Anh Tuấn'];
     let currentBookings = 28;
     let currentVisitors = 8;
-    let remainingTables = 12;
+    let remainingTables = 15;
 
     function updateLiveStats() {
-      // Random visitor count (6-12)
       currentVisitors = Math.floor(Math.random() * 7) + 6;
       document.getElementById('liveVisitors').textContent = currentVisitors;
 
-      // Occasionally increase bookings and decrease tables
       if (Math.random() > 0.7 && remainingTables > 5) {
         currentBookings++;
         remainingTables--;
-        
-        // Update all remaining displays
         document.getElementById('remainingTables').textContent = remainingTables;
-        document.getElementById('floatingRemaining').textContent = remainingTables;
-        document.getElementById('finalRemaining').textContent = remainingTables + ' bàn';
-        
-        // Update bookings count
         document.getElementById('liveBookings').textContent = currentBookings;
-        
-        // Update recent booking name
         const randomName = names[Math.floor(Math.random() * names.length)];
-        const timeAgo = Math.floor(Math.random() * 5) + 1;
         document.getElementById('recentBooking').textContent = randomName;
-        
-        // Show notification (optional enhancement)
-        const tracker = document.querySelector('.tracker-status');
-        tracker.style.animation = 'none';
-        setTimeout(() => {
-          tracker.style.animation = 'pulse 0.5s ease';
-        }, 10);
       }
     }
 
-    // Update every 8-15 seconds
     setInterval(updateLiveStats, Math.random() * 7000 + 8000);
-
-    // Initial update after 3 seconds
     setTimeout(updateLiveStats, 3000);
 
-    // ========== LAZY LOAD IMAGES ==========
+    // LAZY LOAD IMAGES
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2139,75 +1816,40 @@
         }
       });
     });
+    document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
-      imageObserver.observe(img);
-    });
-
-    // ========== SMOOTH SCROLL ==========
+    // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          const offset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
         }
       });
     });
 
-    // ========== TRACK CLICKS (for analytics) ==========
+    // TRACK CLICKS
     document.querySelectorAll('a[href^="tel"], a[href*="zalo"], a[href*="wa.me"]').forEach(link => {
       link.addEventListener('click', function() {
-        // Send event to Google Analytics
         if (typeof gtag !== 'undefined') {
-          const action = this.href.includes('zalo') ? 'zalo_click' : 
-                        this.href.includes('tel') ? 'phone_click' : 'whatsapp_click';
-          gtag('event', 'contact_action', {
-            'event_category': 'Contact',
-            'event_label': action,
-            'value': this.href
-          });
+          const action = this.href.includes('zalo') ? 'zalo_click' : this.href.includes('tel') ? 'phone_click' : 'whatsapp_click';
+          gtag('event', 'contact_action', { 'event_category': 'Contact', 'event_label': action });
         }
       });
     });
 
-    // ========== PREVENT LAYOUT SHIFT ==========
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      document.body.style.transition = 'none';
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        document.body.style.transition = '';
-      }, 400);
-    });
-
-    // ========== SCROLL ANIMATIONS ==========
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    // SCROLL ANIMATIONS
     const animationObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-        }
+        if (entry.isIntersecting) entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
       });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.promo-card, .review-card, .stat-item').forEach(el => {
-      animationObserver.observe(el);
-    });
+    document.querySelectorAll('.promo-card, .review-card, .stat-item').forEach(el => animationObserver.observe(el));
   </script>
 
-  <!-- Facebook Pixel Code -->
+  <!-- Facebook Pixel -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
